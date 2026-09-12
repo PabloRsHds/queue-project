@@ -1,0 +1,26 @@
+::ng-deep .mat-mdc-snack-bar-container .mdc-snackbar__label {
+  font-weight: 500 !important;
+  text-align: center;
+  margin-right: 15px;
+}
+
+::ng-deep .snackbar .mdc-snackbar__surface {
+  background-color: #0a0a0a !important;
+  color: white !important;
+  padding: 10px;
+  font-weight: bold;
+}
+
+::ng-deep .snackbar-success .mdc-snackbar__surface {
+  background-color: #0b5e18 !important;
+  color: rgb(255, 255, 255) !important;
+  padding: 10px;
+  font-weight: bold;
+}
+
+::ng-deep .snackbar-error .mdc-snackbar__surface {
+  background-color: #8d0000 !important;
+  color: rgb(255, 255, 255) !important;
+  padding: 10px;
+  font-weight: bold;
+}

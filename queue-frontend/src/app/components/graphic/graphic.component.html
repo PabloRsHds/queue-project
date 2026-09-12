@@ -1,0 +1,1195 @@
+<!-- RELATÓRIOS PAGE -->
+<div class="fade-in" >
+
+  <div class="section-container">
+    <!-- Left Nav -->
+    <div class="section-card" style="align-self:start;position:sticky;top:88px;">
+      <div class="report-nav" style="padding:8px;">
+        <a [class.active]="this.navItem === 'Attendance'" (click)="navItemChange('Attendance')">
+          <svg fill="currentColor" stroke="none" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 512 512" xml:space="preserve"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <g> <g> <path d="M503.467,29.867H8.533C3.823,29.867,0,33.69,0,38.4v341.333c0,4.71,3.823,8.533,8.533,8.533h494.933 c4.71,0,8.533-3.823,8.533-8.533V38.4C512,33.69,508.177,29.867,503.467,29.867z M486.409,371.2H25.6 c-4.71,0-8.533-3.823-8.533-8.533v-307.2c0-4.71,3.823-8.533,8.533-8.533h460.8c4.71,0,8.533,3.823,8.533,8.533l0.009,307.2 C494.942,367.377,491.119,371.2,486.409,371.2z"></path> </g> </g> <g> <g> <path d="M469.333,64H42.667c-4.71,0-8.533,3.823-8.533,8.533V345.6c0,4.71,3.823,8.533,8.533,8.533h426.667 c4.71,0,8.533-3.823,8.533-8.533V72.533C477.867,67.823,474.044,64,469.333,64z M51.2,337.067v-256h409.6l0.008,256H51.2z"></path> </g> </g> <g> <g> <path d="M384,465.067c-18.5,0-34.133-23.45-34.133-51.2c0-4.719-3.823-8.533-8.533-8.533H170.667c-4.71,0-8.533,3.814-8.533,8.533 c0,27.75-15.633,51.2-34.133,51.2c-4.71,0-8.533,3.814-8.533,8.533c0,4.719,3.823,8.533,8.533,8.533h256 c4.71,0,8.533-3.814,8.533-8.533C392.533,468.881,388.71,465.067,384,465.067z M161.826,465.067 c9.131-10.743,15.386-25.762,16.973-42.667h154.402c1.587,16.904,7.834,31.923,16.973,42.667H161.826z"></path> </g> </g> </g>
+          </svg>
+          Atendimentos
+        </a>
+        <a [class.active]="this.navItem === 'Department'" (click)="navItemChange('Department')" *ngIf="userLogged()?.role === 'ADMIN' || userLogged()?.role === 'MANAGER'">
+          <svg fill="currentColor" viewBox="0 0 32 32" id="icon" xmlns="http://www.w3.org/2000/svg" stroke="currentColor" stroke-width="0.00032">
+            <g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><defs><style>.cls-1{fill:none;}</style></defs><title>enterprise</title><rect x="8" y="8" width="2" height="4"></rect><rect x="8" y="14" width="2" height="4"></rect><rect x="14" y="8" width="2" height="4"></rect><rect x="14" y="14" width="2" height="4"></rect><rect x="8" y="20" width="2" height="4"></rect><rect x="14" y="20" width="2" height="4"></rect><path d="M30,14a2,2,0,0,0-2-2H22V4a2,2,0,0,0-2-2H4A2,2,0,0,0,2,4V30H30ZM4,4H20V28H4ZM22,28V14h6V28Z"></path><rect id="_Transparent_Rectangle_" data-name="&lt;Transparent Rectangle&gt;" class="cls-1" width="32" height="32"></rect></g>
+          </svg>
+          Departamentos
+        </a>
+        <a [class.active]="this.navItem === 'Services'" (click)="navItemChange('Services')" *ngIf="userLogged()?.role === 'ADMIN' || userLogged()?.role === 'MANAGER'">
+          <svg fill="none" viewBox="0 0 512 512" version="1.1" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" stroke="currentColor" stroke-width="20.48">
+            <g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <g id="_x37_21-_gear__x2C__setting__x2C_engine__x2C_"> <g> <g> <path d="M283.693,492.847H229.26c-14.972,0-27.153-12.177-27.153-27.144v-53.9c-19.271-6.774-37.417-17.271-52.977-30.643 l-46.764,26.991c-4.106,2.361-8.772,3.605-13.503,3.606c-9.703,0-18.727-5.173-23.55-13.5l-27.237-47.184 c-7.457-12.935-3.004-29.55,9.925-37.04l46.741-26.958c-1.903-10.071-2.867-20.341-2.867-30.6c0-10.258,0.963-20.527,2.867-30.6 l-46.73-26.95c-12.972-7.516-17.423-24.157-9.933-37.104l27.23-47.121c4.835-8.347,13.859-13.527,23.553-13.527 c4.743,0,9.417,1.257,13.517,3.635l46.754,26.946c15.576-13.353,33.724-23.837,52.974-30.604v-53.9 c0-14.968,12.181-27.145,27.153-27.145h54.434c14.974,0,27.155,12.177,27.155,27.145v53.899 c19.343,6.793,37.492,17.274,52.983,30.6l46.761-26.951c4.095-2.369,8.77-3.625,13.51-3.625c9.693,0,18.708,5.185,23.524,13.531 l27.25,47.118c7.477,12.977,3.021,29.615-9.928,37.1l-46.738,26.955c1.89,10.021,2.846,20.291,2.846,30.599 c0,10.388-0.953,20.659-2.839,30.603l46.726,26.948c6.236,3.572,10.721,9.399,12.611,16.398 c1.898,7.03,0.949,14.362-2.674,20.646l-27.233,47.178c-4.827,8.335-13.847,13.508-23.544,13.509 c-4.729,0-9.396-1.244-13.499-3.597l-46.775-27c-15.553,13.379-33.701,23.863-52.98,30.605v53.937 C310.849,480.67,298.667,492.847,283.693,492.847z M149.959,366.227c1.636,0,3.259,0.598,4.526,1.756 c16.143,14.748,35.631,26.02,56.358,32.597c2.787,0.885,4.68,3.472,4.68,6.395v58.729c0,7.569,6.162,13.728,13.736,13.728h54.434 c7.576,0,13.738-6.158,13.738-13.728v-58.774c0-2.928,1.899-5.518,4.691-6.397c20.731-6.537,40.215-17.791,56.344-32.546 c2.159-1.974,5.348-2.323,7.882-0.86l50.947,29.407c2.058,1.18,4.417,1.809,6.807,1.809c4.927-0.001,9.499-2.609,11.931-6.808 l27.227-47.166c1.827-3.17,2.305-6.88,1.343-10.442c-0.954-3.533-3.208-6.468-6.345-8.265l-50.938-29.378 c-2.539-1.465-3.834-4.408-3.196-7.27c2.334-10.482,3.518-21.429,3.518-32.536c0-11.004-1.185-21.955-3.521-32.55 c-0.63-2.857,0.664-5.794,3.199-7.256l50.921-29.367c6.547-3.783,8.8-12.207,5.017-18.773l-27.247-47.114 c-2.432-4.213-6.992-6.826-11.907-6.826c-2.383,0-4.734,0.632-6.8,1.827l-50.958,29.37c-2.533,1.46-5.721,1.11-7.879-0.864 c-16.047-14.687-35.533-25.941-56.354-32.548c-2.786-0.885-4.68-3.472-4.68-6.395V47.251c0-7.569-6.162-13.729-13.738-13.729 H229.26c-7.574,0-13.736,6.159-13.736,13.729v58.729c0,2.923-1.893,5.51-4.68,6.395c-20.706,6.569-40.196,17.828-56.366,32.559 c-2.157,1.967-5.339,2.311-7.867,0.854l-50.948-29.363c-2.073-1.203-4.419-1.834-6.801-1.834c-4.924,0-9.5,2.617-11.94,6.83 l-27.228,47.118c-3.789,6.55-1.531,14.97,5.033,18.772l50.909,29.36c2.535,1.462,3.83,4.398,3.2,7.256 c-2.351,10.662-3.542,21.613-3.542,32.55c0,10.938,1.192,21.889,3.542,32.55c0.63,2.857-0.665,5.794-3.199,7.256l-50.92,29.368 c-6.53,3.782-8.786,12.184-5.018,18.72l27.229,47.172c2.428,4.19,7.003,6.799,11.936,6.799c2.388,0,4.742-0.628,6.807-1.814 l50.938-29.401C147.652,366.521,148.809,366.227,149.959,366.227z"></path> </g> <g> <path d="M256.491,337.764c-44.857,0-81.351-36.465-81.351-81.287c0-44.821,36.494-81.286,81.351-81.286 c44.842,0,81.323,36.465,81.323,81.286C337.814,301.299,301.333,337.764,256.491,337.764z M256.491,188.606 c-37.459,0-67.934,30.446-67.934,67.87s30.475,67.871,67.934,67.871c37.444,0,67.907-30.447,67.907-67.871 S293.936,188.606,256.491,188.606z"></path> </g> </g> </g> <g id="Layer_1"></g> </g>
+          </svg>
+          Serviços
+        </a>
+        <a [class.active]="this.navItem === 'Users'" (click)="navItemChange('Users')" *ngIf="userLogged()?.role === 'ADMIN' || userLogged()?.role === 'MANAGER'">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/></svg>
+          Usuários
+        </a>
+        <a [class.active]="this.navItem === 'Scheduling'" (click)="navItemChange('Scheduling')">
+          <svg fill="currentColor" stroke="none" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><path d="M12,14a1,1,0,1,0-1-1A1,1,0,0,0,12,14Zm5,0a1,1,0,1,0-1-1A1,1,0,0,0,17,14Zm-5,4a1,1,0,1,0-1-1A1,1,0,0,0,12,18Zm5,0a1,1,0,1,0-1-1A1,1,0,0,0,17,18ZM7,14a1,1,0,1,0-1-1A1,1,0,0,0,7,14ZM19,4H18V3a1,1,0,0,0-2,0V4H8V3A1,1,0,0,0,6,3V4H5A3,3,0,0,0,2,7V19a3,3,0,0,0,3,3H19a3,3,0,0,0,3-3V7A3,3,0,0,0,19,4Zm1,15a1,1,0,0,1-1,1H5a1,1,0,0,1-1-1V10H20ZM20,8H4V7A1,1,0,0,1,5,6H19a1,1,0,0,1,1,1ZM7,18a1,1,0,1,0-1-1A1,1,0,0,0,7,18Z"></path></g>
+          </svg>
+          Agendamentos
+        </a>
+        <a [class.active]="this.navItem === 'Customers'" (click)="navItemChange('Customers')" *ngIf="userLogged()?.role === 'ADMIN' || userLogged()?.role === 'MANAGER' || userLogged()?.role === 'RECEPTION'">
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17 21v-2a4 4 0 00-4-4H5a4 4 0 00-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M23 21v-2a4 4 0 00-3-3.87"/><path d="M16 3.13a4 4 0 010 7.75"/>
+          </svg>
+          Clientes
+        </a>
+
+      </div>
+    </div>
+
+    <!-- Content Attendance -->
+    <div style="display:flex;flex-direction:column;gap:20px;" *ngIf="this.navItem === 'Attendance'">
+      <!-- Stats Cards -->
+      <div class="stats-grid" style="display:grid;grid-template-columns:repeat(3,1fr);gap:16px;">
+
+        <div class="stat-card">
+          <div style="display:flex;align-items:center;gap:12px;">
+            <div style="width:55px;height:55px;background:#0084ff2a;;border-radius:10px;display:flex;align-items:center;justify-content:center; flex-shrink: 0;">
+              <svg viewBox="0 0 1024 1024" width="32px" height="32px" class="icon" version="1.1" xmlns="http://www.w3.org/2000/svg" fill="#000000"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><path d="M749.7 585.3l-164.6 91.4v182.9L749.7 951l164.6-91.4V676.7l-164.6-91.4z m91.4 231.2l-91.4 50.8-91.4-50.8v-96.8l91.4-50.8 91.4 50.8v96.8z" fill="#2980d1"></path><path d="M735.667582 801.904773a36.6 36.6 0 1 0 28.012427-67.627982 36.6 36.6 0 1 0-28.012427 67.627982Z" fill="#2980d1"></path><path d="M219.4 731.4H256v-73.1h-36.6V365.7H256v-73.1h-36.6V146.3h585v402.4h73.2V73.1H146.3v219.5h-36.6v73.1h36.6v292.6h-36.6v73.1h36.6v219.5h399.8v-73.2H219.4z" fill="#2980d1"></path><path d="M329.2 256h402.3v73.1H329.2zM329.2 438.9h402.3V512H329.2zM329.2 621.7h182.9v73.1H329.2z" fill="#2980d1"></path></g>
+              </svg>
+            </div>
+            <div>
+              <div style="font-size:22px;font-weight:700;color:#1e293b;">{{this.countTotalAttendances()?.attendancesThisMonth ?? 0}}</div>
+              <div style="font-size:12px;color:#64748b; margin-top: 3px">Total de atendimentos no mês</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="stat-card">
+          <div style="display:flex;align-items:center;gap:12px;">
+            <div style="width:55px;height:55px;background:#0084ff2a;;border-radius:10px;display:flex;align-items:center;justify-content:center; flex-shrink: 0;">
+              <svg viewBox="0 0 1024 1024" width="32px" height="32px" class="icon" version="1.1" xmlns="http://www.w3.org/2000/svg" fill="#000000"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><path d="M749.7 585.3l-164.6 91.4v182.9L749.7 951l164.6-91.4V676.7l-164.6-91.4z m91.4 231.2l-91.4 50.8-91.4-50.8v-96.8l91.4-50.8 91.4 50.8v96.8z" fill="#2980d1"></path><path d="M735.667582 801.904773a36.6 36.6 0 1 0 28.012427-67.627982 36.6 36.6 0 1 0-28.012427 67.627982Z" fill="#2980d1"></path><path d="M219.4 731.4H256v-73.1h-36.6V365.7H256v-73.1h-36.6V146.3h585v402.4h73.2V73.1H146.3v219.5h-36.6v73.1h36.6v292.6h-36.6v73.1h36.6v219.5h399.8v-73.2H219.4z" fill="#2980d1"></path><path d="M329.2 256h402.3v73.1H329.2zM329.2 438.9h402.3V512H329.2zM329.2 621.7h182.9v73.1H329.2z" fill="#2980d1"></path></g>
+              </svg>
+            </div>
+            <div>
+              <div style="font-size:22px;font-weight:700;color:#1e293b;">{{this.countTotalAttendances()?.attendancesThisWeek ?? 0}}</div>
+              <div style="font-size:12px;color:#64748b; margin-top: 3px">Total de atendimentos na semana</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="stat-card">
+          <div style="display:flex;align-items:center;gap:12px;">
+            <div style="width:55px;height:55px;background:#0084ff2a;;border-radius:10px;display:flex;align-items:center;justify-content:center; flex-shrink: 0;">
+              <svg viewBox="0 0 1024 1024" width="32px" height="32px" class="icon" version="1.1" xmlns="http://www.w3.org/2000/svg" fill="#000000"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><path d="M749.7 585.3l-164.6 91.4v182.9L749.7 951l164.6-91.4V676.7l-164.6-91.4z m91.4 231.2l-91.4 50.8-91.4-50.8v-96.8l91.4-50.8 91.4 50.8v96.8z" fill="#2980d1"></path><path d="M735.667582 801.904773a36.6 36.6 0 1 0 28.012427-67.627982 36.6 36.6 0 1 0-28.012427 67.627982Z" fill="#2980d1"></path><path d="M219.4 731.4H256v-73.1h-36.6V365.7H256v-73.1h-36.6V146.3h585v402.4h73.2V73.1H146.3v219.5h-36.6v73.1h36.6v292.6h-36.6v73.1h36.6v219.5h399.8v-73.2H219.4z" fill="#2980d1"></path><path d="M329.2 256h402.3v73.1H329.2zM329.2 438.9h402.3V512H329.2zM329.2 621.7h182.9v73.1H329.2z" fill="#2980d1"></path></g>
+              </svg>
+            </div>
+            <div>
+              <div style="font-size:22px;font-weight:700;color:#1e293b;">{{this.countTotalAttendances()?.attendancesToday ?? 0}}</div>
+              <div style="font-size:12px;color:#64748b; margin-top: 3px">Total de atendimentos no dia</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="stat-card">
+          <div style="display:flex;align-items:center;gap:12px;">
+            <div style="width:55px;height:55px;background:#0084ff2a;;border-radius:10px;display:flex;align-items:center;justify-content:center; flex-shrink: 0;">
+              <svg viewBox="0 0 1024 1024" width="32px" height="32px" class="icon" version="1.1" xmlns="http://www.w3.org/2000/svg" fill="#000000"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><path d="M749.7 585.3l-164.6 91.4v182.9L749.7 951l164.6-91.4V676.7l-164.6-91.4z m91.4 231.2l-91.4 50.8-91.4-50.8v-96.8l91.4-50.8 91.4 50.8v96.8z" fill="#2980d1"></path><path d="M735.667582 801.904773a36.6 36.6 0 1 0 28.012427-67.627982 36.6 36.6 0 1 0-28.012427 67.627982Z" fill="#2980d1"></path><path d="M219.4 731.4H256v-73.1h-36.6V365.7H256v-73.1h-36.6V146.3h585v402.4h73.2V73.1H146.3v219.5h-36.6v73.1h36.6v292.6h-36.6v73.1h36.6v219.5h399.8v-73.2H219.4z" fill="#2980d1"></path><path d="M329.2 256h402.3v73.1H329.2zM329.2 438.9h402.3V512H329.2zM329.2 621.7h182.9v73.1H329.2z" fill="#2980d1"></path></g>
+              </svg>
+            </div>
+            <div>
+              <div style="font-size:22px;font-weight:700;color:#1e293b;">{{this.countTotalAttendances()?.countAttendancesInProgress ?? 0}}</div>
+              <div style="font-size:12px;color:#64748b; margin-top: 3px">Total de atendimentos em progresso</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="stat-card">
+          <div style="display:flex;align-items:center;gap:12px;">
+            <div style="width:55px;height:55px;background:#0084ff2a;;border-radius:10px;display:flex;align-items:center;justify-content:center; flex-shrink: 0;">
+              <svg viewBox="0 0 1024 1024" width="32px" height="32px" class="icon" version="1.1" xmlns="http://www.w3.org/2000/svg" fill="#000000"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><path d="M749.7 585.3l-164.6 91.4v182.9L749.7 951l164.6-91.4V676.7l-164.6-91.4z m91.4 231.2l-91.4 50.8-91.4-50.8v-96.8l91.4-50.8 91.4 50.8v96.8z" fill="#2980d1"></path><path d="M735.667582 801.904773a36.6 36.6 0 1 0 28.012427-67.627982 36.6 36.6 0 1 0-28.012427 67.627982Z" fill="#2980d1"></path><path d="M219.4 731.4H256v-73.1h-36.6V365.7H256v-73.1h-36.6V146.3h585v402.4h73.2V73.1H146.3v219.5h-36.6v73.1h36.6v292.6h-36.6v73.1h36.6v219.5h399.8v-73.2H219.4z" fill="#2980d1"></path><path d="M329.2 256h402.3v73.1H329.2zM329.2 438.9h402.3V512H329.2zM329.2 621.7h182.9v73.1H329.2z" fill="#2980d1"></path></g>
+              </svg>
+            </div>
+            <div>
+              <div style="font-size:22px;font-weight:700;color:#1e293b;">{{this.countTotalAttendances()?.countAttendancesWaiting ?? 0}}</div>
+              <div style="font-size:12px;color:#64748b; margin-top: 3px">Total de atendimentos em espera</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="stat-card">
+          <div style="display:flex;align-items:center;gap:12px;">
+            <div style="width:55px;height:55px;background:#0084ff2a;;border-radius:10px;display:flex;align-items:center;justify-content:center; flex-shrink: 0;">
+              <svg viewBox="0 0 1024 1024" width="32px" height="32px" class="icon" version="1.1" xmlns="http://www.w3.org/2000/svg" fill="#000000"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><path d="M749.7 585.3l-164.6 91.4v182.9L749.7 951l164.6-91.4V676.7l-164.6-91.4z m91.4 231.2l-91.4 50.8-91.4-50.8v-96.8l91.4-50.8 91.4 50.8v96.8z" fill="#2980d1"></path><path d="M735.667582 801.904773a36.6 36.6 0 1 0 28.012427-67.627982 36.6 36.6 0 1 0-28.012427 67.627982Z" fill="#2980d1"></path><path d="M219.4 731.4H256v-73.1h-36.6V365.7H256v-73.1h-36.6V146.3h585v402.4h73.2V73.1H146.3v219.5h-36.6v73.1h36.6v292.6h-36.6v73.1h36.6v219.5h399.8v-73.2H219.4z" fill="#2980d1"></path><path d="M329.2 256h402.3v73.1H329.2zM329.2 438.9h402.3V512H329.2zM329.2 621.7h182.9v73.1H329.2z" fill="#2980d1"></path></g>
+              </svg>
+            </div>
+            <div>
+              <div style="font-size:22px;font-weight:700;color:#1e293b;">{{this.countTotalAttendances()?.totalAttendances ?? 0 }}</div>
+              <div style="font-size:12px;color:#64748b; margin-top: 3px">Total de atendimentos</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="stat-card">
+          <div style="display:flex;align-items:center;gap:12px;">
+            <div style="width:55px;height:55px;background:#0084ff2a;;border-radius:10px;display:flex;align-items:center;justify-content:center; flex-shrink: 0;">
+              <svg viewBox="0 0 24 24" width="35px" height="35px" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path fill-rule="evenodd" clip-rule="evenodd" d="M12 4C7.58172 4 4 7.58172 4 12C4 16.4183 7.58172 20 12 20C16.4183 20 20 16.4183 20 12C20 7.58172 16.4183 4 12 4ZM2 12C2 6.47715 6.47715 2 12 2C17.5228 2 22 6.47715 22 12C22 17.5228 17.5228 22 12 22C6.47715 22 2 17.5228 2 12ZM11.8284 6.75736C12.3807 6.75736 12.8284 7.20507 12.8284 7.75736V12.7245L16.3553 14.0653C16.8716 14.2615 17.131 14.8391 16.9347 15.3553C16.7385 15.8716 16.1609 16.131 15.6447 15.9347L11.4731 14.349C11.085 14.2014 10.8284 13.8294 10.8284 13.4142V7.75736C10.8284 7.20507 11.2761 6.75736 11.8284 6.75736Z" fill="#388ad6"></path> </g>
+              </svg>
+            </div>
+            <div>
+              <div style="font-size:22px;font-weight:700;color:#1e293b;">{{this.avarageWaitingTime()?.averageWaitingTime ?? '00:00:00'}}</div>
+              <div style="font-size:12px;color:#64748b; margin-top: 3px">Tempo médio de espera</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="stat-card">
+          <div style="display:flex;align-items:center;gap:12px;">
+            <div style="width:55px;height:55px;background:#0084ff2a;;border-radius:10px;display:flex;align-items:center;justify-content:center; flex-shrink: 0;">
+              <svg viewBox="0 0 24 24" width="35px" height="35px" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path fill-rule="evenodd" clip-rule="evenodd" d="M12 4C7.58172 4 4 7.58172 4 12C4 16.4183 7.58172 20 12 20C16.4183 20 20 16.4183 20 12C20 7.58172 16.4183 4 12 4ZM2 12C2 6.47715 6.47715 2 12 2C17.5228 2 22 6.47715 22 12C22 17.5228 17.5228 22 12 22C6.47715 22 2 17.5228 2 12ZM11.8284 6.75736C12.3807 6.75736 12.8284 7.20507 12.8284 7.75736V12.7245L16.3553 14.0653C16.8716 14.2615 17.131 14.8391 16.9347 15.3553C16.7385 15.8716 16.1609 16.131 15.6447 15.9347L11.4731 14.349C11.085 14.2014 10.8284 13.8294 10.8284 13.4142V7.75736C10.8284 7.20507 11.2761 6.75736 11.8284 6.75736Z" fill="#388ad6"></path> </g>
+              </svg>
+            </div>
+            <div>
+              <div style="font-size:22px;font-weight:700;color:#1e293b;">{{this.averageServiceTime()?.averageServiceTime ?? '00:00:00'}}</div>
+              <div style="font-size:12px;color:#64748b; margin-top: 3px">Tempo médio de atendimento</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Charts Row -->
+      <div class="charts-grid" style="display:grid;grid-template-columns:1fr;gap:20px;">
+
+
+        <div class="column-grid">
+
+          <div class="section-card">
+
+            <div style="padding:20px;border-bottom:1px solid #e2e8f0;">
+              <h3 style="font-size:14px;font-weight:700;color:#1e293b;">
+                Atendimentos por atendente
+              </h3>
+            </div>
+
+            <div
+              class="graphic-card"
+              *ngIf="(this.countTotalAttendances()?.totalAttendances ?? 0) > 0">
+              <div
+                style="display:flex;flex-direction:column;gap:10px;"
+                *ngFor="let attendant of this.attendancesByCustomer()">
+
+                <div style="display:flex;justify-content:space-between;align-items:center;">
+
+                  <div style="display:flex;align-items:center;gap:8px;">
+                    <div class="legend-dot" style="background:#3b82f6;"></div>
+                    <span style="font-weight:600;color:#64748b; font-size:16px;">
+                      {{ attendant.username }}
+                    </span>
+                  </div>
+
+                  <div style="display:flex;gap:18px;align-items:center;">
+                    <span style="font-weight:700;color:#1e293b; font-size:13px">
+                      {{ attendant.totalAttendances }} atendimentos
+                    </span>
+                    <span style="color:#64748b; font-size:14px">
+                      {{ attendant.percentage }}%
+                    </span>
+                  </div>
+
+                </div>
+              </div>
+
+            </div>
+
+            <div *ngIf="(this.countTotalAttendances()?.totalAttendances ?? 0) === 0" style="display:flex;align-items:center;justify-content:center;height:200px;">
+
+              <div style="display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;">
+                <svg viewBox="0 0 24 24" width="40px" heigth="40px" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M10.5 15L13.5 12M13.5 15L10.5 12" stroke="#64748b" stroke-width="1.5" stroke-linecap="round"></path> <path d="M22 11.7979C22 9.16554 22 7.84935 21.2305 6.99383C21.1598 6.91514 21.0849 6.84024 21.0062 6.76946C20.1506 6 18.8345 6 16.2021 6H15.8284C14.6747 6 14.0979 6 13.5604 5.84678C13.2651 5.7626 12.9804 5.64471 12.7121 5.49543C12.2237 5.22367 11.8158 4.81578 11 4L10.4497 3.44975C10.1763 3.17633 10.0396 3.03961 9.89594 2.92051C9.27652 2.40704 8.51665 2.09229 7.71557 2.01738C7.52976 2 7.33642 2 6.94975 2C6.06722 2 5.62595 2 5.25839 2.06935C3.64031 2.37464 2.37464 3.64031 2.06935 5.25839C2 5.62595 2 6.06722 2 6.94975M21.9913 16C21.9554 18.4796 21.7715 19.8853 20.8284 20.8284C19.6569 22 17.7712 22 14 22H10C6.22876 22 4.34315 22 3.17157 20.8284C2 19.6569 2 17.7712 2 14V11" stroke="#64748b" stroke-width="1.5" stroke-linecap="round"></path> </g>
+                </svg>
+                <span style="font-size: 14px; color: #64748b;">Nenhum atendimento foi realizado.</span>
+              </div>
+
+            </div>
+
+          </div>
+
+          <div class="section-card">
+            <div style="padding:20px;border-bottom:1px solid #e2e8f0;">
+              <h3 style="font-size:14px;font-weight:700;color:#1e293b;">Média de atendimentos do atendente</h3>
+            </div>
+
+            <div class="graphic-card" *ngIf="(this.countTotalAttendances()?.totalAttendances ?? 0) > 0">
+
+              <div style="flex:1;display:flex;flex-direction:column;gap:8px;" *ngFor="let attendant of this.averageAttendanceByUsers()">
+                <div style="display:flex;align-items:center;justify-content:space-between;font-size:14px;">
+                  <div style="display:flex;align-items:center;gap:8px;">
+                    <div class="legend-dot" style="background:#3b82f6;"></div>
+                    <span style="color:#64748b; font-weight:600; font-size:16px">{{ attendant.username}}</span>
+                  </div>
+                  <div style="display:flex;gap:16px;">
+                    <span style="font-weight:700;color:#1e293b; font-size:13px">{{ attendant.averageMinutes}} minutos</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div *ngIf="(this.countTotalAttendances()?.totalAttendances ?? 0) === 0" style="display:flex;align-items:center;justify-content:center;height:200px;">
+
+              <div style="display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;">
+                <svg viewBox="0 0 24 24" width="40px" heigth="40px" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M10.5 15L13.5 12M13.5 15L10.5 12" stroke="#64748b" stroke-width="1.5" stroke-linecap="round"></path> <path d="M22 11.7979C22 9.16554 22 7.84935 21.2305 6.99383C21.1598 6.91514 21.0849 6.84024 21.0062 6.76946C20.1506 6 18.8345 6 16.2021 6H15.8284C14.6747 6 14.0979 6 13.5604 5.84678C13.2651 5.7626 12.9804 5.64471 12.7121 5.49543C12.2237 5.22367 11.8158 4.81578 11 4L10.4497 3.44975C10.1763 3.17633 10.0396 3.03961 9.89594 2.92051C9.27652 2.40704 8.51665 2.09229 7.71557 2.01738C7.52976 2 7.33642 2 6.94975 2C6.06722 2 5.62595 2 5.25839 2.06935C3.64031 2.37464 2.37464 3.64031 2.06935 5.25839C2 5.62595 2 6.06722 2 6.94975M21.9913 16C21.9554 18.4796 21.7715 19.8853 20.8284 20.8284C19.6569 22 17.7712 22 14 22H10C6.22876 22 4.34315 22 3.17157 20.8284C2 19.6569 2 17.7712 2 14V11" stroke="#64748b" stroke-width="1.5" stroke-linecap="round"></path> </g>
+                </svg>
+                <span style="font-size: 14px; color: #64748b;">Nenhum atendimento foi realizado.</span>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+
+        <div class="column-grid">
+
+          <!-- Atendimentos por departamento -->
+          <div class="section-card">
+            <div style="padding:20px;border-bottom:1px solid #e2e8f0;">
+              <h3 style="font-size:14px;font-weight:700;color:#1e293b;">Atendimentos por departamento</h3>
+            </div>
+
+            <div class="graphic-card" *ngIf="(this.countTotalAttendances()?.totalAttendances ?? 0) > 0">
+
+              <div style="flex:1;display:flex;flex-direction:column;gap:8px;" *ngFor="let department of this.attendancesByDepartment()">
+
+                <div style="display:flex;justify-content:space-between;align-items:center;">
+
+                  <div style="display:flex;align-items:center;gap:8px;">
+                    <div class="legend-dot" style="background:#3b82f6;"></div>
+                    <span style="font-weight:600;color:#64748b; font-size:16px">
+                      {{ department.departmentName }}
+                    </span>
+                  </div>
+
+                  <div style="display:flex;gap:18px;align-items:center;">
+                    <span style="font-weight:700;color:#1e293b; font-size:13px">
+                      {{ department.totalAttendances}} atendimentos
+                    </span>
+                    <span style="color:#64748b; font-size:14px">
+                      {{ department.percentage}}%
+                    </span>
+                  </div>
+
+                </div>
+
+              </div>
+            </div>
+
+            <div *ngIf="(this.countTotalAttendances()?.totalAttendances ?? 0) === 0" style="display:flex;align-items:center;justify-content:center;height:200px;">
+
+              <div style="display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;">
+                <svg viewBox="0 0 24 24" width="40px" heigth="40px" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M10.5 15L13.5 12M13.5 15L10.5 12" stroke="#64748b" stroke-width="1.5" stroke-linecap="round"></path> <path d="M22 11.7979C22 9.16554 22 7.84935 21.2305 6.99383C21.1598 6.91514 21.0849 6.84024 21.0062 6.76946C20.1506 6 18.8345 6 16.2021 6H15.8284C14.6747 6 14.0979 6 13.5604 5.84678C13.2651 5.7626 12.9804 5.64471 12.7121 5.49543C12.2237 5.22367 11.8158 4.81578 11 4L10.4497 3.44975C10.1763 3.17633 10.0396 3.03961 9.89594 2.92051C9.27652 2.40704 8.51665 2.09229 7.71557 2.01738C7.52976 2 7.33642 2 6.94975 2C6.06722 2 5.62595 2 5.25839 2.06935C3.64031 2.37464 2.37464 3.64031 2.06935 5.25839C2 5.62595 2 6.06722 2 6.94975M21.9913 16C21.9554 18.4796 21.7715 19.8853 20.8284 20.8284C19.6569 22 17.7712 22 14 22H10C6.22876 22 4.34315 22 3.17157 20.8284C2 19.6569 2 17.7712 2 14V11" stroke="#64748b" stroke-width="1.5" stroke-linecap="round"></path> </g>
+                </svg>
+                <span style="font-size: 14px; color: #64748b;">Nenhum atendimento foi realizado.</span>
+              </div>
+
+            </div>
+          </div>
+
+          <div class="section-card">
+
+            <div style="padding:20px;border-bottom:1px solid #e2e8f0;">
+              <h3 style="font-size:14px;font-weight:700;color:#1e293b;">
+                Atendimentos por serviço
+              </h3>
+            </div>
+
+            <div
+              class="graphic-card"
+              *ngIf="(this.countTotalAttendances()?.totalAttendances ?? 0) > 0">
+              <div
+                style="display:flex;flex-direction:column;gap:10px;"
+                *ngFor="let service of this.attendancesByService()">
+
+                <div style="display:flex;justify-content:space-between;align-items:center;">
+
+                  <div style="display:flex;align-items:center;gap:8px;">
+                    <div class="legend-dot" style="background:#3b82f6;"></div>
+                    <span style="font-weight:600;color:#64748b;">
+                      {{ service.serviceName }}
+                    </span>
+                  </div>
+
+                  <div style="display:flex;gap:18px;align-items:center;">
+                    <span style="font-weight:700;color:#1e293b; font-size:13px">
+                      {{ service.totalAttendances }} atendimentos
+                    </span>
+                    <span style="color:#64748b; font-size:14px">
+                      {{ service.percentage }}%
+                    </span>
+                  </div>
+
+                </div>
+              </div>
+
+            </div>
+
+            <div *ngIf="(this.countTotalAttendances()?.totalAttendances ?? 0) === 0" style="display:flex;align-items:center;justify-content:center;height:200px;">
+
+              <div style="display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;">
+                <svg viewBox="0 0 24 24" width="40px" heigth="40px" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M10.5 15L13.5 12M13.5 15L10.5 12" stroke="#64748b" stroke-width="1.5" stroke-linecap="round"></path> <path d="M22 11.7979C22 9.16554 22 7.84935 21.2305 6.99383C21.1598 6.91514 21.0849 6.84024 21.0062 6.76946C20.1506 6 18.8345 6 16.2021 6H15.8284C14.6747 6 14.0979 6 13.5604 5.84678C13.2651 5.7626 12.9804 5.64471 12.7121 5.49543C12.2237 5.22367 11.8158 4.81578 11 4L10.4497 3.44975C10.1763 3.17633 10.0396 3.03961 9.89594 2.92051C9.27652 2.40704 8.51665 2.09229 7.71557 2.01738C7.52976 2 7.33642 2 6.94975 2C6.06722 2 5.62595 2 5.25839 2.06935C3.64031 2.37464 2.37464 3.64031 2.06935 5.25839C2 5.62595 2 6.06722 2 6.94975M21.9913 16C21.9554 18.4796 21.7715 19.8853 20.8284 20.8284C19.6569 22 17.7712 22 14 22H10C6.22876 22 4.34315 22 3.17157 20.8284C2 19.6569 2 17.7712 2 14V11" stroke="#64748b" stroke-width="1.5" stroke-linecap="round"></path> </g>
+                </svg>
+                <span style="font-size: 14px; color: #64748b;">Nenhum atendimento foi realizado.</span>
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+        <div class="column-grid">
+
+          <div class="section-card">
+
+            <div style="padding:20px;border-bottom:1px solid #e2e8f0;">
+              <h3 style="font-size:14px;font-weight:700;color:#1e293b;">Atendimentos ao decorrer do mês</h3>
+            </div>
+
+            <apx-chart
+              *ngIf="chartAttendanceMonthOptions"
+              [series]="chartAttendanceMonthOptions.series"
+
+              [chart]="chartAttendanceMonthOptions.chart"
+
+              [xaxis]="chartAttendanceMonthOptions.xaxis"
+
+              [dataLabels]="chartAttendanceMonthOptions.dataLabels">
+
+            </apx-chart>
+
+          </div>
+
+          <div class="section-card">
+
+            <div style="padding:20px;border-bottom:1px solid #e2e8f0;">
+              <h3 style="font-size:14px;font-weight:700;color:#1e293b;">
+                Atendimentos durante a semana
+              </h3>
+            </div>
+
+            <apx-chart
+              *ngIf="chartAttendanceWeekOptions"
+              [series]="chartAttendanceWeekOptions.series"
+              [chart]="chartAttendanceWeekOptions.chart"
+              [xaxis]="chartAttendanceWeekOptions.xaxis"
+              [dataLabels]="chartAttendanceWeekOptions.dataLabels">
+            </apx-chart>
+          </div>
+
+        </div>
+
+        <div class="section-card">
+
+          <div style="padding:20px;border-bottom:1px solid #e2e8f0;">
+            <h3 style="font-size:14px;font-weight:700;color:#1e293b;">
+              Horários com maior volume de atendimentos
+            </h3>
+          </div>
+
+          <apx-chart
+            *ngIf="chartAttendanceHourOptions"
+            [series]="chartAttendanceHourOptions.series"
+            [chart]="chartAttendanceHourOptions.chart"
+            [xaxis]="chartAttendanceHourOptions.xaxis"
+            [dataLabels]="chartAttendanceHourOptions.dataLabels">
+          </apx-chart>
+
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Content Department -->
+    <div style="display:flex;flex-direction:column;gap:20px;" *ngIf="this.navItem === 'Department'">
+      <!-- Stats Cards -->
+      <div class="stats-grid" style="display:grid;grid-template-columns:repeat(3,1fr);gap:16px;">
+
+        <div class="stat-card">
+          <div style="display:flex;align-items:center;gap:12px;">
+            <div style="width:55px;height:55px;background:#0084ff2a;;border-radius:10px;display:flex;align-items:center;justify-content:center; flex-shrink: 0;">
+              <svg viewBox="0 -14.5 1053 1053" width="35px" height="35px" class="icon" version="1.1" xmlns="http://www.w3.org/2000/svg" fill="#000000">
+                <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                <g id="SVGRepo_iconCarrier">
+                  <path d="M160.914286 73.142857h541.257143v833.828572H160.914286z" fill="#b3d8f4"></path>
+                  <path d="M731.428571 936.228571H131.657143V51.2H731.428571v885.028571zM190.171429 877.714286h482.742857V102.4H190.171429V877.714286z" fill="#2292d8"></path>
+                  <path d="M702.171429 219.428571h212.114285v687.542858H702.171429z" fill="#FFFEFE"></path>
+                  <path d="M936.228571 936.228571H672.914286V190.171429h263.314285v746.057142z m-204.8-51.2h153.6V248.685714H731.428571v636.342857z" fill="#2292d8"></path>
+                  <path d="M1024 943.542857H29.257143c-14.628571 0-29.257143-14.628571-29.257143-29.257143s14.628571-29.257143 29.257143-29.257143H1024c14.628571 0 29.257143 14.628571 29.257143 29.257143s-14.628571 29.257143-29.257143 29.257143zM468.114286 197.485714h175.542857v58.514286H468.114286zM226.742857 197.485714h175.542857v58.514286H226.742857z" fill="#2292d8"></path><path d="M468.114286 358.4h175.542857v58.514286H468.114286zM226.742857 358.4h175.542857v58.514286H226.742857z" fill="#2292d8"></path><path d="M468.114286 512h175.542857v58.514286H468.114286zM226.742857 512h175.542857v58.514286H226.742857z" fill="#2292d8"></path><path d="M782.628571 570.514286h58.514286v175.542857h-58.514286zM782.628571 329.142857h58.514286v175.542857h-58.514286z" fill="#2292d8"></path></g>
+              </svg>
+            </div>
+            <div>
+              <div style="font-size:22px;font-weight:700;color:#1e293b;">{{this.totalDepartments()?.totalElements ?? 0}}</div>
+              <div style="font-size:12px;color:#64748b; margin-top: 3px">Departamentos cadastrados</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="stat-card">
+          <div style="display:flex;align-items:center;gap:12px;">
+            <div>
+              <div style="display:flex;align-items:center;gap:5px;">
+                <div style="width:6px;height: 6px;background:#16a34a;border-radius:50%;"></div>
+                <div style="font-size:12px;color:#64748b;">Ativos</div>
+              </div>
+              <div style="font-size:22px;font-weight:700;color:#1e293b; margin: 5px 0px">
+                {{ this.totalDepartments()?.totalElementsActive ?? 0}}
+              </div>
+              <div style="font-size:11px;color:#6c6e72;">{{ this.percentageByDepartment()?.percentageActive ?? 0}} % do total</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="stat-card">
+          <div style="display:flex;align-items:center;gap:12px;">
+            <div>
+              <div style="display:flex;align-items:center;gap:5px;">
+                <div style="width:6px;height: 6px;background:#b9b9b9;border-radius:50%;"></div>
+                <div style="font-size:12px;color:#64748b;">Inativos</div>
+              </div>
+              <div style="font-size:22px;font-weight:700;color:#1e293b; margin: 5px 0px">
+                {{ this.totalDepartments()?.totalElementsInactive ?? 0}}
+              </div>
+              <div style="font-size:11px;color:#6c6e72;">{{ this.percentageByDepartment()?.percentageInactive ?? 0}} % do total</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Charts Row -->
+      <div class="charts-grid" style="display:grid;grid-template-columns:1fr;gap:20px;">
+
+        <!-- Atendimentos por departamento -->
+        <div class="section-card">
+          <div style="padding:20px;border-bottom:1px solid #e2e8f0;">
+            <h3 style="font-size:14px;font-weight:700;color:#1e293b;">Quantidade de serviços por departamento</h3>
+          </div>
+
+          <div class="graphic-card" *ngIf="(this.totalDepartments()?.totalElements ?? 0) > 0">
+
+            <div style="flex:1;display:flex;flex-direction:column;gap:8px;" *ngFor="let service of this.countServicesByDepartment()">
+              <div style="display:flex;align-items:center;justify-content:space-between;font-size:14px;">
+                <div style="display:flex;align-items:center;gap:8px;">
+                  <div class="legend-dot" style="background:#3b82f6;"></div>
+                  <span style="color:#64748b; font-weight:600">{{ service.departmentName}}</span>
+                </div>
+                <div style="display:flex;gap:16px;">
+                  <span style="font-weight:700;color:#1e293b;">{{ service.totalServices}}</span>
+                  <span style="color:#94a3b8;">{{ service.percentage }}%</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div *ngIf="(this.totalDepartments()?.totalElements ?? 0) === 0" style="display:flex;align-items:center;justify-content:center;height:200px;">
+
+            <div style="display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;">
+              <svg viewBox="0 0 24 24" width="40px" heigth="40px" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M10.5 15L13.5 12M13.5 15L10.5 12" stroke="#64748b" stroke-width="1.5" stroke-linecap="round"></path> <path d="M22 11.7979C22 9.16554 22 7.84935 21.2305 6.99383C21.1598 6.91514 21.0849 6.84024 21.0062 6.76946C20.1506 6 18.8345 6 16.2021 6H15.8284C14.6747 6 14.0979 6 13.5604 5.84678C13.2651 5.7626 12.9804 5.64471 12.7121 5.49543C12.2237 5.22367 11.8158 4.81578 11 4L10.4497 3.44975C10.1763 3.17633 10.0396 3.03961 9.89594 2.92051C9.27652 2.40704 8.51665 2.09229 7.71557 2.01738C7.52976 2 7.33642 2 6.94975 2C6.06722 2 5.62595 2 5.25839 2.06935C3.64031 2.37464 2.37464 3.64031 2.06935 5.25839C2 5.62595 2 6.06722 2 6.94975M21.9913 16C21.9554 18.4796 21.7715 19.8853 20.8284 20.8284C19.6569 22 17.7712 22 14 22H10C6.22876 22 4.34315 22 3.17157 20.8284C2 19.6569 2 17.7712 2 14V11" stroke="#64748b" stroke-width="1.5" stroke-linecap="round"></path> </g>
+              </svg>
+              <span style="font-size: 14px; color: #64748b;">Nenhum departamento foi criado ainda.</span>
+            </div>
+
+          </div>
+
+        </div>
+
+        <div class="section-card">
+
+          <div style="padding:20px;border-bottom:1px solid #e2e8f0;">
+            <h3 style="font-size:14px;font-weight:700;color:#1e293b;">Departamentos criados no mês</h3>
+          </div>
+
+          <apx-chart
+            *ngIf="chartOptions"
+            [series]="chartOptions.series"
+
+            [chart]="chartOptions.chart"
+
+            [xaxis]="chartOptions.xaxis"
+
+            [dataLabels]="chartOptions.dataLabels">
+
+          </apx-chart>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- Content Service -->
+    <div style="display:flex;flex-direction:column;gap:20px;" *ngIf="this.navItem === 'Services'">
+      <!-- Stats Cards -->
+      <div class="stats-grid" style="display:grid;grid-template-columns:repeat(3,1fr);gap:16px;">
+
+        <div class="stat-card">
+          <div style="display:flex;align-items:center;gap:12px;">
+            <div style="width:55px;height:55px;background:#0084ff2a;border-radius:10px;display:flex;align-items:center;justify-content:center; flex-shrink: 0;">
+              <svg fill="#2d7dc8" width="35px" heigth="35px" viewBox="0 0 512 512" version="1.1" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" stroke="#2d7dc8" stroke-width="19.968"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <g id="_x37_21-_gear__x2C__setting__x2C_engine__x2C_"> <g> <g> <path d="M283.693,492.847H229.26c-14.972,0-27.153-12.177-27.153-27.144v-53.9c-19.271-6.774-37.417-17.271-52.977-30.643 l-46.764,26.991c-4.106,2.361-8.772,3.605-13.503,3.606c-9.703,0-18.727-5.173-23.55-13.5l-27.237-47.184 c-7.457-12.935-3.004-29.55,9.925-37.04l46.741-26.958c-1.903-10.071-2.867-20.341-2.867-30.6c0-10.258,0.963-20.527,2.867-30.6 l-46.73-26.95c-12.972-7.516-17.423-24.157-9.933-37.104l27.23-47.121c4.835-8.347,13.859-13.527,23.553-13.527 c4.743,0,9.417,1.257,13.517,3.635l46.754,26.946c15.576-13.353,33.724-23.837,52.974-30.604v-53.9 c0-14.968,12.181-27.145,27.153-27.145h54.434c14.974,0,27.155,12.177,27.155,27.145v53.899 c19.343,6.793,37.492,17.274,52.983,30.6l46.761-26.951c4.095-2.369,8.77-3.625,13.51-3.625c9.693,0,18.708,5.185,23.524,13.531 l27.25,47.118c7.477,12.977,3.021,29.615-9.928,37.1l-46.738,26.955c1.89,10.021,2.846,20.291,2.846,30.599 c0,10.388-0.953,20.659-2.839,30.603l46.726,26.948c6.236,3.572,10.721,9.399,12.611,16.398 c1.898,7.03,0.949,14.362-2.674,20.646l-27.233,47.178c-4.827,8.335-13.847,13.508-23.544,13.509 c-4.729,0-9.396-1.244-13.499-3.597l-46.775-27c-15.553,13.379-33.701,23.863-52.98,30.605v53.937 C310.849,480.67,298.667,492.847,283.693,492.847z M149.959,366.227c1.636,0,3.259,0.598,4.526,1.756 c16.143,14.748,35.631,26.02,56.358,32.597c2.787,0.885,4.68,3.472,4.68,6.395v58.729c0,7.569,6.162,13.728,13.736,13.728h54.434 c7.576,0,13.738-6.158,13.738-13.728v-58.774c0-2.928,1.899-5.518,4.691-6.397c20.731-6.537,40.215-17.791,56.344-32.546 c2.159-1.974,5.348-2.323,7.882-0.86l50.947,29.407c2.058,1.18,4.417,1.809,6.807,1.809c4.927-0.001,9.499-2.609,11.931-6.808 l27.227-47.166c1.827-3.17,2.305-6.88,1.343-10.442c-0.954-3.533-3.208-6.468-6.345-8.265l-50.938-29.378 c-2.539-1.465-3.834-4.408-3.196-7.27c2.334-10.482,3.518-21.429,3.518-32.536c0-11.004-1.185-21.955-3.521-32.55 c-0.63-2.857,0.664-5.794,3.199-7.256l50.921-29.367c6.547-3.783,8.8-12.207,5.017-18.773l-27.247-47.114 c-2.432-4.213-6.992-6.826-11.907-6.826c-2.383,0-4.734,0.632-6.8,1.827l-50.958,29.37c-2.533,1.46-5.721,1.11-7.879-0.864 c-16.047-14.687-35.533-25.941-56.354-32.548c-2.786-0.885-4.68-3.472-4.68-6.395V47.251c0-7.569-6.162-13.729-13.738-13.729 H229.26c-7.574,0-13.736,6.159-13.736,13.729v58.729c0,2.923-1.893,5.51-4.68,6.395c-20.706,6.569-40.196,17.828-56.366,32.559 c-2.157,1.967-5.339,2.311-7.867,0.854l-50.948-29.363c-2.073-1.203-4.419-1.834-6.801-1.834c-4.924,0-9.5,2.617-11.94,6.83 l-27.228,47.118c-3.789,6.55-1.531,14.97,5.033,18.772l50.909,29.36c2.535,1.462,3.83,4.398,3.2,7.256 c-2.351,10.662-3.542,21.613-3.542,32.55c0,10.938,1.192,21.889,3.542,32.55c0.63,2.857-0.665,5.794-3.199,7.256l-50.92,29.368 c-6.53,3.782-8.786,12.184-5.018,18.72l27.229,47.172c2.428,4.19,7.003,6.799,11.936,6.799c2.388,0,4.742-0.628,6.807-1.814 l50.938-29.401C147.652,366.521,148.809,366.227,149.959,366.227z"></path> </g> <g> <path d="M256.491,337.764c-44.857,0-81.351-36.465-81.351-81.287c0-44.821,36.494-81.286,81.351-81.286 c44.842,0,81.323,36.465,81.323,81.286C337.814,301.299,301.333,337.764,256.491,337.764z M256.491,188.606 c-37.459,0-67.934,30.446-67.934,67.87s30.475,67.871,67.934,67.871c37.444,0,67.907-30.447,67.907-67.871 S293.936,188.606,256.491,188.606z"></path> </g> </g> </g> <g id="Layer_1"></g> </g>
+              </svg>
+            </div>
+            <div>
+              <div style="font-size:22px;font-weight:700;color:#1e293b;">{{ totalServices()?.totalElements ?? 0 }}</div>
+              <div style="font-size:12px;color:#64748b; margin-top: 3px">Serviços Cadastrados</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="stat-card">
+          <div style="display:flex;align-items:center;gap:12px;">
+            <div>
+              <div style="display:flex;align-items:center;gap:5px;">
+                <div style="width:6px;height: 6px;background:#16a34a;border-radius:50%;"></div>
+                <div style="font-size:12px;color:#64748b;">Ativos</div>
+              </div>
+              <div style="font-size:22px;font-weight:700;color:#1e293b; margin: 5px 0px">
+                {{ totalServices()?.totalElementsActive ?? 0 }}
+              </div>
+              <div style="font-size:11px;color:#6c6e72;">{{ percentageServices()?.percentageActive ?? 0 }}% do total</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="stat-card">
+          <div style="display:flex;align-items:center;gap:12px;">
+            <div>
+              <div style="display:flex;align-items:center;gap:5px;">
+                <div style="width:6px;height: 6px;background:#b9b9b9;border-radius:50%;"></div>
+                <div style="font-size:12px;color:#64748b;">Inativos</div>
+              </div>
+              <div style="font-size:22px;font-weight:700;color:#1e293b; margin: 5px 0px">
+                {{ totalServices()?.totalElementsInactive ?? 0}}
+              </div>
+              <div style="font-size:11px;color:#6c6e72;">{{ percentageServices()?.percentageInactive ?? 0}}% do total</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Charts Row -->
+      <div class="charts-grid" style="display:grid;grid-template-columns:1fr;gap:20px;">
+
+        <div class="column-grid">
+
+          <!-- Serviços por departamentos -->
+          <div class="section-card">
+            <div style="padding:20px;border-bottom:1px solid #e2e8f0;">
+              <h3 style="font-size:14px;font-weight:700;color:#1e293b;">Quantidade de serviços por departamentos</h3>
+            </div>
+
+            <div class="graphic-card" *ngIf="(this.totalServices()?.totalElements ?? 0) > 0">
+
+              <div style="flex:1;display:flex;flex-direction:column;gap:8px;" *ngFor="let service of this.servicesByDepartment()">
+                <div style="display:flex;align-items:center;justify-content:space-between;font-size:14px;">
+                  <div style="display:flex;align-items:center;gap:8px;">
+                    <div class="legend-dot" style="background:#3b82f6;"></div>
+                    <span style="color:#64748b; font-weight:600">{{ service.departmentName}}</span>
+                  </div>
+                  <div style="display:flex;gap:16px;">
+                    <span style="font-weight:700;color:#1e293b;">{{ service.totalServices}}</span>
+                    <span style="color:#94a3b8;">{{ service.percentage }}%</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div *ngIf="(this.totalServices()?.totalElements ?? 0) === 0" style="display:flex;align-items:center;justify-content:center;height:200px;">
+
+              <div style="display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;">
+                <svg viewBox="0 0 24 24" width="40px" heigth="40px" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M10.5 15L13.5 12M13.5 15L10.5 12" stroke="#64748b" stroke-width="1.5" stroke-linecap="round"></path> <path d="M22 11.7979C22 9.16554 22 7.84935 21.2305 6.99383C21.1598 6.91514 21.0849 6.84024 21.0062 6.76946C20.1506 6 18.8345 6 16.2021 6H15.8284C14.6747 6 14.0979 6 13.5604 5.84678C13.2651 5.7626 12.9804 5.64471 12.7121 5.49543C12.2237 5.22367 11.8158 4.81578 11 4L10.4497 3.44975C10.1763 3.17633 10.0396 3.03961 9.89594 2.92051C9.27652 2.40704 8.51665 2.09229 7.71557 2.01738C7.52976 2 7.33642 2 6.94975 2C6.06722 2 5.62595 2 5.25839 2.06935C3.64031 2.37464 2.37464 3.64031 2.06935 5.25839C2 5.62595 2 6.06722 2 6.94975M21.9913 16C21.9554 18.4796 21.7715 19.8853 20.8284 20.8284C19.6569 22 17.7712 22 14 22H10C6.22876 22 4.34315 22 3.17157 20.8284C2 19.6569 2 17.7712 2 14V11" stroke="#64748b" stroke-width="1.5" stroke-linecap="round"></path> </g>
+                </svg>
+                <span style="font-size: 14px; color: #64748b;">Nenhum serviço foi criado ainda.</span>
+              </div>
+
+            </div>
+          </div>
+
+          <!-- Usuários por Serviço -->
+          <div class="section-card">
+            <div style="padding:20px;border-bottom:1px solid #e2e8f0;">
+              <h3 style="font-size:14px;font-weight:700;color:#1e293b;">Quantidade de usuários por Serviço</h3>
+            </div>
+
+            <div class="graphic-card" *ngIf="(this.totalServices()?.totalElements ?? 0) > 0">
+
+              <div style="flex:1;display:flex;flex-direction:column;gap:8px;" *ngFor="let service of this.usersByService()">
+                <div style="display:flex;align-items:center;justify-content:space-between;font-size:14px;">
+                  <div style="display:flex;align-items:center;gap:8px;">
+                    <div class="legend-dot" style="background:#3b82f6;"></div>
+                    <span style="color:#64748b; font-weight:600">{{ service.serviceName}}</span>
+                  </div>
+                  <div style="display:flex;gap:16px;">
+                    <span style="font-weight:700;color:#1e293b;">{{ service.totalUsers}}</span>
+                    <span style="color:#94a3b8;">{{ service.percentage }}%</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div *ngIf="(this.totalServices()?.totalElements ?? 0) === 0" style="display:flex;align-items:center;justify-content:center;height:200px;">
+
+              <div style="display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;">
+                <svg viewBox="0 0 24 24" width="40px" heigth="40px" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M10.5 15L13.5 12M13.5 15L10.5 12" stroke="#64748b" stroke-width="1.5" stroke-linecap="round"></path> <path d="M22 11.7979C22 9.16554 22 7.84935 21.2305 6.99383C21.1598 6.91514 21.0849 6.84024 21.0062 6.76946C20.1506 6 18.8345 6 16.2021 6H15.8284C14.6747 6 14.0979 6 13.5604 5.84678C13.2651 5.7626 12.9804 5.64471 12.7121 5.49543C12.2237 5.22367 11.8158 4.81578 11 4L10.4497 3.44975C10.1763 3.17633 10.0396 3.03961 9.89594 2.92051C9.27652 2.40704 8.51665 2.09229 7.71557 2.01738C7.52976 2 7.33642 2 6.94975 2C6.06722 2 5.62595 2 5.25839 2.06935C3.64031 2.37464 2.37464 3.64031 2.06935 5.25839C2 5.62595 2 6.06722 2 6.94975M21.9913 16C21.9554 18.4796 21.7715 19.8853 20.8284 20.8284C19.6569 22 17.7712 22 14 22H10C6.22876 22 4.34315 22 3.17157 20.8284C2 19.6569 2 17.7712 2 14V11" stroke="#64748b" stroke-width="1.5" stroke-linecap="round"></path> </g>
+                </svg>
+                <span style="font-size: 14px; color: #64748b;">Nenhum serviço foi criado ainda.</span>
+              </div>
+
+            </div>
+          </div>
+
+          <!-- Users by service -->
+          <div class="section-card">
+            <div style="padding:20px;border-bottom:1px solid #e2e8f0;">
+              <h3 style="font-size:14px;font-weight:700;color:#1e293b;">Quantidade de agendamentos por Serviço</h3>
+            </div>
+
+            <div class="graphic-card" *ngIf="(this.totalServices()?.totalElements ?? 0) > 0">
+
+              <div style="flex:1;display:flex;flex-direction:column;gap:8px;" *ngFor="let service of this.schedulesByService()">
+                <div style="display:flex;align-items:center;justify-content:space-between;font-size:14px;">
+                  <div style="display:flex;align-items:center;gap:8px;">
+                    <div class="legend-dot" style="background:#3b82f6;"></div>
+                    <span style="color:#64748b; font-weight:600">{{ service.serviceName}}</span>
+                  </div>
+                  <div style="display:flex;gap:16px;">
+                    <span style="font-weight:700;color:#1e293b;">{{ service.totalSchedules}}</span>
+                    <span style="color:#94a3b8;">{{ service.percentage }}%</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div *ngIf="(this.totalServices()?.totalElements ?? 0) === 0" style="display:flex;align-items:center;justify-content:center;height:200px;">
+
+              <div style="display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;">
+                <svg viewBox="0 0 24 24" width="40px" heigth="40px" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M10.5 15L13.5 12M13.5 15L10.5 12" stroke="#64748b" stroke-width="1.5" stroke-linecap="round"></path> <path d="M22 11.7979C22 9.16554 22 7.84935 21.2305 6.99383C21.1598 6.91514 21.0849 6.84024 21.0062 6.76946C20.1506 6 18.8345 6 16.2021 6H15.8284C14.6747 6 14.0979 6 13.5604 5.84678C13.2651 5.7626 12.9804 5.64471 12.7121 5.49543C12.2237 5.22367 11.8158 4.81578 11 4L10.4497 3.44975C10.1763 3.17633 10.0396 3.03961 9.89594 2.92051C9.27652 2.40704 8.51665 2.09229 7.71557 2.01738C7.52976 2 7.33642 2 6.94975 2C6.06722 2 5.62595 2 5.25839 2.06935C3.64031 2.37464 2.37464 3.64031 2.06935 5.25839C2 5.62595 2 6.06722 2 6.94975M21.9913 16C21.9554 18.4796 21.7715 19.8853 20.8284 20.8284C19.6569 22 17.7712 22 14 22H10C6.22876 22 4.34315 22 3.17157 20.8284C2 19.6569 2 17.7712 2 14V11" stroke="#64748b" stroke-width="1.5" stroke-linecap="round"></path> </g>
+                </svg>
+                <span style="font-size: 14px; color: #64748b;">Nenhum serviço foi criado ainda.</span>
+              </div>
+
+            </div>
+          </div>
+
+          <!-- Tickets by service -->
+          <div class="section-card">
+            <div style="padding:20px;border-bottom:1px solid #e2e8f0;">
+              <h3 style="font-size:14px;font-weight:700;color:#1e293b;">Quantidade de tickets por Serviço</h3>
+            </div>
+
+            <div class="graphic-card" *ngIf="(this.totalServices()?.totalElements ?? 0) > 0">
+
+              <div style="flex:1;display:flex;flex-direction:column;gap:8px;" *ngFor="let service of this.ticketsByService()">
+                <div style="display:flex;align-items:center;justify-content:space-between;font-size:14px;">
+                  <div style="display:flex;align-items:center;gap:8px;">
+                    <div class="legend-dot" style="background:#3b82f6;"></div>
+                    <span style="color:#64748b; font-weight:600">{{ service.serviceName}}</span>
+                  </div>
+                  <div style="display:flex;gap:16px;">
+                    <span style="font-weight:700;color:#1e293b;">{{ service.totalTickets}}</span>
+                    <span style="color:#94a3b8;">{{ service.percentage }}%</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div *ngIf="(this.totalServices()?.totalElements ?? 0) === 0" style="display:flex;align-items:center;justify-content:center;height:200px;">
+
+              <div style="display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;">
+                <svg viewBox="0 0 24 24" width="40px" heigth="40px" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M10.5 15L13.5 12M13.5 15L10.5 12" stroke="#64748b" stroke-width="1.5" stroke-linecap="round"></path> <path d="M22 11.7979C22 9.16554 22 7.84935 21.2305 6.99383C21.1598 6.91514 21.0849 6.84024 21.0062 6.76946C20.1506 6 18.8345 6 16.2021 6H15.8284C14.6747 6 14.0979 6 13.5604 5.84678C13.2651 5.7626 12.9804 5.64471 12.7121 5.49543C12.2237 5.22367 11.8158 4.81578 11 4L10.4497 3.44975C10.1763 3.17633 10.0396 3.03961 9.89594 2.92051C9.27652 2.40704 8.51665 2.09229 7.71557 2.01738C7.52976 2 7.33642 2 6.94975 2C6.06722 2 5.62595 2 5.25839 2.06935C3.64031 2.37464 2.37464 3.64031 2.06935 5.25839C2 5.62595 2 6.06722 2 6.94975M21.9913 16C21.9554 18.4796 21.7715 19.8853 20.8284 20.8284C19.6569 22 17.7712 22 14 22H10C6.22876 22 4.34315 22 3.17157 20.8284C2 19.6569 2 17.7712 2 14V11" stroke="#64748b" stroke-width="1.5" stroke-linecap="round"></path> </g>
+                </svg>
+                <span style="font-size: 14px; color: #64748b;">Nenhum serviço foi criado ainda.</span>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+
+        <!--sdasdasdasd-->
+        <div class="section-card">
+
+          <div style="padding:20px;border-bottom:1px solid #e2e8f0;">
+            <h3 style="font-size:14px;font-weight:700;color:#1e293b;">Serviços criados por mês</h3>
+          </div>
+
+          <apx-chart
+            *ngIf="chartServiceOptions"
+            [series]="chartServiceOptions.series"
+
+            [chart]="chartServiceOptions.chart"
+
+            [xaxis]="chartServiceOptions.xaxis"
+
+            [dataLabels]="chartServiceOptions.dataLabels">
+
+          </apx-chart>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- Content Users -->
+    <div style="display:flex;flex-direction:column;gap:20px;" *ngIf="this.navItem === 'Users'">
+      <!-- Stats Cards -->
+      <div class="stats-grid" style="display:grid;grid-template-columns:repeat(3,1fr);gap:16px;">
+
+        <div class="stat-card">
+          <div style="display:flex;align-items:center;gap:12px;">
+            <div style="width:55px;height:55px;background:#0084ff2a;border-radius:10px;display:flex;align-items:center;justify-content:center; flex-shrink: 0;">
+              <svg viewBox="0 0 24 24" width="35px" heigth="35px" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                <g id="SVGRepo_iconCarrier"> <path d="M19.6515 19.4054C20.2043 19.2902 20.5336 18.7117 20.2589 18.2183C19.6533 17.1307 18.6993 16.1749 17.4788 15.4465C15.907 14.5085 13.9812 14 12 14C10.0188 14 8.09292 14.5085 6.52112 15.4465C5.30069 16.1749 4.34666 17.1307 3.74108 18.2183C3.46638 18.7117 3.79562 19.2902 4.34843 19.4054C9.39524 20.4572 14.6047 20.4572 19.6515 19.4054Z" fill="#209cd9"></path> <circle cx="12" cy="8" r="5" fill="#209cd9"></circle> </g>
+              </svg>
+            </div>
+            <div>
+              <div style="font-size:22px;font-weight:700;color:#1e293b;">{{ totalUsers()?.totalElements ?? 0 }}</div>
+              <div style="font-size:12px;color:#64748b; margin-top: 3px">Usuários Cadastrados</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="stat-card">
+          <div style="display:flex;align-items:center;gap:12px;">
+            <div>
+              <div style="display:flex;align-items:center;gap:5px;">
+                <div style="width:6px;height: 6px;background:#16a34a;border-radius:50%;"></div>
+                <div style="font-size:12px;color:#64748b;">Ativos</div>
+              </div>
+              <div style="font-size:22px;font-weight:700;color:#1e293b; margin: 5px 0px">
+                {{ totalUsers()?.totalElementsActive ?? 0 }}
+              </div>
+              <div style="font-size:11px;color:#6c6e72;">{{ percentageUsers()?.percentageActive ?? 0 }}% do total</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="stat-card">
+          <div style="display:flex;align-items:center;gap:12px;">
+            <div>
+              <div style="display:flex;align-items:center;gap:5px;">
+                <div style="width:6px;height: 6px;background:#b9b9b9;border-radius:50%;"></div>
+                <div style="font-size:12px;color:#64748b;">Inativos</div>
+              </div>
+              <div style="font-size:22px;font-weight:700;color:#1e293b; margin: 5px 0px">
+                {{ totalUsers()?.totalElementsInactive ?? 0}}
+              </div>
+              <div style="font-size:11px;color:#6c6e72;">{{ percentageUsers()?.percentageInactive ?? 0}}% do total</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Charts Row -->
+      <div class="charts-grid" style="display:grid;grid-template-columns:1fr;gap:20px;">
+
+        <div class="column-grid">
+
+          <!-- Serviços por departamentos -->
+          <div class="section-card">
+            <div style="padding:20px;border-bottom:1px solid #e2e8f0;">
+              <h3 style="font-size:14px;font-weight:700;color:#1e293b;">Quantidade de serviços por usuário</h3>
+            </div>
+
+            <div class="graphic-card" *ngIf="(this.totalServices()?.totalElements ?? 0) > 0">
+
+              <div style="flex:1;display:flex;flex-direction:column;gap:8px;" *ngFor="let user of this.countServicesByUsers()">
+                <div style="display:flex;align-items:center;justify-content:space-between;font-size:14px;">
+                  <div style="display:flex;align-items:center;gap:8px;">
+                    <div class="legend-dot" style="background:#3b82f6;"></div>
+                    <span style="color:#64748b; font-weight:600">{{ user.username}}</span>
+                  </div>
+                  <div style="display:flex;gap:16px;">
+                    <span style="font-weight:700;color:#1e293b;">{{ user.totalServices}}</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div *ngIf="(this.totalServices()?.totalElements ?? 0) === 0" style="display:flex;align-items:center;justify-content:center;height:200px;">
+
+              <div style="display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;">
+                <svg viewBox="0 0 24 24" width="40px" heigth="40px" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M10.5 15L13.5 12M13.5 15L10.5 12" stroke="#64748b" stroke-width="1.5" stroke-linecap="round"></path> <path d="M22 11.7979C22 9.16554 22 7.84935 21.2305 6.99383C21.1598 6.91514 21.0849 6.84024 21.0062 6.76946C20.1506 6 18.8345 6 16.2021 6H15.8284C14.6747 6 14.0979 6 13.5604 5.84678C13.2651 5.7626 12.9804 5.64471 12.7121 5.49543C12.2237 5.22367 11.8158 4.81578 11 4L10.4497 3.44975C10.1763 3.17633 10.0396 3.03961 9.89594 2.92051C9.27652 2.40704 8.51665 2.09229 7.71557 2.01738C7.52976 2 7.33642 2 6.94975 2C6.06722 2 5.62595 2 5.25839 2.06935C3.64031 2.37464 2.37464 3.64031 2.06935 5.25839C2 5.62595 2 6.06722 2 6.94975M21.9913 16C21.9554 18.4796 21.7715 19.8853 20.8284 20.8284C19.6569 22 17.7712 22 14 22H10C6.22876 22 4.34315 22 3.17157 20.8284C2 19.6569 2 17.7712 2 14V11" stroke="#64748b" stroke-width="1.5" stroke-linecap="round"></path> </g>
+                </svg>
+                <span style="font-size: 14px; color: #64748b;">Nenhum usuário foi criado ainda.</span>
+              </div>
+
+            </div>
+          </div>
+
+          <!-- Usuários por Serviço -->
+          <div class="section-card">
+            <div style="padding:20px;border-bottom:1px solid #e2e8f0;">
+              <h3 style="font-size:14px;font-weight:700;color:#1e293b;">Quantidade de funções por usuário</h3>
+            </div>
+
+            <div class="graphic-card" *ngIf="(this.totalServices()?.totalElements ?? 0) > 0">
+
+              <div style="flex:1;display:flex;flex-direction:column;gap:8px;" *ngFor="let user of this.countRoleByUsers()">
+                <div style="display:flex;align-items:center;justify-content:space-between;font-size:14px;">
+                  <div style="display:flex;align-items:center;gap:8px;">
+                    <div class="legend-dot" style="background:#3b82f6;"></div>
+                    <span style="color:#64748b; font-weight:600">{{ getRoleDisplayName(user.role)}}</span>
+                  </div>
+                  <div style="display:flex;gap:16px;">
+                    <span style="font-weight:700;color:#1e293b;">{{ user.totalUsers}}</span>
+                    <span style="color:#94a3b8;">{{ user.percentage }}%</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div *ngIf="(this.totalServices()?.totalElements ?? 0) === 0" style="display:flex;align-items:center;justify-content:center;height:200px;">
+
+              <div style="display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;">
+                <svg viewBox="0 0 24 24" width="40px" heigth="40px" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M10.5 15L13.5 12M13.5 15L10.5 12" stroke="#64748b" stroke-width="1.5" stroke-linecap="round"></path> <path d="M22 11.7979C22 9.16554 22 7.84935 21.2305 6.99383C21.1598 6.91514 21.0849 6.84024 21.0062 6.76946C20.1506 6 18.8345 6 16.2021 6H15.8284C14.6747 6 14.0979 6 13.5604 5.84678C13.2651 5.7626 12.9804 5.64471 12.7121 5.49543C12.2237 5.22367 11.8158 4.81578 11 4L10.4497 3.44975C10.1763 3.17633 10.0396 3.03961 9.89594 2.92051C9.27652 2.40704 8.51665 2.09229 7.71557 2.01738C7.52976 2 7.33642 2 6.94975 2C6.06722 2 5.62595 2 5.25839 2.06935C3.64031 2.37464 2.37464 3.64031 2.06935 5.25839C2 5.62595 2 6.06722 2 6.94975M21.9913 16C21.9554 18.4796 21.7715 19.8853 20.8284 20.8284C19.6569 22 17.7712 22 14 22H10C6.22876 22 4.34315 22 3.17157 20.8284C2 19.6569 2 17.7712 2 14V11" stroke="#64748b" stroke-width="1.5" stroke-linecap="round"></path> </g>
+                </svg>
+                <span style="font-size: 14px; color: #64748b;">Nenhum usuário foi criado ainda.</span>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+
+        <!--sdasdasdasd-->
+        <div class="section-card">
+
+          <div style="padding:20px;border-bottom:1px solid #e2e8f0;">
+            <h3 style="font-size:14px;font-weight:700;color:#1e293b;">Usuarios criados por mês</h3>
+          </div>
+
+          <apx-chart
+            *ngIf="chartUserOptions"
+            [series]="chartUserOptions.series"
+
+            [chart]="chartUserOptions.chart"
+
+            [xaxis]="chartUserOptions.xaxis"
+
+            [dataLabels]="chartUserOptions.dataLabels">
+
+          </apx-chart>
+
+        </div>
+      </div>
+    </div>
+
+    <!-- Content Scheduling -->
+    <div style="display:flex;flex-direction:column;gap:20px;" *ngIf="this.navItem === 'Scheduling'">
+      <!-- Stats Cards -->
+      <div class="stats-grid" style="display:grid;grid-template-columns:repeat(3,1fr);gap:16px;">
+
+        <div class="stat-card">
+          <div style="display:flex;align-items:center;gap:12px;">
+            <div style="width:55px;height:55px;background:#0084ff2a;;border-radius:10px;display:flex;align-items:center;justify-content:center; flex-shrink: 0;">
+              <svg version="1.1" width="35px" height="35px" id="_x32_" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 512 512" xml:space="preserve" fill="#000000"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <style type="text/css"> .st0{fill:#247cb2;} </style> <g> <rect x="119.256" y="222.607" class="st0" width="50.881" height="50.885"></rect> <rect x="341.863" y="222.607" class="st0" width="50.881" height="50.885"></rect> <rect x="267.662" y="222.607" class="st0" width="50.881" height="50.885"></rect> <rect x="119.256" y="302.11" class="st0" width="50.881" height="50.885"></rect> <rect x="267.662" y="302.11" class="st0" width="50.881" height="50.885"></rect> <rect x="193.46" y="302.11" class="st0" width="50.881" height="50.885"></rect> <rect x="341.863" y="381.612" class="st0" width="50.881" height="50.885"></rect> <rect x="267.662" y="381.612" class="st0" width="50.881" height="50.885"></rect> <rect x="193.46" y="381.612" class="st0" width="50.881" height="50.885"></rect> <path class="st0" d="M439.277,55.046h-41.376v39.67c0,14.802-12.195,26.84-27.183,26.84h-54.025 c-14.988,0-27.182-12.038-27.182-26.84v-39.67h-67.094v39.297c0,15.008-12.329,27.213-27.484,27.213h-53.424 c-15.155,0-27.484-12.205-27.484-27.213V55.046H72.649c-26.906,0-48.796,21.692-48.796,48.354v360.246 c0,26.661,21.89,48.354,48.796,48.354h366.628c26.947,0,48.87-21.692,48.87-48.354V103.4 C488.147,76.739,466.224,55.046,439.277,55.046z M453.167,462.707c0,8.56-5.751,14.309-14.311,14.309H73.144 c-8.56,0-14.311-5.749-14.311-14.309V178.089h394.334V462.707z"></path> <path class="st0" d="M141.525,102.507h53.392c4.521,0,8.199-3.653,8.199-8.144v-73.87c0-11.3-9.27-20.493-20.666-20.493h-28.459 c-11.395,0-20.668,9.192-20.668,20.493v73.87C133.324,98.854,137.002,102.507,141.525,102.507z"></path> <path class="st0" d="M316.693,102.507h54.025c4.348,0,7.884-3.513,7.884-7.826V20.178C378.602,9.053,369.474,0,358.251,0H329.16 c-11.221,0-20.349,9.053-20.349,20.178v74.503C308.81,98.994,312.347,102.507,316.693,102.507z"></path> </g> </g>
+              </svg>
+            </div>
+            <div>
+              <div style="font-size:22px;font-weight:700;color:#1e293b;">{{ totalScheduling()?.totalElements ?? 0 }}</div>
+              <div style="font-size:12px;color:#64748b; margin-top: 3px">Total de agendamentos</div>
+            </div>
+          </div>
+        </div>
+        <div class="stat-card">
+          <div style="display:flex;align-items:center;gap:12px;">
+            <div style="width:55px;height:55px;background:#a5eea044;border-radius:10px;display:flex;align-items:center;justify-content:center; flex-shrink: 0;">
+              <svg viewBox="0 0 24 24" width="35px" height="35px" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M14 19.2857L15.8 21L20 17M4 21C4 17.134 7.13401 14 11 14C12.4872 14 13.8662 14.4638 15 15.2547M15 7C15 9.20914 13.2091 11 11 11C8.79086 11 7 9.20914 7 7C7 4.79086 8.79086 3 11 3C13.2091 3 15 4.79086 15 7Z" stroke="#0f5d0e" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> </g>
+              </svg>
+            </div>
+            <div>
+              <div style="font-size:12px;color:#64748b; margin-bottom: 3px">Total de clientes presentes</div>
+              <div style="font-size:22px;font-weight:700;color:#1e293b;">{{ totalScheduling()?.present ?? 0}}</div>
+              <div style="font-size:10px;color:#64748b; margin-top: 3px">{{ percentageScheduling()?.present ?? 0}}%</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="stat-card">
+          <div style="display:flex;align-items:center;gap:12px;">
+            <div style="width:55px;height:55px;background:#ffcece44;border-radius:10px;display:flex;align-items:center;justify-content:center; flex-shrink: 0;">
+              <svg viewBox="0 0 24 24" width="35px" height="35px"  fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M15 16L20 21M20 16L15 21M11 14C7.13401 14 4 17.134 4 21H11M15 7C15 9.20914 13.2091 11 11 11C8.79086 11 7 9.20914 7 7C7 4.79086 8.79086 3 11 3C13.2091 3 15 4.79086 15 7Z" stroke="#c81414" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> </g>
+              </svg>
+            </div>
+            <div>
+              <div style="font-size:12px;color:#64748b; margin-bottom: 3px">Total de agendamentos cancelados</div>
+              <div style="font-size:22px;font-weight:700;color:#1e293b;">{{ totalScheduling()?.canceled ?? 0}}</div>
+              <div style="font-size:10px;color:#64748b; margin-top: 3px">{{ percentageScheduling()?.canceled ?? 0}}%</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="stat-card">
+          <div style="display:flex;align-items:center;gap:12px;">
+            <div style="width:55px;height:55px;background:#f1f5f9;border-radius:10px;display:flex;align-items:center;justify-content:center; flex-shrink: 0;">
+              <svg viewBox="0 0 24 24" width="35px" height="35px" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M20 18L14 18M11 21H4C4 17.134 7.13401 14 11 14C11.695 14 12.3663 14.1013 13 14.2899M15 7C15 9.20914 13.2091 11 11 11C8.79086 11 7 9.20914 7 7C7 4.79086 8.79086 3 11 3C13.2091 3 15 4.79086 15 7Z" stroke="#94a3b8" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> </g>
+              </svg>
+            </div>
+            <div>
+              <div style="font-size:12px;color:#64748b; margin-bottom: 3px">Total de clientes ausentes</div>
+              <div style="font-size:22px;font-weight:700;color:#1e293b;">{{ totalScheduling()?.absent ?? 0}}</div>
+              <div style="font-size:10px;color:#64748b; margin-top: 3px">{{ percentageScheduling()?.absent ?? 0}}%</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="stat-card">
+          <div style="display:flex;align-items:center;gap:12px;">
+            <div style="width:55px;height:55px;background:#ffa40621;border-radius:10px;display:flex;align-items:center;justify-content:center; flex-shrink: 0;">
+              <svg viewBox="0 0 24 24" fill="none" width="35px" height="35px"xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M12 14.0709C11.6734 14.0242 11.3395 14 11 14C7.13401 14 4 17.134 4 21H14M17.997 18C18.997 17 19.997 16.6046 19.997 15.5C19.997 14.3954 19.1016 13.5 17.997 13.5C17.0651 13.5 16.282 14.1374 16.06 15M17.997 21H18.007M15 7C15 9.20914 13.2091 11 11 11C8.79086 11 7 9.20914 7 7C7 4.79086 8.79086 3 11 3C13.2091 3 15 4.79086 15 7Z" stroke="#ebac00" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> </g>
+              </svg>
+            </div>
+            <div>
+              <div style="font-size:12px;color:#64748b; margin-bottom: 3px">Total de clientes pendentes</div>
+              <div style="font-size:22px;font-weight:700;color:#1e293b;">{{ totalScheduling()?.scheduled ?? 0}}</div>
+              <div style="font-size:10px;color:#64748b; margin-top: 3px">{{ percentageScheduling()?.scheduled ?? 0}}%</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="charts-grid" style="display:grid;grid-template-columns:1fr;gap:20px;">
+
+        <div class="column-grid">
+
+          <!-- Agendamentos por mês -->
+          <div class="section-card">
+
+            <div style="padding:20px;border-bottom:1px solid #e2e8f0;">
+              <h3 style="font-size:14px;font-weight:700;color:#1e293b;">Agendamentos criados durante a semana</h3>
+            </div>
+
+            <apx-chart
+              *ngIf="chartSchedulingWeekOptions"
+              [series]="chartSchedulingWeekOptions.series"
+
+              [chart]="chartSchedulingWeekOptions.chart"
+
+              [xaxis]="chartSchedulingWeekOptions.xaxis"
+
+              [dataLabels]="chartSchedulingWeekOptions.dataLabels">
+
+            </apx-chart>
+
+          </div>
+
+          <!-- Agendamentos por mês -->
+          <div class="section-card">
+
+            <div style="padding:20px;border-bottom:1px solid #e2e8f0;">
+              <h3 style="font-size:14px;font-weight:700;color:#1e293b;">Agendamentos criados por horário</h3>
+            </div>
+
+            <apx-chart
+              *ngIf="chartSchedulingHourOptions"
+              [series]="chartSchedulingHourOptions.series"
+
+              [chart]="chartSchedulingHourOptions.chart"
+
+              [xaxis]="chartSchedulingHourOptions.xaxis"
+
+              [dataLabels]="chartSchedulingHourOptions.dataLabels">
+
+            </apx-chart>
+
+          </div>
+
+        </div>
+
+      </div>
+
+      <div class="charts-grid" style="display:grid;grid-template-columns:1fr;gap:20px;">
+
+        <div class="column-grid">
+
+          <!-- Agendamentos por departamento -->
+          <div class="section-card">
+            <div style="padding:20px;border-bottom:1px solid #e2e8f0;">
+              <h3 style="font-size:14px;font-weight:700;color:#1e293b;">Agendamentos por departamento</h3>
+            </div>
+
+            <div class="graphic-card" *ngIf="(this.totalScheduling()?.totalElements ?? 0) > 0">
+
+              <div style="flex:1;display:flex;flex-direction:column;gap:8px;" *ngFor="let schedule of this.schedulesByDepartment()">
+                <div style="display:flex;align-items:center; justify-content:space-between;font-size:14px;">
+                  <div style="display:flex;align-items:center;gap:8px;">
+                    <div class="legend-dot" style="background:#3b82f6;"></div>
+                    <span style="color:#64748b; font-weight:600">{{ schedule.departmentName }}</span>
+                  </div>
+                  <div style="display:flex;gap:16px; align-items:center;">
+                    <span style="font-weight:700;color:#1e293b;">{{ schedule.totalSchedules}}</span>
+                    <span style="color:#94a3b8; font-size: 12px;">{{ schedule.percentage }}%</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div *ngIf="(this.totalScheduling()?.totalElements ?? 0) === 0" style="display:flex;align-items:center;justify-content:center;height:200px;">
+
+              <div style="display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;">
+                <svg viewBox="0 0 24 24" width="40px" heigth="40px" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M10.5 15L13.5 12M13.5 15L10.5 12" stroke="#64748b" stroke-width="1.5" stroke-linecap="round"></path> <path d="M22 11.7979C22 9.16554 22 7.84935 21.2305 6.99383C21.1598 6.91514 21.0849 6.84024 21.0062 6.76946C20.1506 6 18.8345 6 16.2021 6H15.8284C14.6747 6 14.0979 6 13.5604 5.84678C13.2651 5.7626 12.9804 5.64471 12.7121 5.49543C12.2237 5.22367 11.8158 4.81578 11 4L10.4497 3.44975C10.1763 3.17633 10.0396 3.03961 9.89594 2.92051C9.27652 2.40704 8.51665 2.09229 7.71557 2.01738C7.52976 2 7.33642 2 6.94975 2C6.06722 2 5.62595 2 5.25839 2.06935C3.64031 2.37464 2.37464 3.64031 2.06935 5.25839C2 5.62595 2 6.06722 2 6.94975M21.9913 16C21.9554 18.4796 21.7715 19.8853 20.8284 20.8284C19.6569 22 17.7712 22 14 22H10C6.22876 22 4.34315 22 3.17157 20.8284C2 19.6569 2 17.7712 2 14V11" stroke="#64748b" stroke-width="1.5" stroke-linecap="round"></path> </g>
+                </svg>
+                <span style="font-size: 14px; color: #64748b;">Nenhum agendamento foi criado ainda.</span>
+              </div>
+
+            </div>
+          </div>
+
+          <!-- Agendamentos por serviço -->
+          <div class="section-card">
+            <div style="padding:20px;border-bottom:1px solid #e2e8f0;">
+              <h3 style="font-size:14px;font-weight:700;color:#1e293b;">Agendamentos por serviço</h3>
+            </div>
+
+            <div class="graphic-card" *ngIf="(this.totalScheduling()?.totalElements ?? 0) > 0">
+
+              <div style="flex:1;display:flex;flex-direction:column;gap:8px;" *ngFor="let schedule of this.schedulesByService()">
+                <div style="display:flex;align-items:center;justify-content:space-between;font-size:14px;">
+                  <div style="display:flex;align-items:center;gap:8px;">
+                    <div class="legend-dot" style="background:#3b82f6;"></div>
+                    <span style="color:#64748b; font-weight:600">{{ schedule.serviceName}}</span>
+                  </div>
+                  <div style="display:flex;gap:16px;align-items:center;">
+                    <span style="font-weight:700;color:#1e293b;">{{ schedule.totalSchedules}}</span>
+                    <span style="color:#94a3b8; font-size: 12px;">{{ schedule.percentage }}%</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div *ngIf="(this.totalScheduling()?.totalElements ?? 0) === 0" style="display:flex;align-items:center;justify-content:center;height:200px;">
+
+              <div style="display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;">
+                <svg viewBox="0 0 24 24" width="40px" heigth="40px" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M10.5 15L13.5 12M13.5 15L10.5 12" stroke="#64748b" stroke-width="1.5" stroke-linecap="round"></path> <path d="M22 11.7979C22 9.16554 22 7.84935 21.2305 6.99383C21.1598 6.91514 21.0849 6.84024 21.0062 6.76946C20.1506 6 18.8345 6 16.2021 6H15.8284C14.6747 6 14.0979 6 13.5604 5.84678C13.2651 5.7626 12.9804 5.64471 12.7121 5.49543C12.2237 5.22367 11.8158 4.81578 11 4L10.4497 3.44975C10.1763 3.17633 10.0396 3.03961 9.89594 2.92051C9.27652 2.40704 8.51665 2.09229 7.71557 2.01738C7.52976 2 7.33642 2 6.94975 2C6.06722 2 5.62595 2 5.25839 2.06935C3.64031 2.37464 2.37464 3.64031 2.06935 5.25839C2 5.62595 2 6.06722 2 6.94975M21.9913 16C21.9554 18.4796 21.7715 19.8853 20.8284 20.8284C19.6569 22 17.7712 22 14 22H10C6.22876 22 4.34315 22 3.17157 20.8284C2 19.6569 2 17.7712 2 14V11" stroke="#64748b" stroke-width="1.5" stroke-linecap="round"></path> </g>
+                </svg>
+                <span style="font-size: 14px; color: #64748b;">Nenhum agendamento foi criado ainda.</span>
+              </div>
+
+            </div>
+          </div>
+
+        </div>
+
+        <!--Grafico de agendamentos por mês-->
+        <div class="column-grid">
+
+          <div class="section-card">
+
+            <div style="padding:20px;border-bottom:1px solid #e2e8f0;">
+              <h3 style="font-size:14px;font-weight:700;color:#1e293b;">Agendamentos por prioridade</h3>
+            </div>
+
+            <div style="display: flex;align-items: center;justify-content: center; margin-top: 30px">
+              <apx-chart
+                *ngIf="chartSchedulingPriorityOptions"
+                [series]="chartSchedulingPriorityOptions.series"
+                [chart]="chartSchedulingPriorityOptions.chart"
+                [labels]="chartSchedulingPriorityOptions.labels"
+                [colors]="chartSchedulingPriorityOptions.colors"
+                [legend]="chartSchedulingPriorityOptions.legend"
+                [dataLabels]="chartSchedulingPriorityOptions.dataLabels"
+                [responsive]="chartSchedulingPriorityOptions.responsive">
+              </apx-chart>
+            </div>
+
+            <div *ngIf="(this.totalScheduling()?.totalElements ?? 0) === 0" style="display:flex;align-items:center;justify-content:center;height:200px;">
+
+              <div style="display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;">
+                <svg viewBox="0 0 24 24" width="40px" heigth="40px" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M10.5 15L13.5 12M13.5 15L10.5 12" stroke="#64748b" stroke-width="1.5" stroke-linecap="round"></path> <path d="M22 11.7979C22 9.16554 22 7.84935 21.2305 6.99383C21.1598 6.91514 21.0849 6.84024 21.0062 6.76946C20.1506 6 18.8345 6 16.2021 6H15.8284C14.6747 6 14.0979 6 13.5604 5.84678C13.2651 5.7626 12.9804 5.64471 12.7121 5.49543C12.2237 5.22367 11.8158 4.81578 11 4L10.4497 3.44975C10.1763 3.17633 10.0396 3.03961 9.89594 2.92051C9.27652 2.40704 8.51665 2.09229 7.71557 2.01738C7.52976 2 7.33642 2 6.94975 2C6.06722 2 5.62595 2 5.25839 2.06935C3.64031 2.37464 2.37464 3.64031 2.06935 5.25839C2 5.62595 2 6.06722 2 6.94975M21.9913 16C21.9554 18.4796 21.7715 19.8853 20.8284 20.8284C19.6569 22 17.7712 22 14 22H10C6.22876 22 4.34315 22 3.17157 20.8284C2 19.6569 2 17.7712 2 14V11" stroke="#64748b" stroke-width="1.5" stroke-linecap="round"></path> </g>
+                </svg>
+                <span style="font-size: 14px; color: #64748b;">Nenhum agendamento foi criado ainda.</span>
+              </div>
+            </div>
+
+          </div>
+
+          <div class="section-card">
+
+            <div style="padding:20px;border-bottom:1px solid #e2e8f0;">
+              <h3 style="font-size:14px;font-weight:700;color:#1e293b;">Agendamentos criados por mês</h3>
+            </div>
+
+            <apx-chart
+
+              *ngIf="chartSchedulingMonthOptions"
+              [series]="chartSchedulingMonthOptions.series"
+
+              [chart]="chartSchedulingMonthOptions.chart"
+
+              [xaxis]="chartSchedulingMonthOptions.xaxis"
+
+              [dataLabels]="chartSchedulingMonthOptions.dataLabels">
+
+            </apx-chart>
+
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+
+    <!-- Content Users -->
+    <div style="display:flex;flex-direction:column;gap:20px;" *ngIf="this.navItem === 'Customers'">
+      <!-- Stats Cards -->
+      <div class="stats-grid" style="display:grid;grid-template-columns:repeat(3,1fr);gap:16px;">
+
+        <div class="stat-card">
+          <div style="display:flex;align-items:center;gap:12px;">
+            <div style="width:55px;height:55px;background:#0084ff2a;border-radius:10px;display:flex;align-items:center;justify-content:center; flex-shrink: 0;">
+              <svg viewBox="0 0 24 24" width="35px" heigth="35px" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+                <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g>
+                <g id="SVGRepo_iconCarrier"> <path d="M19.6515 19.4054C20.2043 19.2902 20.5336 18.7117 20.2589 18.2183C19.6533 17.1307 18.6993 16.1749 17.4788 15.4465C15.907 14.5085 13.9812 14 12 14C10.0188 14 8.09292 14.5085 6.52112 15.4465C5.30069 16.1749 4.34666 17.1307 3.74108 18.2183C3.46638 18.7117 3.79562 19.2902 4.34843 19.4054C9.39524 20.4572 14.6047 20.4572 19.6515 19.4054Z" fill="#209cd9"></path> <circle cx="12" cy="8" r="5" fill="#209cd9"></circle> </g>
+              </svg>
+            </div>
+            <div>
+              <div style="font-size:22px;font-weight:700;color:#1e293b;">{{ totalCustomers()?.totalElements ?? 0 }}</div>
+              <div style="font-size:12px;color:#64748b; margin-top: 3px">Clientes Cadastrados</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <!-- Charts Row -->
+      <div class="charts-grid" style="display:grid;grid-template-columns:1fr;gap:20px;">
+
+        <!--sdasdasdasd-->
+        <div class="section-card">
+
+          <div style="padding:20px;border-bottom:1px solid #e2e8f0;">
+            <h3 style="font-size:14px;font-weight:700;color:#1e293b;">Clientes criados por mês</h3>
+          </div>
+
+          <apx-chart
+            *ngIf="chartCustomerOptions"
+            [series]="chartCustomerOptions.series"
+
+            [chart]="chartCustomerOptions.chart"
+
+            [xaxis]="chartCustomerOptions.xaxis"
+
+            [dataLabels]="chartCustomerOptions.dataLabels">
+
+          </apx-chart>
+
+          <div *ngIf="(this.totalUsers()?.totalElements ?? 0) === 0" style="display:flex;align-items:center;justify-content:center;height:200px;">
+
+            <div style="display:flex;flex-direction:column;align-items:center;justify-content:center;gap:12px;">
+              <svg viewBox="0 0 24 24" width="40px" heigth="40px" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M10.5 15L13.5 12M13.5 15L10.5 12" stroke="#64748b" stroke-width="1.5" stroke-linecap="round"></path> <path d="M22 11.7979C22 9.16554 22 7.84935 21.2305 6.99383C21.1598 6.91514 21.0849 6.84024 21.0062 6.76946C20.1506 6 18.8345 6 16.2021 6H15.8284C14.6747 6 14.0979 6 13.5604 5.84678C13.2651 5.7626 12.9804 5.64471 12.7121 5.49543C12.2237 5.22367 11.8158 4.81578 11 4L10.4497 3.44975C10.1763 3.17633 10.0396 3.03961 9.89594 2.92051C9.27652 2.40704 8.51665 2.09229 7.71557 2.01738C7.52976 2 7.33642 2 6.94975 2C6.06722 2 5.62595 2 5.25839 2.06935C3.64031 2.37464 2.37464 3.64031 2.06935 5.25839C2 5.62595 2 6.06722 2 6.94975M21.9913 16C21.9554 18.4796 21.7715 19.8853 20.8284 20.8284C19.6569 22 17.7712 22 14 22H10C6.22876 22 4.34315 22 3.17157 20.8284C2 19.6569 2 17.7712 2 14V11" stroke="#64748b" stroke-width="1.5" stroke-linecap="round"></path> </g>
+              </svg>
+              <span style="font-size: 14px; color: #64748b;">Nenhum cliente foi criado ainda.</span>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>

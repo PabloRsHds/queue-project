@@ -1,0 +1,682 @@
+<!-- SERVIÇOS PAGE -->
+
+<div id="page-servicos" class="fade-in" (click)="closeDropDown()">
+  <!-- Stats Cards -->
+  <div class="stats-grid" style="display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-bottom:24px;">
+    <div class="stat-card">
+      <div style="display:flex;align-items:center;gap:12px;">
+        <div style="width:55px;height:55px;background:#0084ff2a;border-radius:10px;display:flex;align-items:center;justify-content:center; flex-shrink: 0;">
+          <svg fill="#2d7dc8" width="35px" heigth="35px" viewBox="0 0 512 512" version="1.1" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" stroke="#2d7dc8" stroke-width="19.968"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <g id="_x37_21-_gear__x2C__setting__x2C_engine__x2C_"> <g> <g> <path d="M283.693,492.847H229.26c-14.972,0-27.153-12.177-27.153-27.144v-53.9c-19.271-6.774-37.417-17.271-52.977-30.643 l-46.764,26.991c-4.106,2.361-8.772,3.605-13.503,3.606c-9.703,0-18.727-5.173-23.55-13.5l-27.237-47.184 c-7.457-12.935-3.004-29.55,9.925-37.04l46.741-26.958c-1.903-10.071-2.867-20.341-2.867-30.6c0-10.258,0.963-20.527,2.867-30.6 l-46.73-26.95c-12.972-7.516-17.423-24.157-9.933-37.104l27.23-47.121c4.835-8.347,13.859-13.527,23.553-13.527 c4.743,0,9.417,1.257,13.517,3.635l46.754,26.946c15.576-13.353,33.724-23.837,52.974-30.604v-53.9 c0-14.968,12.181-27.145,27.153-27.145h54.434c14.974,0,27.155,12.177,27.155,27.145v53.899 c19.343,6.793,37.492,17.274,52.983,30.6l46.761-26.951c4.095-2.369,8.77-3.625,13.51-3.625c9.693,0,18.708,5.185,23.524,13.531 l27.25,47.118c7.477,12.977,3.021,29.615-9.928,37.1l-46.738,26.955c1.89,10.021,2.846,20.291,2.846,30.599 c0,10.388-0.953,20.659-2.839,30.603l46.726,26.948c6.236,3.572,10.721,9.399,12.611,16.398 c1.898,7.03,0.949,14.362-2.674,20.646l-27.233,47.178c-4.827,8.335-13.847,13.508-23.544,13.509 c-4.729,0-9.396-1.244-13.499-3.597l-46.775-27c-15.553,13.379-33.701,23.863-52.98,30.605v53.937 C310.849,480.67,298.667,492.847,283.693,492.847z M149.959,366.227c1.636,0,3.259,0.598,4.526,1.756 c16.143,14.748,35.631,26.02,56.358,32.597c2.787,0.885,4.68,3.472,4.68,6.395v58.729c0,7.569,6.162,13.728,13.736,13.728h54.434 c7.576,0,13.738-6.158,13.738-13.728v-58.774c0-2.928,1.899-5.518,4.691-6.397c20.731-6.537,40.215-17.791,56.344-32.546 c2.159-1.974,5.348-2.323,7.882-0.86l50.947,29.407c2.058,1.18,4.417,1.809,6.807,1.809c4.927-0.001,9.499-2.609,11.931-6.808 l27.227-47.166c1.827-3.17,2.305-6.88,1.343-10.442c-0.954-3.533-3.208-6.468-6.345-8.265l-50.938-29.378 c-2.539-1.465-3.834-4.408-3.196-7.27c2.334-10.482,3.518-21.429,3.518-32.536c0-11.004-1.185-21.955-3.521-32.55 c-0.63-2.857,0.664-5.794,3.199-7.256l50.921-29.367c6.547-3.783,8.8-12.207,5.017-18.773l-27.247-47.114 c-2.432-4.213-6.992-6.826-11.907-6.826c-2.383,0-4.734,0.632-6.8,1.827l-50.958,29.37c-2.533,1.46-5.721,1.11-7.879-0.864 c-16.047-14.687-35.533-25.941-56.354-32.548c-2.786-0.885-4.68-3.472-4.68-6.395V47.251c0-7.569-6.162-13.729-13.738-13.729 H229.26c-7.574,0-13.736,6.159-13.736,13.729v58.729c0,2.923-1.893,5.51-4.68,6.395c-20.706,6.569-40.196,17.828-56.366,32.559 c-2.157,1.967-5.339,2.311-7.867,0.854l-50.948-29.363c-2.073-1.203-4.419-1.834-6.801-1.834c-4.924,0-9.5,2.617-11.94,6.83 l-27.228,47.118c-3.789,6.55-1.531,14.97,5.033,18.772l50.909,29.36c2.535,1.462,3.83,4.398,3.2,7.256 c-2.351,10.662-3.542,21.613-3.542,32.55c0,10.938,1.192,21.889,3.542,32.55c0.63,2.857-0.665,5.794-3.199,7.256l-50.92,29.368 c-6.53,3.782-8.786,12.184-5.018,18.72l27.229,47.172c2.428,4.19,7.003,6.799,11.936,6.799c2.388,0,4.742-0.628,6.807-1.814 l50.938-29.401C147.652,366.521,148.809,366.227,149.959,366.227z"></path> </g> <g> <path d="M256.491,337.764c-44.857,0-81.351-36.465-81.351-81.287c0-44.821,36.494-81.286,81.351-81.286 c44.842,0,81.323,36.465,81.323,81.286C337.814,301.299,301.333,337.764,256.491,337.764z M256.491,188.606 c-37.459,0-67.934,30.446-67.934,67.87s30.475,67.871,67.934,67.871c37.444,0,67.907-30.447,67.907-67.871 S293.936,188.606,256.491,188.606z"></path> </g> </g> </g> <g id="Layer_1"></g> </g>
+          </svg>
+        </div>
+        <div>
+          <div style="font-size:22px;font-weight:700;color:#1e293b;">{{ totalServices()?.totalElements ?? 0 }}</div>
+          <div style="font-size:12px;color:#64748b; margin-top: 3px">Serviços Cadastrados</div>
+        </div>
+      </div>
+    </div>
+    <div class="stat-card">
+      <div style="display:flex;align-items:center;gap:12px;">
+        <div>
+          <div style="display:flex;align-items:center;gap:5px;">
+            <div style="width:6px;height: 6px;background:#16a34a;border-radius:50%;"></div>
+            <div style="font-size:12px;color:#64748b;">Ativos</div>
+          </div>
+          <div style="font-size:22px;font-weight:700;color:#1e293b; margin: 5px 0px">
+            {{ totalServices()?.totalElementsActive ?? 0 }}
+          </div>
+          <div style="font-size:11px;color:#6c6e72;">{{ percentage()?.percentageActive ?? 0 }}% do total</div>
+        </div>
+      </div>
+    </div>
+    <div class="stat-card">
+      <div style="display:flex;align-items:center;gap:12px;">
+        <div>
+          <div style="display:flex;align-items:center;gap:5px;">
+            <div style="width:6px;height: 6px;background:#b9b9b9;border-radius:50%;"></div>
+            <div style="font-size:12px;color:#64748b;">Inativos</div>
+          </div>
+          <div style="font-size:22px;font-weight:700;color:#1e293b; margin: 5px 0px">
+            {{ totalServices()?.totalElementsInactive ?? 0}}
+          </div>
+          <div style="font-size:11px;color:#6c6e72;">{{ percentage()?.percentageInactive ?? 0}}% do total</div>
+        </div>
+      </div>
+    </div>
+    <div class="stat-card" style="padding:0;border:none;background:none;box-shadow:none;">
+      <div class="new-service-card" (click)="openModalRegister()" style="width:100%;height:100%;">
+        <div class="new-service-icon">
+          <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round"><line x1="12" y1="5" x2="12" y2="19"/><line x1="5" y1="12" x2="19" y2="12"/></svg>
+        </div>
+        <div>
+          <div class="new-service-text">Novo Serviço</div>
+          <div class="new-service-sub">Cadastrar um novo serviço</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Search Bar -->
+  <div class="table-search-container" >
+    <div class="search-container">
+      <svg class="search-icon" width="20" height="20" fill="none" stroke="#64748b" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M21 21l-6-6m2-5a7 7 0 01-14 0 7 7 0 0114 0z"/>
+      </svg>
+      <input
+      (input)="onSearch($event)"
+      class="search-box"
+      placeholder="Pesquisar serviços...">
+    </div>
+  </div>
+
+  <!-- Services Table -->
+  <table class="dept-table">
+    <thead>
+      <tr>
+        <th>Serviço</th>
+        <th>Código</th>
+        <th>Departamento</th>
+        <th>Status</th>
+        <th>Ações</th>
+      </tr>
+    </thead>
+    <tbody>
+      <ng-container *ngIf="services().length === 0;">
+        <tr>
+          <td colspan="5" style="text-align:center;padding:3rem;color:#9ca3af;">
+            <p>Nenhum serviço encontrado.</p>
+          </td>
+        </tr>
+      </ng-container>
+
+      <ng-container *ngIf="services().length > 0">
+        <tr *ngFor="let service of services(), let i = index">
+          <td class="td-name" (click)="openModalView(service.serviceManagementId)">
+            <div class="td-name-container">
+
+              <div class="td-name-background">
+                <svg fill="#3594d0" height="25px" width="25px" version="1.1" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 325 325" xml:space="preserve" stroke="#3594d0"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <g> <path d="M233.733,325h5.462c1.708,0,3.335-0.728,4.474-2.002l36.096-40.387c0.983-1.1,1.526-2.523,1.526-3.998v-4.689h-47.558V325z "></path> <path d="M275.291,0H49.709c-3.313,0-6,2.687-6,6v313c0,3.314,2.687,6,6,6h168.024v-59.075c0-4.418,3.582-8,8-8h55.558V6 C281.291,2.687,278.604,0,275.291,0z M130.917,261.374H76.778c-4.418,0-8-3.582-8-8c0-4.418,3.582-8,8-8h54.139 c4.418,0,8,3.582,8,8C138.917,257.792,135.335,261.374,130.917,261.374z M248.222,200.795H76.778c-4.418,0-8-3.582-8-8 c0-4.418,3.582-8,8-8h171.443c4.418,0,8,3.582,8,8C256.222,197.213,252.64,200.795,248.222,200.795z M248.222,140.209H76.778 c-4.418,0-8-3.582-8-8s3.582-8,8-8h171.443c4.418,0,8,3.582,8,8S252.64,140.209,248.222,140.209z M248.222,79.625H76.778 c-4.418,0-8-3.582-8-8s3.582-8,8-8h171.443c4.418,0,8,3.582,8,8S252.64,79.625,248.222,79.625z"></path> </g> </g>
+                </svg>
+              </div>
+
+              <div style="display:flex;flex-direction:column;gap:5px;">
+                <strong>{{ service.name }}</strong>
+                <strong style="font-size: 12px; color: #7f8a99;">{{ service.departmentName }}</strong>
+              </div>
+
+            </div>
+          </td>
+          <td data-label="Código" (click)="openModalView(service.serviceManagementId)">
+            <strong>{{ service.code }}</strong>
+          </td>
+          <td data-label="Departamento" (click)="openModalView(service.serviceManagementId)">
+            <strong>{{ service.departmentName }}</strong>
+          </td>
+
+          <td data-label="Status" (click)="openModalView(service.serviceManagementId)">
+            <div *ngIf="service.active === true" style="display: flex; align-items: center;">
+              <div class="td-status-active">
+                <div style="width:6px;height: 6px;background:#16a34a;border-radius:50%;"></div>
+                <strong>Ativo</strong>
+              </div>
+            </div>
+
+            <div *ngIf="service.active === false" style="display: flex; align-items: center;">
+              <div class="td-status-inactive">
+                <div style="width:6px;height: 6px; background:#4d4f52; border-radius:50%;"></div>
+                <strong>Inativo</strong>
+              </div>
+            </div>
+          </td>
+
+          <td data-label="buttons">
+
+            <div style="display:flex;align-items:center; gap:10px;">
+              <button type="button" class="button-department-update" (click)="openModalUpdate(service.serviceManagementId)">
+                <div style="display:flex;align-items:center;gap:5px;">
+
+                  <svg xmlns="http://www.w3.org/2000/svg" width="15px" height="15px" viewBox="0 0 24 24">
+                    <path d="M20,16v4a2,2,0,0,1-2,2H4a2,2,0,0,1-2-2V6A2,2,0,0,1,4,4H8" fill="none" stroke="#EA8C00" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+                    <polygon fill="none" points="12.5 15.8 22 6.2 17.8 2 8.3 11.5 8 16 12.5 15.8" stroke="#EA8C00" stroke-linecap="round" stroke-linejoin="round" stroke-width="2"/>
+                  </svg>
+
+                  <span>Editar</span>
+                </div>
+              </button>
+
+              <div style="position: relative;">
+                <div class="button-menu-table" (click)="openDropDown(i); $event.stopPropagation()">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="15px" height="15px" viewBox="0 0 24 24" fill="none">
+                    <path d="M7 12C7 13.1046 6.10457 14 5 14C3.89543 14 3 13.1046 3 12C3 10.8954 3.89543 10 5 10C6.10457 10 7 10.8954 7 12Z" fill="#1C274C"/>
+                    <path d="M14 12C14 13.1046 13.1046 14 12 14C10.8954 14 10 13.1046 10 12C10 10.8954 10.8954 10 12 10C13.1046 10 14 10.8954 14 12Z" fill="#1C274C"/>
+                    <path d="M21 12C21 13.1046 20.1046 14 19 14C17.8954 14 17 13.1046 17 12C17 10.8954 17.8954 10 19 10C20.1046 10 21 10.8954 21 12Z" fill="#1C274C"/>
+                  </svg>
+                </div>
+
+                <div class="drop-down-delete" *ngIf="dropDown === i" (click)="$event.stopPropagation()">
+                  <div style="display:flex;flex-direction:column;">
+                    <button type="button" class="button-department-delete" (click)="openModalDelete(service.serviceManagementId)">
+                      <div style="display:flex;align-items:center; justify-content:center; gap:5px; color:#046af0e7;">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="15px" height="15px" viewBox="0 0 24 24" fill="none">
+                          <path d="M20.5001 6H3.5" stroke="#eb3414" stroke-width="1.5" stroke-linecap="round"/>
+                          <path d="M6.5 6C6.55588 6 6.58382 6 6.60915 5.99936C7.43259 5.97849 8.15902 5.45491 8.43922 4.68032C8.44784 4.65649 8.45667 4.62999 8.47434 4.57697L8.57143 4.28571C8.65431 4.03708 8.69575 3.91276 8.75071 3.8072C8.97001 3.38607 9.37574 3.09364 9.84461 3.01877C9.96213 3 10.0932 3 10.3553 3H13.6447C13.9068 3 14.0379 3 14.1554 3.01877C14.6243 3.09364 15.03 3.38607 15.2493 3.8072C15.3043 3.91276 15.3457 4.03708 15.4286 4.28571L15.5257 4.57697C15.5433 4.62992 15.5522 4.65651 15.5608 4.68032C15.841 5.45491 16.5674 5.97849 17.3909 5.99936C17.4162 6 17.4441 6 17.5 6" stroke="#eb3414" stroke-width="1.5"/>
+                          <path d="M18.3735 15.3991C18.1965 18.054 18.108 19.3815 17.243 20.1907C16.378 21 15.0476 21 12.3868 21H11.6134C8.9526 21 7.6222 21 6.75719 20.1907C5.89218 19.3815 5.80368 18.054 5.62669 15.3991L5.16675 8.5M18.8334 8.5L18.6334 11.5" stroke="#eb3414" stroke-width="1.5" stroke-linecap="round"/>
+                        </svg>
+                        <span>Excluir</span>
+                      </div>
+                    </button>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </td>
+        </tr>
+      </ng-container>
+    </tbody>
+  </table>
+
+  <div class="pagination">
+    <span class="pagination-info">
+      Mostrando {{ getStartIndex() }} - {{ getEndIndex() }} de {{ totalElements() }}
+    </span>
+
+    <div class="pagination-buttons">
+      <!-- PREV -->
+      <button
+        class="page-btn"
+        (click)="previousPage()"
+        [disabled]="page() === 0"
+        >
+        <svg viewBox="0 0 24 24">
+          <polyline points="15 18 9 12 15 6"></polyline>
+        </svg>
+      </button>
+      <!-- PAGES -->
+      <button
+        *ngFor="let p of getPagesArray()"
+        class="page-btn"
+        [class.active]="p === page()"
+        (click)="goToPage(p)">
+
+        {{ p + 1 }}
+      </button>
+      <!-- NEXT -->
+      <button
+        class="page-btn"
+        (click)="nextPage()"
+        [disabled]="page() + 1 >= totalPages()"
+        >
+        <svg viewBox="0 0 24 24">
+          <polyline points="9 18 15 12 9 6"></polyline>
+        </svg>
+      </button>
+    </div>
+  </div>
+</div>
+
+<!-- MODAL REGISTER -->
+<div class="modal-register-container" *ngIf="modalRegister()" (click)="closeModalRegister()">
+  <div class="modal-register" onclick="event.stopPropagation()">
+
+    <div class="modal-register-top">
+      <div style="display: flex; justify-content: end; padding: 20px 20px 20px 20px;">
+        <button class="dept-modal-close" aria-label="Fechar" (click)="closeModalRegister()" >
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+
+      <div class="modal-register-header-container">
+        <div class="modal-register-header">
+          <div class="modal-register-header-icon">
+            <svg viewBox="0 0 32 32" version="1.1" width="30px" height="30px" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns" fill="#000000"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <title>plus</title> <desc>Created with Sketch Beta.</desc> <defs> </defs> <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage"> <g id="Icon-Set-Filled" sketch:type="MSLayerGroup" transform="translate(-362.000000, -1037.000000)" fill="#ffffff"> <path d="M390,1049 L382,1049 L382,1041 C382,1038.79 380.209,1037 378,1037 C375.791,1037 374,1038.79 374,1041 L374,1049 L366,1049 C363.791,1049 362,1050.79 362,1053 C362,1055.21 363.791,1057 366,1057 L374,1057 L374,1065 C374,1067.21 375.791,1069 378,1069 C380.209,1069 382,1067.21 382,1065 L382,1057 L390,1057 C392.209,1057 394,1055.21 394,1053 C394,1050.79 392.209,1049 390,1049" id="plus" sketch:type="MSShapeGroup"> </path> </g> </g> </g>
+            </svg>
+          </div>
+          <div class="modal-register-header-text">
+            <h2>Cadastrar serviço</h2>
+            <span >Preencha os campos abaixo para cadastrar um novo serviço.</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <form [formGroup]="registerForm" (ngSubmit)="registerServiceManagement()">
+      <div class="form-group">
+        <label class="form-label">Nome do serviço</label>
+        <input
+          formControlName="name"
+          type="text"
+          class="form-input"
+          placeholder="Digite o nome do serviço..."
+          required>
+      </div>
+
+      <div class="form-group">
+        <label class="form-label">Código</label>
+        <input
+          formControlName="code"
+          type="text"
+          class="form-input"
+          placeholder="Digite o código do serviço..."
+          required>
+      </div>
+
+      <div class="form-group">
+        <label class="form-label">Descrição</label>
+        <textarea
+          formControlName="description"
+          rows="6"
+          class="form-textarea"
+          placeholder="Breve descrição do serviço..."></textarea>
+      </div>
+
+      <div class="form-group">
+        <label class="form-label">Departamento</label>
+        <select class="form-select" formControlName="departmentName" required>
+          <option value="">
+            Selecione um departamento
+          </option>
+          <option *ngFor="let name of departmentNames()">
+            {{ name }}
+          </option>
+        </select>
+      </div>
+
+      <div class="separator"></div>
+
+      <div class="modal-register-footer">
+        <button type="submit" class="button-submit">
+          Salvar
+        </button>
+        <button type="button" class="button-back" (click)="closeModalRegister()">
+          Voltar
+        </button>
+      </div>
+    </form>
+
+    <div style="padding: 20px 30px;">
+      <div class="modal-register-info">
+        <div class="modal-register-info-1">
+          <svg viewBox="0 0 24 24" width="20px" height="20px" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <circle cx="12" cy="12" r="10" stroke="#0d682b" stroke-width="1.5"></circle> <path d="M12 17V11" stroke="#0d682b" stroke-width="1.5" stroke-linecap="round"></path> <circle cx="1" cy="1" r="1" transform="matrix(1 0 0 -1 11 9)" fill="#0d682b"></circle> </g>
+          </svg>
+          <strong>Dica:</strong>
+        </div>
+
+        <div class="modal-register-info-2">
+          <span>Cadastre um departamento antes de cadastrar um serviço.</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- MODAL UPDATE -->
+<div class="modal-update-container" *ngIf="modalUpdate" (click)="closeModalUpdate()">
+  <div class="modal-update" onclick="event.stopPropagation()">
+
+    <div class="modal-update-top">
+      <div style="display: flex; justify-content: end; padding: 20px 20px 20px 20px;">
+        <button class="dept-modal-close" aria-label="Fechar" (click)="closeModalUpdate()" >
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+
+      <div class="modal-update-header-container">
+        <div class="modal-update-header">
+          <div class="modal-update-header-icon">
+            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" width="30px" height="30px">
+              <g id="SVGRepo_bgCarrier" stroke-width="0"></g>
+              <g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path fill-rule="evenodd" clip-rule="evenodd" d="M21.1213 2.70705C19.9497 1.53548 18.0503 1.53547 16.8787 2.70705L15.1989 4.38685L7.29289 12.2928C7.16473 12.421 7.07382 12.5816 7.02986 12.7574L6.02986 16.7574C5.94466 17.0982 6.04451 17.4587 6.29289 17.707C6.54127 17.9554 6.90176 18.0553 7.24254 17.9701L11.2425 16.9701C11.4184 16.9261 11.5789 16.8352 11.7071 16.707L19.5556 8.85857L21.2929 7.12126C22.4645 5.94969 22.4645 4.05019 21.2929 2.87862L21.1213 2.70705ZM18.2929 4.12126C18.6834 3.73074 19.3166 3.73074 19.7071 4.12126L19.8787 4.29283C20.2692 4.68336 20.2692 5.31653 19.8787 5.70705L18.8622 6.72357L17.3068 5.10738L18.2929 4.12126ZM15.8923 6.52185L17.4477 8.13804L10.4888 15.097L8.37437 15.6256L8.90296 13.5112L15.8923 6.52185ZM4 7.99994C4 7.44766 4.44772 6.99994 5 6.99994H10C10.5523 6.99994 11 6.55223 11 5.99994C11 5.44766 10.5523 4.99994 10 4.99994H5C3.34315 4.99994 2 6.34309 2 7.99994V18.9999C2 20.6568 3.34315 21.9999 5 21.9999H16C17.6569 21.9999 19 20.6568 19 18.9999V13.9999C19 13.4477 18.5523 12.9999 18 12.9999C17.4477 12.9999 17 13.4477 17 13.9999V18.9999C17 19.5522 16.5523 19.9999 16 19.9999H5C4.44772 19.9999 4 19.5522 4 18.9999V7.99994Z" fill="#ffffff"></path> </g>
+            </svg>
+          </div>
+          <div class="modal-update-header-text">
+            <h2>Alterar serviço</h2>
+            <span >Altere as informações do serviço abaixo.</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <form [formGroup]="updateForm" (ngSubmit)="updateServiceManagement()">
+
+      <div class="form-group-name-code">
+        <div style="flex: 1;">
+          <div class="form-group">
+            <label class="form-label">Nome</label>
+            <input
+              formControlName="name"
+              type="text"
+              class="form-input"
+              placeholder="Digite o nome do serviço..."
+              required>
+          </div>
+        </div>
+
+        <div style="flex: 1;">
+          <div class="form-group">
+            <label class="form-label">Código</label>
+            <input
+              formControlName="code"
+              type="text"
+              class="form-input"
+              placeholder="Digite o código do serviço..."
+              required>
+          </div>
+        </div>
+      </div>
+
+      <div class="form-group">
+        <label class="form-label">Descrição</label>
+        <textarea
+          formControlName="description"
+          rows="5"
+          class="form-textarea"
+          placeholder="Breve descrição do serviço..."></textarea>
+      </div>
+
+      <div class="form-group-department-status">
+
+        <div style="flex: 1;">
+          <div class="form-group">
+            <label class="form-label">Departamento</label>
+            <select class="form-select" formControlName="departmentName" required>
+              <option *ngFor="let name of departmentNames()">
+                {{ name }}
+              </option>
+            </select>
+          </div>
+        </div>
+
+        <div style="flex: 1;">
+          <label class="form-label">Status</label>
+
+          <div class="status-container">
+            <label class="switch">
+              <input type="checkbox" formControlName="active" checked>
+              <span class="slider"></span>
+            </label>
+
+            <span class="status-text">Ativo</span>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="separator"></div>
+
+      <div class="modal-update-footer">
+        <button type="submit" [disabled]="updateForm.invalid" class="button-update">Salvar Alterações</button>
+        <button type="button" class="button-back" (click)="closeModalUpdate()">Voltar</button>
+      </div>
+    </form>
+
+    <div style="padding: 20px 30px;">
+      <div class="modal-update-info">
+        <div class="modal-update-info-1">
+          <svg viewBox="-0.5 0 25 25" fill="none" width="20px" height="20px" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M12 21.5C17.1086 21.5 21.25 17.3586 21.25 12.25C21.25 7.14137 17.1086 3 12 3C6.89137 3 2.75 7.14137 2.75 12.25C2.75 17.3586 6.89137 21.5 12 21.5Z" stroke="#EA8C00" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path> <path d="M12.9309 8.15005C12.9256 8.39231 12.825 8.62272 12.6509 8.79123C12.4767 8.95974 12.2431 9.05271 12.0008 9.05002C11.8242 9.04413 11.6533 8.98641 11.5093 8.884C11.3652 8.7816 11.2546 8.63903 11.1911 8.47415C11.1275 8.30927 11.1139 8.12932 11.152 7.95675C11.19 7.78419 11.278 7.6267 11.405 7.50381C11.532 7.38093 11.6923 7.29814 11.866 7.26578C12.0397 7.23341 12.2192 7.25289 12.3819 7.32181C12.5446 7.39072 12.6834 7.506 12.781 7.65329C12.8787 7.80057 12.9308 7.97335 12.9309 8.15005ZM11.2909 16.5301V11.1501C11.2882 11.0556 11.3046 10.9615 11.3392 10.8736C11.3738 10.7857 11.4258 10.7057 11.4922 10.6385C11.5585 10.5712 11.6378 10.518 11.7252 10.4822C11.8126 10.4464 11.9064 10.4286 12.0008 10.43C12.094 10.4299 12.1863 10.4487 12.272 10.4853C12.3577 10.5218 12.4352 10.5753 12.4997 10.6426C12.5642 10.7099 12.6143 10.7895 12.6472 10.8767C12.6801 10.9639 12.6949 11.0569 12.6908 11.1501V16.5301C12.6908 16.622 12.6727 16.713 12.6376 16.7979C12.6024 16.8828 12.5508 16.96 12.4858 17.025C12.4208 17.09 12.3437 17.1415 12.2588 17.1767C12.1738 17.2119 12.0828 17.23 11.9909 17.23C11.899 17.23 11.8079 17.2119 11.723 17.1767C11.6381 17.1415 11.5609 17.09 11.4959 17.025C11.4309 16.96 11.3793 16.8828 11.3442 16.7979C11.309 16.713 11.2909 16.622 11.2909 16.5301Z" fill="#EA8C00"></path> </g>
+          </svg>
+          <strong>Dica:</strong>
+        </div>
+
+        <div class="modal-update-info-2">
+          <span>Cadastre um departamento antes de cadastrar um serviço.</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+<!-- MODAL DELETE -->
+<div class="modal-delete-container" *ngIf="modalDelete" (click)="closeModalDelete()">
+  <div class="modal-delete" onclick="event.stopPropagation()">
+
+    <div class="modal-delete-top">
+      <div style="display: flex; justify-content: end; padding: 20px 20px 20px 20px;">
+        <button class="dept-modal-close" aria-label="Fechar" (click)="closeModalDelete()" >
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+
+      <div class="modal-delete-header-container">
+        <div class="modal-delete-header">
+          <div class="modal-delete-header-icon">
+            <svg viewBox="0 0 24 24" fill="none" width="35px" height="35px" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M4 6H20M16 6L15.7294 5.18807C15.4671 4.40125 15.3359 4.00784 15.0927 3.71698C14.8779 3.46013 14.6021 3.26132 14.2905 3.13878C13.9376 3 13.523 3 12.6936 3H11.3064C10.477 3 10.0624 3 9.70951 3.13878C9.39792 3.26132 9.12208 3.46013 8.90729 3.71698C8.66405 4.00784 8.53292 4.40125 8.27064 5.18807L8 6M18 6V16.2C18 17.8802 18 18.7202 17.673 19.362C17.3854 19.9265 16.9265 20.3854 16.362 20.673C15.7202 21 14.8802 21 13.2 21H10.8C9.11984 21 8.27976 21 7.63803 20.673C7.07354 20.3854 6.6146 19.9265 6.32698 19.362C6 18.7202 6 17.8802 6 16.2V6M14 10V17M10 10V17" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> </g>
+            </svg>
+          </div>
+          <div class="modal-delete-header-text">
+            <h2>Deletar serviço</h2>
+            <span>Delete o serviço escolhido abaixo.</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div style="margin: 0px 30px">
+      <div class="modal-delete-content">
+
+        <div class="modal-delete-top-info">
+
+          <div style="display: flex; align-items: center;">
+            <svg viewBox="-0.5 0 25 25" width="35px" height="35px" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M12 21.5C17.1086 21.5 21.25 17.3586 21.25 12.25C21.25 7.14137 17.1086 3 12 3C6.89137 3 2.75 7.14137 2.75 12.25C2.75 17.3586 6.89137 21.5 12 21.5Z" stroke="#ec1313" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path> <path d="M12.9309 8.15005C12.9256 8.39231 12.825 8.62272 12.6509 8.79123C12.4767 8.95974 12.2431 9.05271 12.0008 9.05002C11.8242 9.04413 11.6533 8.98641 11.5093 8.884C11.3652 8.7816 11.2546 8.63903 11.1911 8.47415C11.1275 8.30927 11.1139 8.12932 11.152 7.95675C11.19 7.78419 11.278 7.6267 11.405 7.50381C11.532 7.38093 11.6923 7.29814 11.866 7.26578C12.0397 7.23341 12.2192 7.25289 12.3819 7.32181C12.5446 7.39072 12.6834 7.506 12.781 7.65329C12.8787 7.80057 12.9308 7.97335 12.9309 8.15005ZM11.2909 16.5301V11.1501C11.2882 11.0556 11.3046 10.9615 11.3392 10.8736C11.3738 10.7857 11.4258 10.7057 11.4922 10.6385C11.5585 10.5712 11.6378 10.518 11.7252 10.4822C11.8126 10.4464 11.9064 10.4286 12.0008 10.43C12.094 10.4299 12.1863 10.4487 12.272 10.4853C12.3577 10.5218 12.4352 10.5753 12.4997 10.6426C12.5642 10.7099 12.6143 10.7895 12.6472 10.8767C12.6801 10.9639 12.6949 11.0569 12.6908 11.1501V16.5301C12.6908 16.622 12.6727 16.713 12.6376 16.7979C12.6024 16.8828 12.5508 16.96 12.4858 17.025C12.4208 17.09 12.3437 17.1415 12.2588 17.1767C12.1738 17.2119 12.0828 17.23 11.9909 17.23C11.899 17.23 11.8079 17.2119 11.723 17.1767C11.6381 17.1415 11.5609 17.09 11.4959 17.025C11.4309 16.96 11.3793 16.8828 11.3442 16.7979C11.309 16.713 11.2909 16.622 11.2909 16.5301Z" fill="#ec1313"></path> </g>
+            </svg>
+          </div>
+
+          <div class="modal-delete-top-info-text">
+            <p style="font-weight: bold; color: #c21010;">Tem certeza que deseja deletar o serviço?</p>
+            <p style=" color: #050614;">Todos os atendimentos relacionados a ele serão deletados.</p>
+          </div>
+        </div>
+
+
+        <div class="modal-delete-info">
+          <div class="modal-delete-info-name">
+            <strong>Nome do serviço:</strong> <p>{{ this.serviceInfo()?.name }}</p>
+          </div>
+
+          <div class="modal-delete-info-status">
+            <strong>Status:</strong> <p>{{ this.serviceInfo()?.active ? 'Ativo' : 'Inativo' }}</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="separator"></div>
+      <div class="modal-delete-footer">
+        <button type="button" class="button-delete" (click)="deleteServiceManagement(this.serviceInfo()?.serviceManagementId ?? '')">Excluir</button>
+        <button type="button" class="button-back" (click)="closeModalDelete()">Cancelar</button>
+      </div>
+    </div>
+
+    <div style="padding: 20px 30px;">
+      <div class="modal-delete-bottom-info">
+        <div class="modal-delete-bottom-info-1">
+          <svg viewBox="-0.5 0 25 25" width="20px" height="20px" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M12 21.5C17.1086 21.5 21.25 17.3586 21.25 12.25C21.25 7.14137 17.1086 3 12 3C6.89137 3 2.75 7.14137 2.75 12.25C2.75 17.3586 6.89137 21.5 12 21.5Z" stroke="#ec1313" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path> <path d="M12.9309 8.15005C12.9256 8.39231 12.825 8.62272 12.6509 8.79123C12.4767 8.95974 12.2431 9.05271 12.0008 9.05002C11.8242 9.04413 11.6533 8.98641 11.5093 8.884C11.3652 8.7816 11.2546 8.63903 11.1911 8.47415C11.1275 8.30927 11.1139 8.12932 11.152 7.95675C11.19 7.78419 11.278 7.6267 11.405 7.50381C11.532 7.38093 11.6923 7.29814 11.866 7.26578C12.0397 7.23341 12.2192 7.25289 12.3819 7.32181C12.5446 7.39072 12.6834 7.506 12.781 7.65329C12.8787 7.80057 12.9308 7.97335 12.9309 8.15005ZM11.2909 16.5301V11.1501C11.2882 11.0556 11.3046 10.9615 11.3392 10.8736C11.3738 10.7857 11.4258 10.7057 11.4922 10.6385C11.5585 10.5712 11.6378 10.518 11.7252 10.4822C11.8126 10.4464 11.9064 10.4286 12.0008 10.43C12.094 10.4299 12.1863 10.4487 12.272 10.4853C12.3577 10.5218 12.4352 10.5753 12.4997 10.6426C12.5642 10.7099 12.6143 10.7895 12.6472 10.8767C12.6801 10.9639 12.6949 11.0569 12.6908 11.1501V16.5301C12.6908 16.622 12.6727 16.713 12.6376 16.7979C12.6024 16.8828 12.5508 16.96 12.4858 17.025C12.4208 17.09 12.3437 17.1415 12.2588 17.1767C12.1738 17.2119 12.0828 17.23 11.9909 17.23C11.899 17.23 11.8079 17.2119 11.723 17.1767C11.6381 17.1415 11.5609 17.09 11.4959 17.025C11.4309 16.96 11.3793 16.8828 11.3442 16.7979C11.309 16.713 11.2909 16.622 11.2909 16.5301Z" fill="#ec1313"></path> </g>
+          </svg>
+          <strong>Dica:</strong>
+        </div>
+
+        <div class="modal-delete-bottom-info-2">
+          <span>Esta ação não poderá ser desfeita.</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+<!-- MODAL VIEW -->
+<div class="modal-view-container" *ngIf="modalView" (click)="closeModalView()">
+  <div class="modal-view" (onclick="event.stopPropagation()" [ngClass]="{'modal-view-updatedAt': serviceInfo()?.updatedAt != null}">
+
+    <div class="modal-view-top">
+      <div style="display: flex; justify-content: end; padding: 20px 20px 20px 20px;">
+        <button class="dept-modal-close" aria-label="Fechar" (click)="closeModalView()" >
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+
+      <div class="modal-view-header-container">
+        <div class="modal-view-header">
+          <div class="modal-view-header-icon">
+            <svg viewBox="0 0 24 24" width="35px" height="35px" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M21.335 11.4069L22.2682 11.0474L21.335 11.4069ZM21.335 12.5932L20.4018 12.2337L21.335 12.5932ZM2.66492 11.4068L1.73175 11.0474L2.66492 11.4068ZM2.66492 12.5932L1.73175 12.9526L2.66492 12.5932ZM3.5981 11.7663C4.89784 8.39171 8.17084 6 12 6V4C7.31641 4 3.31889 6.92667 1.73175 11.0474L3.5981 11.7663ZM12 6C15.8291 6 19.1021 8.39172 20.4018 11.7663L22.2682 11.0474C20.681 6.92668 16.6835 4 12 4V6ZM20.4018 12.2337C19.1021 15.6083 15.8291 18 12 18V20C16.6835 20 20.681 17.0733 22.2682 12.9526L20.4018 12.2337ZM12 18C8.17084 18 4.89784 15.6083 3.5981 12.2337L1.73175 12.9526C3.31889 17.0733 7.31641 20 12 20V18ZM20.4018 11.7663C20.4597 11.9165 20.4597 12.0835 20.4018 12.2337L22.2682 12.9526C22.5043 12.3396 22.5043 11.6604 22.2682 11.0474L20.4018 11.7663ZM1.73175 11.0474C1.49567 11.6604 1.49567 12.3396 1.73175 12.9526L3.5981 12.2337C3.54022 12.0835 3.54022 11.9165 3.5981 11.7663L1.73175 11.0474Z" fill="#ffffff"></path> <circle cx="12" cy="12" r="3" stroke="#ffffff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></circle> </g>
+            </svg>
+          </div>
+          <div class="modal-view-header-text">
+            <h2>Detalhes do serviço</h2>
+            <span >Vizualize as informações do serviço abaixo.</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Body -->
+    <div class="modal-body">
+
+      <div class="info-row">
+        <div style="display: flex; align-items: center; gap: 8px;">
+          <svg viewBox="0 0 1024 1024" width="30px" height="30px" class="icon" version="1.1" xmlns="http://www.w3.org/2000/svg" fill="#000000"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><path d="M749.7 585.3l-164.6 91.4v182.9L749.7 951l164.6-91.4V676.7l-164.6-91.4z m91.4 231.2l-91.4 50.8-91.4-50.8v-96.8l91.4-50.8 91.4 50.8v96.8z" fill="#2270c3"></path><path d="M735.667582 801.904773a36.6 36.6 0 1 0 28.012427-67.627982 36.6 36.6 0 1 0-28.012427 67.627982Z" fill="#2270c3"></path><path d="M219.4 731.4H256v-73.1h-36.6V365.7H256v-73.1h-36.6V146.3h585v402.4h73.2V73.1H146.3v219.5h-36.6v73.1h36.6v292.6h-36.6v73.1h36.6v219.5h399.8v-73.2H219.4z" fill="#2270c3"></path><path d="M329.2 256h402.3v73.1H329.2zM329.2 438.9h402.3V512H329.2zM329.2 621.7h182.9v73.1H329.2z" fill="#2270c3"></path></g>
+          </svg>
+          <span class="label">Nome do serviço</span>
+        </div>
+        <span class="value">{{serviceInfo()?.name ?? "-"}}</span>
+      </div>
+
+      <div class="info-row">
+        <div style="display: flex; align-items: center; gap: 8px;">
+          <svg viewBox="0 0 28 28" width="30px" height="30px" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M18.5855 2.91384C17.6028 1.82492 15.9084 1.78149 14.8712 2.81863L2.80233 14.8871C1.77391 15.9155 1.80656 17.5926 2.87422 18.5802L4.2494 19.8523C4.96332 20.5126 5.94127 20.365 6.53962 20.1218C6.73219 20.0435 6.94342 20 7.16667 20C8.08714 20 8.83333 20.7462 8.83333 21.6667C8.83333 21.844 8.80591 22.0134 8.75563 22.1718C8.56037 22.7868 8.48875 23.7737 9.2029 24.4343L10.2226 25.3774C11.2264 26.306 12.7825 26.2827 13.7582 25.3246L25.2864 14.0026C26.2661 13.0404 26.3132 11.477 25.3932 10.4575L24.3181 9.26619C23.6832 8.56267 22.7258 8.60169 22.117 8.77197C21.9746 8.8118 21.8238 8.83334 21.6667 8.83334C20.7462 8.83334 20 8.08714 20 7.16667C20 6.9492 20.0413 6.74318 20.1157 6.55472C20.3483 5.96606 20.4845 5.01807 19.8498 4.31481L18.5855 2.91384Z" fill="#276bb4"></path> </g>
+          </svg>
+          <span class="label">Código</span>
+        </div>
+        <span class="value">{{serviceInfo()?.code ?? "-"}}</span>
+      </div>
+
+      <div class="info-row">
+        <div style="display: flex; align-items: center; gap: 8px;">
+          <svg viewBox="0 0 16 16" width="30px" height="30px" xmlns="http://www.w3.org/2000/svg" fill="#000000"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M2,3 L14,3 C14.5522847,3 15,3.44771525 15,4 C15,4.55228475 14.5522847,5 14,5 L2,5 C1.44771525,5 1,4.55228475 1,4 C1,3.44771525 1.44771525,3 2,3 Z" fill="#2574b1"></path> <path d="M2,7 L14,7 C14.5522847,7 15,7.44771525 15,8 C15,8.55228475 14.5522847,9 14,9 L2,9 C1.44771525,9 1,8.55228475 1,8 C1,7.44771525 1.44771525,7 2,7 Z" fill="#2574b1"></path> <path d="M1.88888889,11 L8.11111111,11 C8.60203089,11 9,11.4477153 9,12 C9,12.5522847 8.60203089,13 8.11111111,13 L1.88888889,13 C1.39796911,13 1,12.5522847 1,12 C1,11.4477153 1.39796911,11 1.88888889,11 Z" fill="#2574b1"></path> </g>
+          </svg>
+          <span class="label">Descrição</span>
+        </div>
+        <button type="button" class="btn-description" (click)=" $event.stopPropagation();openModalViewDescription(serviceInfo()!.serviceManagementId)">Ver descrição</button>
+      </div>
+
+      <div class="info-row">
+        <div style="display: flex; align-items: center; gap: 8px;" >
+          <svg fill="#2d67a4" width="30px" height="30px" viewBox="0 0 32 32" id="icon" xmlns="http://www.w3.org/2000/svg" stroke="#2d67a4" stroke-width="0.00032"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><defs><style>.cls-1{fill:none;}</style></defs><title>enterprise</title><rect x="8" y="8" width="2" height="4"></rect><rect x="8" y="14" width="2" height="4"></rect><rect x="14" y="8" width="2" height="4"></rect><rect x="14" y="14" width="2" height="4"></rect><rect x="8" y="20" width="2" height="4"></rect><rect x="14" y="20" width="2" height="4"></rect><path d="M30,14a2,2,0,0,0-2-2H22V4a2,2,0,0,0-2-2H4A2,2,0,0,0,2,4V30H30ZM4,4H20V28H4ZM22,28V14h6V28Z"></path><rect id="_Transparent_Rectangle_" data-name="&lt;Transparent Rectangle&gt;" class="cls-1" width="32" height="32"></rect></g>
+          </svg>
+          <span class="label">Departamento</span>
+        </div>
+        <span class="value">{{serviceInfo()?.departmentName ?? "-"}}</span>
+      </div>
+
+      <div class="info-row">
+        <div style="display: flex; align-items: center; gap: 8px;">
+          <svg viewBox="0 0 24 24" width="30px" height="30px" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M2.45001 14.97C3.52001 18.41 6.40002 21.06 9.98002 21.79" stroke="#2364b3" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"></path> <path d="M2.04999 10.98C2.55999 5.93 6.81998 2 12 2C17.18 2 21.44 5.94 21.95 10.98" stroke="#2364b3" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"></path> <path d="M14.01 21.8C17.58 21.07 20.45 18.45 21.54 15.02" stroke="#2364b3" stroke-width="1.5" stroke-miterlimit="10" stroke-linecap="round" stroke-linejoin="round"></path> </g>
+          </svg>
+          <span class="label">Status</span>
+        </div>
+
+        <div *ngIf="serviceInfo()?.active" style="display: flex; align-items: center; gap: 8px;">
+          <div class="td-status-active-view">
+            <div style="width:6px;height: 6px;background:#16a34a;border-radius:50%;"></div>
+            <strong>Ativo</strong>
+          </div>
+        </div>
+
+        <div *ngIf="!serviceInfo()?.active" style="display: flex; align-items: center; gap: 8px;">
+          <div class="td-status-inactive-view">
+            <div style="width:6px;height: 6px; background:#4d4f52; border-radius:50%;"></div>
+            <strong >Inativo</strong>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="info-row" style="border-bottom: none;">
+        <div style="display: flex; align-items: center; gap: 8px;">
+          <svg viewBox="0 0 20 20" width="30px" height="30px" version="1.1" xmlns="http://www.w3.org/2000/svg" fill="#000000"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <g id="layer1"> <path d="M 9.1992188 0.00390625 L 8.5976562 0.0390625 L 7.9980469 0.10742188 L 7.9980469 1.1210938 L 8.5976562 1.0429688 L 9.1992188 1.0039062 L 9.8007812 1.0039062 L 10.402344 1.0429688 L 11 1.1210938 L 11 0.10742188 L 10.402344 0.0390625 L 9.8007812 0.00390625 L 9.1992188 0.00390625 z M 9.3457031 2.0019531 L 8.734375 2.0351562 L 8.125 2.1113281 L 7.5214844 2.2324219 L 6.9316406 2.3964844 L 6.3535156 2.6035156 L 5.7929688 2.8515625 L 5.2480469 3.1386719 L 4.7304688 3.4648438 L 4.234375 3.828125 L 3.765625 4.2246094 L 3.328125 4.6542969 L 2.9238281 5.1152344 L 2.5527344 5.6035156 L 2.2167969 6.1191406 L 1.9179688 6.6542969 L 1.6621094 7.2128906 L 1.4433594 7.7851562 L 1.2695312 8.3730469 L 1.1386719 8.9746094 L 1.0488281 9.5820312 L 1.0058594 10.193359 L 1.0058594 10.808594 L 1.0488281 11.417969 L 1.1386719 12.025391 L 1.2695312 12.626953 L 1.4433594 13.212891 L 1.6621094 13.787109 L 1.9179688 14.345703 L 2.2167969 14.880859 L 2.5527344 15.396484 L 2.9238281 15.884766 L 3.328125 16.345703 L 3.765625 16.775391 L 4.234375 17.171875 L 4.7304688 17.535156 L 5.2480469 17.861328 L 5.7929688 18.148438 L 6.3535156 18.394531 L 6.9316406 18.603516 L 7.5214844 18.765625 L 8.125 18.888672 L 8.734375 18.964844 L 9.3457031 18.998047 L 9.9609375 18.988281 L 10.572266 18.933594 L 11.175781 18.832031 L 11.773438 18.689453 L 12.357422 18.505859 L 12.927734 18.277344 L 13.480469 18.009766 L 14.011719 17.703125 L 14.521484 17.357422 L 15.001953 16.976562 L 15.455078 16.564453 L 15.876953 16.117188 L 16.265625 15.642578 L 16.619141 15.142578 L 16.9375 14.617188 L 17.212891 14.068359 L 17.451172 13.501953 L 17.646484 12.921875 L 17.800781 12.326172 L 17.910156 11.724609 L 17.976562 11.113281 L 18 10.5 L 17.976562 9.8867188 L 17.910156 9.2753906 L 17.800781 8.6738281 L 17.646484 8.078125 L 17.451172 7.4980469 L 17.212891 6.9316406 L 16.9375 6.3828125 L 16.619141 5.8574219 L 16.265625 5.3574219 L 15.876953 4.8808594 L 15.455078 4.4355469 L 15.001953 4.0214844 L 14.521484 3.6425781 L 14.011719 3.296875 L 13.480469 2.9902344 L 12.927734 2.7226562 L 12.357422 2.4960938 L 11.773438 2.3105469 L 11.175781 2.1679688 L 10.572266 2.0683594 L 9.9609375 2.0117188 L 9.3457031 2.0019531 z M 2.8164062 2.4023438 L 2.3164062 2.84375 L 1.84375 3.3164062 L 1.4003906 3.8164062 L 2.1113281 4.5273438 L 2.4375 4.1445312 L 2.7832031 3.7832031 L 3.1445312 3.4375 L 3.5253906 3.1132812 L 2.8164062 2.4023438 z M 16.183594 2.4023438 L 15.472656 3.1132812 L 15.853516 3.4375 L 16.216797 3.7832031 L 16.5625 4.1445312 L 16.884766 4.5273438 L 17.595703 3.8164062 L 17.15625 3.3164062 L 16.683594 2.84375 L 16.183594 2.4023438 z M 9.6445312 3.0019531 L 10.224609 3.0351562 L 10.800781 3.1152344 L 11.369141 3.2363281 L 11.927734 3.4042969 L 12.46875 3.6132812 L 12.996094 3.8632812 L 13.498047 4.1542969 L 13.978516 4.484375 L 14.431641 4.8496094 L 14.853516 5.2480469 L 15.244141 5.6796875 L 15.599609 6.1386719 L 15.919922 6.6230469 L 16.201172 7.1328125 L 16.441406 7.6621094 L 16.640625 8.2109375 L 16.798828 8.7714844 L 16.910156 9.3417969 L 16.976562 9.9199219 L 17 10.5 L 16.976562 11.080078 L 16.910156 11.658203 L 16.798828 12.228516 L 16.640625 12.789062 L 16.441406 13.335938 L 16.201172 13.865234 L 15.919922 14.375 L 15.599609 14.861328 L 15.244141 15.322266 L 14.853516 15.751953 L 14.431641 16.150391 L 13.978516 16.515625 L 13.498047 16.845703 L 12.996094 17.136719 L 12.46875 17.386719 L 11.927734 17.595703 L 11.369141 17.763672 L 10.800781 17.886719 L 10.224609 17.964844 L 9.6445312 17.998047 L 9.0644531 17.988281 L 8.484375 17.929688 L 7.9121094 17.828125 L 7.3496094 17.683594 L 6.7988281 17.496094 L 6.2636719 17.265625 L 5.75 16.996094 L 5.2578125 16.683594 L 4.7910156 16.337891 L 4.3535156 15.955078 L 3.9453125 15.539062 L 3.5722656 15.09375 L 3.234375 14.621094 L 2.9335938 14.123047 L 2.671875 13.603516 L 2.453125 13.064453 L 2.2753906 12.509766 L 2.140625 11.943359 L 2.0507812 11.369141 L 2.0058594 10.791016 L 2.0058594 10.208984 L 2.0507812 9.6289062 L 2.140625 9.0546875 L 2.2753906 8.4902344 L 2.453125 7.9355469 L 2.671875 7.3964844 L 2.9335938 6.8769531 L 3.234375 6.3789062 L 3.5722656 5.9042969 L 3.9453125 5.4609375 L 4.3535156 5.0449219 L 4.7910156 4.6621094 L 5.2578125 4.3144531 L 5.75 4.0039062 L 6.2636719 3.734375 L 6.7988281 3.5039062 L 7.3496094 3.3164062 L 7.9121094 3.1699219 L 8.484375 3.0703125 L 9.0644531 3.0117188 L 9.6445312 3.0019531 z M 8.9980469 4 L 8.9980469 11 L 9.9980469 11 L 9.9980469 4 L 8.9980469 4 z " style="fill:#2469b2; fill-opacity:1; stroke:none; stroke-width:0px;"></path> </g> </g>
+          </svg>
+          <span class="label">Data de criação</span>
+        </div>
+
+        <span class="value">{{serviceInfo()?.createdAt ?? "-"}}</span>
+      </div>
+
+      <div class="info-row" style="border-bottom: none;" *ngIf="serviceInfo()?.updatedAt != null">
+        <div style="display: flex; align-items: center; gap: 8px;">
+          <svg viewBox="0 0 48 48" width="30px" height="30px" enable-background="new 0 0 48 48" id="Layer_4" version="1.1" xml:space="preserve" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" fill="#000000" stroke="#000000" stroke-width="0.00048000000000000007"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <g> <polygon fill="#2873b8" points="25.916,8 25.916,23.359 32.992,30.434 30.164,33.262 21.9,25 21.916,24.982 21.916,8 "></polygon> <path d="M2.216,34.139H0v4.746h2.216c0.271,1.059,0.711,2.051,1.306,2.934l-1.521,1.522l2.693,2.691l1.544-1.543 c0.852,0.554,1.797,0.972,2.808,1.23v2.216h4.761V45.72c1.033-0.267,2.002-0.694,2.867-1.269l1.486,1.484l2.692-2.691l-1.485-1.484 c0.572-0.863,1-1.83,1.268-2.861h2.218v-4.776h-2.218c-0.262-1.007-0.677-1.951-1.23-2.8l1.448-1.449l-2.692-2.691l-1.426,1.424 c-0.879-0.59-1.865-1.028-2.918-1.301v-2.221h-4.78v2.221c-1.03,0.268-1.994,0.693-2.858,1.266l-1.483-1.485l-2.693,2.694 l1.484,1.484C2.909,32.131,2.481,33.104,2.216,34.139z M7.51,36.511c0-2.163,1.754-3.917,3.916-3.917 c2.164,0,3.918,1.754,3.918,3.917s-1.754,3.917-3.918,3.917C9.264,40.428,7.51,38.674,7.51,36.511z" fill="#2873b8"></path> <path d="M0.025,22.997v2.007C0.012,24.67,0,24.336,0,24S0.012,23.33,0.025,22.997z" fill="#2873b8"></path> <path d="M35.012,2.665C33.524,1.9,31.993,1.318,30.443,0.89c-0.074-0.021-0.149-0.04-0.225-0.06 c-0.362-0.096-0.726-0.186-1.091-0.264c-0.225-0.05-0.451-0.095-0.679-0.138c-0.199-0.037-0.399-0.071-0.599-0.103 c-0.354-0.058-0.71-0.109-1.069-0.151c-0.027-0.003-0.056-0.006-0.084-0.009C25.811,0.064,24.913,0,24,0 C11.11,0,0.598,10.162,0.027,22.911h4.028C4.624,12.375,13.322,4,24,4c0.416,0,0.828,0.013,1.236,0.039l0.007,0.021 c0.928,0.054,1.856,0.177,2.78,0.362c0.184,0.038,0.367,0.076,0.548,0.119c0.106,0.024,0.212,0.05,0.317,0.076 c1.484,0.379,2.902,0.922,4.235,1.609l0.021-0.021c0.012,0.006,0.024,0.011,0.036,0.018c4.233,2.179,7.354,5.662,9.136,9.704 l-0.026,0.026C43.382,18.415,44,21.132,44,24c0,11.046-8.954,20-20,20v4c9.3,0,17.358-5.293,21.343-13.027l0.028,0.015 C51.435,23.2,46.797,8.73,35.012,2.665z" fill="#2873b8"></path> </g> </g>
+          </svg>
+          <span class="label">Ultima atualização</span>
+        </div>
+
+        <span class="value">{{serviceInfo()?.updatedAt ?? "-"}}</span>
+      </div>
+    </div>
+
+    <div style="margin: 30px 30px; height: 1px; background-color: #e2e8f0;" ></div>
+    <div class="modal-view-footer">
+      <button type="button" class="button-back" (click)="closeModalView()">Fechar</button>
+    </div>
+
+  </div>
+</div>
+
+<!-- MODAL VIEW DESCRIPTION -->
+<div class="modal-view-container" *ngIf="modalDescription" (click)="closeModalViewDescription()">
+  <div class="modal-view" style="width: 540px !important;" onclick="event.stopPropagation()" [ngClass]="{'modal-view-updatedAt': serviceInfo()?.updatedAt != null}">
+
+    <div class="modal-view-top">
+      <div style="display: flex; justify-content: end; padding: 20px 20px 20px 20px;">
+        <button class="dept-modal-close" aria-label="Fechar" (click)="closeModalViewDescription()" >
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+
+      <div class="modal-view-header-container" style="justify-content: center !important; text-align: center !important;">
+        <div class="modal-view-header">
+          <div class="modal-view-header-text">
+            <h2>Descrição do serviço</h2>
+            <span >Vizualize a descrição do serviço.</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Body -->
+    <div class="modal-body" style="padding: 20px 20px 50px 20px;">
+
+      <div class="info-row" style="grid-template-columns: auto;">
+        <span class="value">
+          <strong>Nome do departamento:</strong>
+          {{serviceInfo()?.name || 'N/A'}}
+        </span>
+      </div>
+
+      <div class="info-row" style="border-bottom: none !important; grid-template-columns: auto;">
+        <span class="value">
+          <strong>Descrição:</strong>
+          {{serviceInfo()?.description || 'Sem descrição'}}
+        </span>
+      </div>
+    </div>
+
+    <div class="modal-view-footer" style="padding-bottom: 20px;">
+
+    </div>
+
+  </div>
+</div>

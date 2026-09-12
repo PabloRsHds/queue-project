@@ -1,0 +1,49 @@
+/* You can add global styles to this file, and also import other style files */
+
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+
+/* ===== SCROLLBAR GLOBAL ===== */
+/* Para WebKit (Chrome, Edge, Safari) */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f5f9;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #3b82f6;
+  border-radius: 10px;
+  transition: background 0.3s;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #dbe6ff;
+}
+
+/* Para Firefox */
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #dadada #f1f5f9;
+}
+
+/* TOOLTIP */
+
+@media (max-width: 768px) {
+
+  .apexcharts-tooltip-series-group {
+    gap: 8px;
+  }
+
+  .apexcharts-tooltip-marker {
+    margin-right: 5px !important;
+  }
+}
+
+
+

@@ -1,0 +1,28 @@
+spring:
+  datasource:
+    url: ${POSTGRES_URL}
+    username: ${POSTGRES_USER:root}
+    password: ${POSTGRES_PASSWORD:root}
+
+  jpa:
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.PostgreSQLDialect
+    hibernate:
+      ddl-auto: update
+
+public:
+  key: ${PUBLIC_KEY}
+private:
+  key: ${PRIVATE_KEY}
+
+api:
+  frontend:
+    url: ${FRONTEND_URL}
+
+adm1:
+  email: ${ADM_1_EMAIL}
+  password: ${ADM_1_PASSWORD}
+  username: ${ADM_1_USERNAME}
+  name: ${ADM_1_NAME}
+  surname: ${ADM_1_SURNAME}

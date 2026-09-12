@@ -1,0 +1,270 @@
+<div class="profile-container">
+  <!-- Sidebar -->
+  <aside class="sidebar">
+    <div class="profile-header">
+      <div class="avatar-wrapper">
+        <div class="avatar">{{ this.userLogged()?.name?.charAt(0)}}{{ this.userLogged()?.surname?.charAt(0)}}</div>
+      </div>
+      <div class="profile-name">{{ this.userLogged()?.username}}</div>
+      <div class="profile-role">{{ this.getRoleDisplayName(this.userLogged()?.role ?? '') }}</div>
+    </div>
+
+    <ul class="nav-menu">
+
+      <li class="nav-item" [class.active]="this.navItem === 'profile'" (click)="navItemChange('profile')">
+        <svg viewBox="0 0 24 24" width="20px" height="20px" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M5 21C5 17.134 8.13401 14 12 14C15.866 14 19 17.134 19 21M16 7C16 9.20914 14.2091 11 12 11C9.79086 11 8 9.20914 8 7C8 4.79086 9.79086 3 12 3C14.2091 3 16 4.79086 16 7Z" stroke="#2575c1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> </g>
+        </svg>
+        <div class="nav-content">
+          <div class="nav-label">Dados do perfil</div>
+          <div class="nav-description">Suas informações pessoais</div>
+        </div>
+      </li>
+
+      <li class="nav-item" [class.active]="this.navItem === 'security'" (click)="navItemChange('security')">
+        <svg class="nav-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
+        </svg>
+        <div class="nav-content">
+          <div class="nav-label">Segurança</div>
+          <div class="nav-description">Alterar senha</div>
+        </div>
+      </li>
+
+      <li class="nav-item" [class.active]="this.navItem === 'integrations'" (click)="navItemChange('integrations')" *ngIf="this.userLogged()?.role !== 'RECEPTION' && this.userLogged()?.role !== 'ADMIN' && this.userLogged()?.role !== 'MANAGER'">
+        <svg class="nav-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13.828 10.172a4 4 0 00-5.656 0l-4 4a4 4 0 105.656 5.656l1.102-1.101m-.758-4.899a4 4 0 005.656 0l4-4a4 4 0 00-5.656-5.656l-1.1 1.1"/>
+        </svg>
+        <div class="nav-content">
+          <div class="nav-label">Integrações</div>
+          <div class="nav-description">Serviços conectados</div>
+        </div>
+      </li>
+    </ul>
+
+  </aside>
+
+  <!-- Main Content -->
+  <form [formGroup]="profileForm" (ngSubmit)="updateUser()">
+
+    <main class="main-content" *ngIf="this.navItem === 'profile'">
+      <div class="content-header">
+        <div>
+          <h1 class="content-title">Dados do perfil</h1>
+          <p class="content-subtitle">Gerencie suas informações pessoais e de contato.</p>
+        </div>
+      </div>
+
+      <!-- Personal Information -->
+      <div class="section">
+        <div class="section-header">
+          <div class="section-icon">
+            <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M5 21C5 17.134 8.13401 14 12 14C15.866 14 19 17.134 19 21M16 7C16 9.20914 14.2091 11 12 11C9.79086 11 8 9.20914 8 7C8 4.79086 9.79086 3 12 3C14.2091 3 16 4.79086 16 7Z" stroke="#2575c1" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"></path> </g>
+            </svg>
+          </div>
+          <h2 class="section-title">Informações pessoais</h2>
+        </div>
+
+        <div class="form-grid">
+          <div class="form-group">
+            <label class="form-label">Nome </label>
+            <input type="text" class="form-input" formControlName="name" readonly>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">E-mail </label>
+            <input type="email" class="form-input" formControlName="email" readonly>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Telefone <span class="required">*</span></label>
+            <input type="tel" class="form-input" formControlName="phone" placeholder="(00) 00000-0000" mask="(00) 00000-0000">
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">Perfil de acesso</label>
+            <input type="text" class="form-input" formControlName="role" readonly>
+          </div>
+
+        </div>
+      </div>
+
+      <!-- Photo and Status -->
+      <div class="column">
+
+        <div class="section">
+          <div class="section-header">
+            <div class="section-icon">
+              <svg fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
+              </svg>
+            </div>
+            <h2 class="section-title">Status da conta</h2>
+          </div>
+
+          <div class="status-list">
+            <div class="status-item">
+              <span class="status-label">Status</span>
+              <span class="status-badge" *ngIf="this.userLogged()?.active">Ativo</span>
+              <span class="status-inactive" *ngIf="!this.userLogged()?.active">Inativo</span>
+            </div>
+
+            <div class="status-item">
+              <span class="status-label">Conta criada em</span>
+              <span class="status-value">{{ this.userLogged()?.createdAt?.replace(' ', ' às ') ?? '-' }}</span>
+            </div>
+            <div class="status-item">
+              <span class="status-label">Última alteração</span>
+              <span class="status-value">{{ this.userLogged()?.updatedAt?.replace(' ', ' às ') ?? '-'}}</span>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Action Buttons -->
+      <div class="action-buttons">
+        <button type="button" class="btn btn-secondary">Cancelar</button>
+        <button type="submit" class="btn btn-primary">
+          Salvar alterações
+        </button>
+      </div>
+    </main>
+
+
+    <main class="main-content" *ngIf="this.navItem === 'security'">
+      <div class="content-header">
+        <div>
+          <h1 class="content-title">Segurança</h1>
+          <p class="content-subtitle">Gerencie suas informações de segurança</p>
+        </div>
+      </div>
+
+      <!-- Personal Information -->
+      <div class="section">
+        <div class="section-header">
+          <div class="section-icon">
+            <svg class="nav-icon" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 12l2 2 4-4m5.618-4.016A11.955 11.955 0 0112 2.944a11.955 11.955 0 01-8.618 3.04A12.02 12.02 0 003 9c0 5.591 3.824 10.29 9 11.622 5.176-1.332 9-6.03 9-11.622 0-1.042-.133-2.052-.382-3.016z"/>
+            </svg>
+          </div>
+          <h2 class="section-title">Informações de segurança</h2>
+        </div>
+
+        <div class="card-password">
+
+          <div class="body-card-password">
+
+            <div class="body-card-left">
+              <svg viewBox="0 0 24 24" width="35px" height="35px" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path fill-rule="evenodd" clip-rule="evenodd" d="M3.17157 5.17157C2 6.34315 2 8.22876 2 12C2 15.7712 2 17.6569 3.17157 18.8284C4.34315 20 6.22876 20 10 20H14C17.7712 20 19.6569 20 20.8284 18.8284C22 17.6569 22 15.7712 22 12C22 8.22876 22 6.34315 20.8284 5.17157C19.6569 4 17.7712 4 14 4H10C6.22876 4 4.34315 4 3.17157 5.17157ZM8 13C8.55228 13 9 12.5523 9 12C9 11.4477 8.55228 11 8 11C7.44772 11 7 11.4477 7 12C7 12.5523 7.44772 13 8 13ZM13 12C13 12.5523 12.5523 13 12 13C11.4477 13 11 12.5523 11 12C11 11.4477 11.4477 11 12 11C12.5523 11 13 11.4477 13 12ZM16 13C16.5523 13 17 12.5523 17 12C17 11.4477 16.5523 11 16 11C15.4477 11 15 11.4477 15 12C15 12.5523 15.4477 13 16 13Z" fill="#1d77d7"></path> </g>
+              </svg>
+              <div>
+                <p>Password</p>
+                <span>Configuração</span>
+              </div>
+            </div>
+
+            <div>
+              <button type="button" class="btn-password" [class.active]="showPassword" (click)="showPassword = !showPassword">
+                Alterar
+              </button>
+            </div>
+
+          </div>
+
+          <div class="inputs-password-container" *ngIf="showPassword">
+
+            <div class="form-group">
+              <label class="form-label">Senha antiga </label>
+              <input type="password" class="form-input" formControlName="oldPassword" placeholder="************">
+            </div>
+
+            <div class="form-group">
+              <label class="form-label">Nova senha </label>
+              <input type="password" class="form-input" formControlName="newPassword" placeholder="************">
+            </div>
+
+            <div class="form-group">
+              <label class="form-label">Confirmar senha </label>
+              <input type="password" class="form-input" formControlName="confirmPassword" placeholder="************">
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+
+      <!-- Action Buttons -->
+      <div class="action-buttons">
+        <button type="button" class="btn btn-secondary">Cancelar</button>
+        <button type="submit" class="btn btn-primary">
+          Salvar alterações
+        </button>
+      </div>
+
+    </main>
+
+    <main class="main-content" *ngIf="this.navItem === 'integrations'">
+
+      <div class="content-header">
+        <div>
+          <h1 class="content-title">Integrações</h1>
+          <p class="content-subtitle">Visualize suas integrações</p>
+        </div>
+      </div>
+
+      <div class="section" *ngIf="(this.userLogged()?.counterNumber ?? 0) > 0">
+        <div class="section-header">
+          <div class="section-icon">
+            <svg version="1.1" id="_x32_" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 512 512" xml:space="preserve" fill="#000000"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <style type="text/css"> .st0{fill:#3687d3;} </style> <g> <path class="st0" d="M464,0H48C21.492,0,0,21.492,0,48v416c0,26.508,21.492,48,48,48h416c26.508,0,48-21.492,48-48V48 C512,21.492,490.508,0,464,0z M444.664,35c10.492,0,19,8.508,19,19s-8.508,19-19,19s-19-8.508-19-19S434.172,35,444.664,35z M374.164,35c10.492,0,19,8.508,19,19s-8.508,19-19,19s-19-8.508-19-19S363.672,35,374.164,35z M303.664,35 c10.492,0,19,8.508,19,19s-8.508,19-19,19s-19-8.508-19-19S293.172,35,303.664,35z M472,464c0,4.406-3.586,8-8,8H48 c-4.414,0-8-3.594-8-8V104h432V464z"></path> <rect x="112" y="192" class="st0" width="288" height="32"></rect> <rect x="112" y="272" class="st0" width="288" height="32"></rect> <rect x="112" y="352" class="st0" width="152" height="32"></rect> </g> </g>
+            </svg>
+          </div>
+          <h2 class="section-title">Guichê</h2>
+        </div>
+
+        <div class="form-grid">
+          <div class="form-group">
+            <label class="form-label">Número do guichê </label>
+            <input type="number" class="form-input" formControlName="counterNumber" readonly>
+          </div>
+        </div>
+      </div>
+
+      <div class="section">
+        <div class="section-header">
+          <div class="section-icon">
+            <svg viewBox="0 0 16 16" xmlns="http://www.w3.org/2000/svg" fill="none"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <g fill="#2784be"> <path d="M6.834.33a2.25 2.25 0 012.332 0l5.25 3.182A2.25 2.25 0 0115.5 5.436V6A.75.75 0 0114 6v-.564a.75.75 0 00-.361-.642l-5.25-3.181a.75.75 0 00-.778 0l-5.25 3.181A.75.75 0 002 5.436v5.128a.75.75 0 00.361.642l4.028 2.44a.75.75 0 11-.778 1.283l-4.027-2.44A2.25 2.25 0 01.5 10.563V5.436a2.25 2.25 0 011.084-1.924L6.834.33z"></path> <path fill-rule="evenodd" d="M11.749 7.325l.001-.042v-.286a.75.75 0 00-1.5 0v.286l.001.042a3.73 3.73 0 00-1.318.546.76.76 0 00-.03-.03l-.201-.203a.75.75 0 00-1.06 1.06l.201.203.03.028c-.26.394-.45.84-.547 1.319a.878.878 0 00-.04-.001H7a.75.75 0 000 1.5h.286l.038-.001c.097.48.286.926.547 1.32a.71.71 0 00-.028.027l-.202.202a.75.75 0 001.06 1.06l.203-.202a.695.695 0 00.025-.026c.395.261.842.45 1.322.548l-.001.036v.286a.75.75 0 001.5 0v-.286-.036c.48-.097.926-.287 1.32-.548l.026.026.202.203a.75.75 0 001.06-1.061l-.201-.202a.667.667 0 00-.028-.026c.261-.395.45-.842.547-1.321H15a.75.75 0 000-1.5h-.286l-.04.002a3.734 3.734 0 00-.547-1.319l.03-.028.202-.202a.75.75 0 00-1.06-1.061l-.203.202-.029.03a3.73 3.73 0 00-1.318-.545zM11 8.75A2.247 2.247 0 008.75 11 2.247 2.247 0 0011 13.25 2.247 2.247 0 0013.25 11 2.247 2.247 0 0011 8.75z" clip-rule="evenodd"></path> </g> </g>
+            </svg>
+          </div>
+          <h2 class="section-title">Serviços</h2>
+        </div>
+
+        <div style="display: grid; gap: 20px;">
+
+          <div class="review-grid" *ngIf="(userLogged()?.serviceNames?.length ?? 0) > 0">
+            <div class="review-field full-width">
+              <div class="review-field-label">Serviços vinculados</div>
+              <div class="review-tags" *ngIf="(userLogged()?.serviceNames?.length ?? 0) > 0">
+                <span class="review-tag green" *ngFor="let serviceName of userLogged()!.serviceNames">
+                  {{ serviceName }}
+                </span>
+              </div>
+            </div>
+          </div>
+
+          <div class="review-not-services" *ngIf="(userLogged()?.serviceNames?.length ?? 0) === 0">
+
+            <div style="display:flex; flex-direction:column; align-items:center; gap:5px;">
+              <svg viewBox="0 0 24 24" width="30px" heigth="30px" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M2 8L8 10" stroke="#1C274C" stroke-width="1.5" stroke-linecap="round"></path> <path d="M6 4L8 7" stroke="#1C274C" stroke-width="1.5" stroke-linecap="round"></path> <path opacity="0.5" d="M11 6.56252L14.7001 2.93755C16.1597 1.50753 18.7629 1.73938 20.5145 3.4554C22.266 5.17142 22.5027 7.72176 21.043 9.15178L18.1358 12" stroke="#1C274C" stroke-width="1.5" stroke-linecap="round"></path> <path opacity="0.5" d="M15 15.5866L10.9653 20.001C9.57254 21.5247 7.0887 21.2777 5.41744 19.4492C3.74618 17.6207 3.52038 14.9032 4.91309 13.3795L6.17395 12" stroke="#1C274C" stroke-width="1.5" stroke-linecap="round"></path> </g>
+              </svg>
+              <span style="color:#6da1eb; text-align:center; display: flex;">
+                Você não possuí serviços associados.
+              </span>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </main>
+
+  </form>
+</div>

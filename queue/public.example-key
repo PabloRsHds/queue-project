@@ -1,0 +1,8 @@
+#
+# PARA GERAR SUA CHAVE PUBLICA, É NECESSÁRIO GERAR PRIMEIRO A PRIVADA!!!!!
+#
+# Gere sua chave publica: openssl rsa -in private-key -pubout -out public-key
+#
+# Aqui vc recupera o valor para adicionar em sua env:
+# openssl rsa -in public-key -pubin -outform DER | base64 -w 0
+#

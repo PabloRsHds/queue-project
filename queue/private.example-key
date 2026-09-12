@@ -1,0 +1,6 @@
+#
+# Gere sua chave privada: openssl genrsa -out private-key 2048
+#
+# Aqui vc recupera o valor para adicionar em sua env:
+# openssl pkcs8 -topk8 -nocrypt -in private-key -outform DER | base64 -w 0
+#

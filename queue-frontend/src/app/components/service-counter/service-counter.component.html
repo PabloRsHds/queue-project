@@ -1,0 +1,512 @@
+<!-- PAINEL DE ATENDIMENTO PAGE -->
+<div class="fade-in page-container">
+  <!-- Stats Row -->
+  <div class="stat-cards-grid">
+    <div class="stat-card">
+      <div class="stat-card-content">
+        <div class="stat-card-icon-wrapper" style="background:#0084ff2a;">
+          <svg fill="#2b8dca" height="25px" width="25px" version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 300.136 300.136" xml:space="preserve" stroke="#2b8dca"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <g> <g> <path d="M217.742,102.562c14.269-13.819,22.453-33.063,22.453-52.799V9c0-4.971-4.029-9-9-9H68.942c-4.971,0-9,4.029-9,9v40.763 c0,20.607,9.063,39.97,24.874,53.151l52.765,47.154l-52.765,47.154c-15.811,13.182-24.874,32.544-24.874,53.151v40.763 c0,4.971,4.029,9,9,9h162.253c4.971,0,9-4.029,9-9v-40.763c0-19.735-8.184-38.979-22.453-52.799 c-0.086-0.084-0.174-0.166-0.264-0.246l-52.884-47.261l52.884-47.261C217.567,102.728,217.656,102.646,217.742,102.562z M77.942,18h144.252v9.069H77.971c-0.01,0-0.019,0.001-0.029,0.001V18z M222.195,282.137H77.942v-9.724 c0.01,0,0.019,0.001,0.029,0.001h144.224V282.137z M79.223,254.415l72.095-38.127l69.73,38.127H79.223z M205.343,210.626 c6.419,6.255,11.18,13.966,13.978,22.329l-63.614-34.783c-2.652-1.451-5.854-1.473-8.525-0.06L80.833,233.2 c3.006-8.554,8.294-16.167,15.607-22.234c0.085-0.07,0.168-0.143,0.25-0.216l54.396-48.612L205.343,210.626z M151.087,137.999 l-29.015-25.93h58.03L151.087,137.999z M200.197,94.109c-0.27-0.024-0.542-0.041-0.818-0.041H103.4 c-0.459,0-0.906,0.045-1.346,0.112l-5.365-4.794c-0.082-0.073-0.166-0.146-0.25-0.216c-11.928-9.896-18.498-23.891-18.498-39.407 v-4.696c0.01,0,0.019,0.001,0.029,0.001h144.224v4.694c0,14.832-6.14,29.309-16.852,39.748L200.197,94.109z"></path> </g> </g> </g>
+          </svg>
+        </div>
+        <div>
+          <div class="stat-label">Em espera</div>
+          <div class="stat-value">{{this.countTotalAttendances()?.countAttendancesWaiting ?? 0}}</div>
+          <div class="stat-sub">clientes</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="stat-card">
+      <div class="stat-card-content">
+        <div class="stat-card-icon-wrapper" style="background:#0084ff2a;">
+          <svg viewBox="0 0 24 24" width="32" height="32" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" fill="#000000"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <title>service_line</title> <g id="页面-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd"> <g id="Media" transform="translate(-1536.000000, 0.000000)"> <g id="service_line" transform="translate(1536.000000, 0.000000)"> <path d="M24,0 L24,24 L0,24 L0,0 L24,0 Z M12.5934901,23.257841 L12.5819402,23.2595131 L12.5108777,23.2950439 L12.4918791,23.2987469 L12.4918791,23.2987469 L12.4767152,23.2950439 L12.4056548,23.2595131 C12.3958229,23.2563662 12.3870493,23.2590235 12.3821421,23.2649074 L12.3780323,23.275831 L12.360941,23.7031097 L12.3658947,23.7234994 L12.3769048,23.7357139 L12.4804777,23.8096931 L12.4953491,23.8136134 L12.4953491,23.8136134 L12.5071152,23.8096931 L12.6106902,23.7357139 L12.6232938,23.7196733 L12.6232938,23.7196733 L12.6266527,23.7031097 L12.609561,23.275831 C12.6075724,23.2657013 12.6010112,23.2592993 12.5934901,23.257841 L12.5934901,23.257841 Z M12.8583906,23.1452862 L12.8445485,23.1473072 L12.6598443,23.2396597 L12.6498822,23.2499052 L12.6498822,23.2499052 L12.6471943,23.2611114 L12.6650943,23.6906389 L12.6699349,23.7034178 L12.6699349,23.7034178 L12.678386,23.7104931 L12.8793402,23.8032389 C12.8914285,23.8068999 12.9022333,23.8029875 12.9078286,23.7952264 L12.9118235,23.7811639 L12.8776777,23.1665331 C12.8752882,23.1545897 12.8674102,23.1470016 12.8583906,23.1452862 L12.8583906,23.1452862 Z M12.1430473,23.1473072 C12.1332178,23.1423925 12.1221763,23.1452606 12.1156365,23.1525954 L12.1099173,23.1665331 L12.0757714,23.7811639 C12.0751323,23.7926639 12.0828099,23.8018602 12.0926481,23.8045676 L12.108256,23.8032389 L12.3092106,23.7104931 L12.3186497,23.7024347 L12.3186497,23.7024347 L12.3225043,23.6906389 L12.340401,23.2611114 L12.337245,23.2485176 L12.337245,23.2485176 L12.3277531,23.2396597 L12.1430473,23.1473072 Z" id="MingCute" fill-rule="nonzero"> </path> <path d="M5,9 C5,5.13401 8.13401,2 12,2 C15.866,2 19,5.13401 19,9 L19,10.0354 C20.6961,10.2781 22,11.7368 22,13.5 L22,13.75 C22,15.5449 20.5449,17 18.75,17 C18.7224,17 18.695,16.9994 18.6678,16.9981 C17.9274,19.118 16.0464,20.5467 14.0149,20.9093 C13.5456,21.0808 12.9889,21 12.5,21 C11.6716,21 11,20.3284 11,19.5 C11,18.6716 11.6716,18 12.5,18 L13.5,18 C13.9946,18 14.4333,18.2394 14.7065,18.6086 C16.0035,17.9919 17,16.6885 17,15 L17,9 C17,6.23858 14.7614,4 12,4 C9.23858,4 7,6.23858 7,9 L7,15.25 C7,16.2165 6.2165,17 5.25,17 C3.45507,17 2,15.5449 2,13.75 L2,13.5 C2,11.7368 3.30385,10.2781 5,10.0354 L5,9 Z M5,12.0854 C4.4174,12.2913 4,12.8469 4,13.5 L4,13.75 C4,14.3547 4.42944,14.8592 5,14.975 L5,12.0854 Z M19,12.0854 L19,14.975 C19.5706,14.8592 20,14.3547 20,13.75 L20,13.5 C20,12.8469 19.5826,12.2913 19,12.0854 Z" id="形状" fill="#2d8bd2"> </path> </g> </g> </g> </g>
+          </svg>
+        </div>
+        <div>
+          <div class="stat-label">Sendo atendido</div>
+          <div class="stat-value">{{this.countTotalAttendances()?.countAttendancesInProgress ?? 0}}</div>
+          <div class="stat-sub">agora</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="stat-card">
+      <div class="stat-card-content">
+        <div class="stat-card-icon-wrapper" style="background:#0084ff2a;">
+          <svg viewBox="0 0 24 24" width="30" height="30" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M23 12C23 18.0751 18.0751 23 12 23C5.92487 23 1 18.0751 1 12C1 5.92487 5.92487 1 12 1C18.0751 1 23 5.92487 23 12ZM3.00683 12C3.00683 16.9668 7.03321 20.9932 12 20.9932C16.9668 20.9932 20.9932 16.9668 20.9932 12C20.9932 7.03321 16.9668 3.00683 12 3.00683C7.03321 3.00683 3.00683 7.03321 3.00683 12Z" fill="#3285d2"></path> <path d="M12 5C11.4477 5 11 5.44771 11 6V12.4667C11 12.4667 11 12.7274 11.1267 12.9235C11.2115 13.0898 11.3437 13.2343 11.5174 13.3346L16.1372 16.0019C16.6155 16.278 17.2271 16.1141 17.5032 15.6358C17.7793 15.1575 17.6155 14.5459 17.1372 14.2698L13 11.8812V6C13 5.44772 12.5523 5 12 5Z" fill="#3285d2"></path> </g>
+          </svg>
+        </div>
+        <div>
+          <div class="stat-label">Tempo médio de espera</div>
+          <div class="stat-value">{{this.avarageWaitingTime()?.averageWaitingTime ?? '00:00:00'}}</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="stat-card">
+      <div class="stat-card-content">
+        <div class="stat-card-icon-wrapper" style="background:#0084ff2a;">
+          <svg viewBox="0 0 24 24" width="30" height="30" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M23 12C23 18.0751 18.0751 23 12 23C5.92487 23 1 18.0751 1 12C1 5.92487 5.92487 1 12 1C18.0751 1 23 5.92487 23 12ZM3.00683 12C3.00683 16.9668 7.03321 20.9932 12 20.9932C16.9668 20.9932 20.9932 16.9668 20.9932 12C20.9932 7.03321 16.9668 3.00683 12 3.00683C7.03321 3.00683 3.00683 7.03321 3.00683 12Z" fill="#3285d2"></path> <path d="M12 5C11.4477 5 11 5.44771 11 6V12.4667C11 12.4667 11 12.7274 11.1267 12.9235C11.2115 13.0898 11.3437 13.2343 11.5174 13.3346L16.1372 16.0019C16.6155 16.278 17.2271 16.1141 17.5032 15.6358C17.7793 15.1575 17.6155 14.5459 17.1372 14.2698L13 11.8812V6C13 5.44772 12.5523 5 12 5Z" fill="#3285d2"></path> </g>
+          </svg>
+        </div>
+        <div>
+          <div class="stat-label">Tempo médio de atendimento</div>
+          <div class="stat-value">{{this.averageServiceTime()?.averageServiceTime ?? '00:00:00'}}</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="stat-card">
+      <div class="stat-card-content">
+        <div class="stat-card-icon-wrapper" style="background:#dbeafe;">
+          <svg viewBox="0 0 1024 1024" class="icon" width="32px" height="32px" version="1.1" xmlns="http://www.w3.org/2000/svg" fill="#000000"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><path d="M749.7 585.3l-164.6 91.4v182.9L749.7 951l164.6-91.4V676.7l-164.6-91.4z m91.4 231.2l-91.4 50.8-91.4-50.8v-96.8l91.4-50.8 91.4 50.8v96.8z" fill="#2980d1"></path><path d="M735.667582 801.904773a36.6 36.6 0 1 0 28.012427-67.627982 36.6 36.6 0 1 0-28.012427 67.627982Z" fill="#2980d1"></path><path d="M219.4 731.4H256v-73.1h-36.6V365.7H256v-73.1h-36.6V146.3h585v402.4h73.2V73.1H146.3v219.5h-36.6v73.1h36.6v292.6h-36.6v73.1h36.6v219.5h399.8v-73.2H219.4z" fill="#2980d1"></path><path d="M329.2 256h402.3v73.1H329.2zM329.2 438.9h402.3V512H329.2zM329.2 621.7h182.9v73.1H329.2z" fill="#2980d1"></path></g>
+          </svg>
+        </div>
+        <div>
+          <div class="stat-label">Atendimentos hoje</div>
+          <div class="stat-value">{{this.countTotalAttendances()?.attendancesToday ?? 0}}</div>
+          <div class="stat-sub">realizados</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main Content Grid -->
+  <div class="main-content-grid" [ngClass]="{'main-content-grid-tickets-0': totalTickets() === 0}">
+
+    <!-- Middle Column -->
+    <div class="middle-column">
+      <!-- Current Call -->
+      <div class="section-card">
+        <div class="card-header">
+          <h3 class="card-title">Chamada atual</h3>
+        </div>
+
+        <div class="card-body" *ngIf="this.ticketSelected() === null">
+          <div class="current-call-card-offline">
+
+            <div style="margin-bottom: 5px;">
+              <svg viewBox="0 0 24 24" width="35" height="35" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><path d="M4 21V18.5C4 15.4624 6.46243 13 9.5 13H14.5C17.5376 13 20 15.4624 20 18.5V21M8 21V18M16 21V18M11 9H7.5C6.67157 9 6 8.32843 6 7.5V6.5C6 5.16725 6.57938 3.96983 7.5 3.14585M18 8.00001V6.50001C18 5.16726 17.4206 3.96983 16.5 3.14585M20 7.5V6M4 7.5V6M16 7C16 9.20914 14.2091 11 12 11C9.79086 11 8 9.20914 8 7C8 4.79086 9.79086 3 12 3C14.2091 3 16 4.79086 16 7Z" stroke="#126bca" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.4"></path></g>
+              </svg>
+            </div>
+            <div class="call-status-offline">Nenhum cliente foi chamado,</div>
+            <div class="call-status-offline">inicie o atendimento.</div>
+          </div>
+        </div>
+
+        <div class="card-body" *ngIf="this.ticketSelected() !== null">
+          <div class="current-call-card pulse-active">
+            <div class="call-status">Atendendo</div>
+            <div class="call-senhas">{{ this.ticketSelected()?.code}}</div>
+            <div class="call-guiche">Guichê {{ userLogged()?.counterNumber ?? 0 }}</div>
+            <div class="call-client-name">{{ this.ticketSelected()?.customerName}}</div>
+            <div class="call-client-service">{{ this.ticketSelected()?.serviceManagementName}}</div>
+            <div class="call-timer-wrapper" *ngIf="this.ticketSelected()?.finishAttendance === null">
+              <div class="call-time-label">Duração do atendimento</div>
+              <div class="call-time-value" id="currentCallTimer">{{ currentTimer() }}</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+    </div>
+
+    <!-- Actions -->
+    <div class="section-card" *ngIf="totalTickets() > 0">
+
+      <div class="card-header">
+        <h3 class="card-title">Ações rápidas</h3>
+      </div>
+
+      <div class="card-body actions-card">
+        <div class="actions-grid">
+          <button class="action-btn-primary"
+          *ngIf="this.ticketSelected()?.startAttendance === null && this.ticketSelected() !== null"
+          (click)="startAttendance(this.ticketSelected()!.ticketId)"
+          >
+            Iniciar atendimento
+          </button>
+          <button class="action-btn-secondary"
+          (click)="redirectToQueueDisplay()"
+          >
+            <svg fill="#2563eb" version="1.1" width="15px" height="15px" id="Capa_1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 97.766 97.767" xml:space="preserve" stroke="#ffffff"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <g> <g> <path d="M85.948,0H11.733C6.947,0,3.079,3.621,3.079,8.406v57.911c0,4.803,3.868,8.877,8.654,8.877h30.66v9.586H31.009 c-4.358,0-8.108,3.537-8.108,7.881v5.106h51.955V92.66c0-4.344-3.344-7.881-7.689-7.881H55.374v-9.586h30.574 c4.786,0,8.74-4.076,8.74-8.877V8.406C94.688,3.621,90.734,0,85.948,0z M81.689,62.21H15.937V12.989h65.751L81.689,62.21 L81.689,62.21z"></path> <path d="M37.03,49.98h23.709c5.072,0,9.197-4.125,9.197-9.198c0-4.644-3.459-8.495-7.938-9.112 c-0.605-0.083-1.158-0.392-1.548-0.863c-1.728-2.092-4.334-3.366-7.099-3.366c-0.051,0-0.104,0-0.154,0.001 c-0.514,0.009-1.012-0.144-1.432-0.436c-1.717-1.193-3.751-1.836-5.876-1.836c-3.849,0-7.287,2.119-9.063,5.378 c-0.344,0.631-0.948,1.079-1.652,1.223c-4.186,0.86-7.344,4.573-7.344,9.01C27.831,45.855,31.958,49.98,37.03,49.98z"></path> </g> </g>
+            </g>
+            </svg>
+            Abrir painel de chamadas
+          </button>
+          <button class="call-btn-primary"
+          *ngIf="this.ticketSelected()?.startAttendance === null && this.ticketSelected() !== null"
+          (click)="callCustomer()"
+          >
+            Chamar cliente
+          </button>
+          <button class="action-btn-primary"
+          *ngIf="this.ticketSelected()?.startAttendance !== null"
+          (click)="openModalFinish(ticketSelected()?.ticketId ?? '')"
+          >
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <polyline points="20 6 9 17 4 12"/>
+            </svg>
+            Finalizar atendimento
+          </button>
+          <button class="action-btn-secondary"
+          *ngIf="this.cont() < this.totalTickets() - 1"
+          (click)="callNextTicket(this.ticketsForAttendance())">
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" xmlns="http://www.w3.org/2000/svg" transform="rotate(0)"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M16.6582 9.28638C18.098 10.1862 18.8178 10.6361 19.0647 11.2122C19.2803 11.7152 19.2803 12.2847 19.0647 12.7878C18.8178 13.3638 18.098 13.8137 16.6582 14.7136L9.896 18.94C8.29805 19.9387 7.49907 20.4381 6.83973 20.385C6.26501 20.3388 5.73818 20.0469 5.3944 19.584C5 19.053 5 18.1108 5 16.2264V7.77357C5 5.88919 5 4.94701 5.3944 4.41598C5.73818 3.9531 6.26501 3.66111 6.83973 3.6149C7.49907 3.5619 8.29805 4.06126 9.896 5.05998L16.6582 9.28638Z" stroke="#1354ec" stroke-width="2" stroke-linejoin="round"></path> </g>
+            </svg>
+            Chamar próximo
+          </button>
+          <button class="action-btn-secondary" *ngIf="this.cont() > 0" (click)="callBeforeTicket(this.ticketsForAttendance())">
+            <svg viewBox="0 0 24 24" width="16" height="16" fill="none" xmlns="http://www.w3.org/2000/svg" transform="rotate(180)"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M16.6582 9.28638C18.098 10.1862 18.8178 10.6361 19.0647 11.2122C19.2803 11.7152 19.2803 12.2847 19.0647 12.7878C18.8178 13.3638 18.098 13.8137 16.6582 14.7136L9.896 18.94C8.29805 19.9387 7.49907 20.4381 6.83973 20.385C6.26501 20.3388 5.73818 20.0469 5.3944 19.584C5 19.053 5 18.1108 5 16.2264V7.77357C5 5.88919 5 4.94701 5.3944 4.41598C5.73818 3.9531 6.26501 3.66111 6.83973 3.6149C7.49907 3.5619 8.29805 4.06126 9.896 5.05998L16.6582 9.28638Z" stroke="#1354ec" stroke-width="2" stroke-linejoin="round"></path> </g>
+            </svg>
+            Chamada anterior
+          </button>
+          <button class="action-btn-danger"
+            *ngIf="this.ticketSelected()?.startAttendance !== null && this.ticketSelected() !== null"
+            (click)="openModalCanceled(this.ticketSelected()!.ticketId)"
+          >
+            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+              <circle cx="12" cy="12" r="10"/>
+              <line x1="15" y1="9" x2="9" y2="15"/>
+              <line x1="9" y1="9" x2="15" y2="15"/>
+            </svg>
+            Cancelar atendimento
+          </button>
+        </div>
+      </div>
+    </div>
+
+    <!-- Queue Column -->
+    <div class="section-card scroll-card">
+      <div class="card-header">
+        <h3 class="card-title">Fila de espera</h3>
+      </div>
+
+      <div class="table-wrapper">
+
+        <div class="table-content">
+
+          <table class="tickets-table">
+            <thead>
+              <tr>
+                <th>Posição</th>
+                <th>Senha</th>
+                <th>Nome</th>
+                <th>Serviço</th>
+                <th>Chegada</th>
+                <th>Prioridade</th>
+              </tr>
+            </thead>
+
+            <tbody>
+              <tr *ngFor="let item of ticketsForAttendance(); let i = index">
+                <td style="font-weight: bold">{{ i + 1 }}</td>
+                <td>{{ item.code }}</td>
+                <td>{{ item.customerName }}</td>
+                <td>{{ item.serviceManagementName }}</td>
+                <td>{{ item.arrivalTime | date : 'HH:mm' }}</td>
+                <td [class.priority-normal]="item.priority === 'NORMAL'"
+                    [class.priority-priority]="item.priority === 'PRIORITY'">
+                  {{ getNamePriority(item.priority) }}
+                </td>
+              </tr>
+
+              <tr *ngIf="ticketsForAttendance().length === 0">
+                <td colspan="6" style="text-align:center;padding:3rem;color:#9ca3af;">
+                  <p>Nenhum ticket encontrado.</p>
+                </td>
+              </tr>
+            </tbody>
+
+          </table>
+
+          <div class="pagination">
+            <span class="pagination-info">
+              Mostrando {{ getStartIndexTickets() }} - {{ getEndIndexTickets() }} de {{ totalElementsTickets() }}
+            </span>
+
+            <div class="pagination-buttons">
+              <!-- PREV -->
+              <button
+                class="page-btn"
+                (click)="previousPageTickets()"
+                [disabled]="pageTickets() === 0"
+                >
+                <svg viewBox="0 0 24 24">
+                  <polyline points="15 18 9 12 15 6"></polyline>
+                </svg>
+              </button>
+              <!-- PAGES -->
+              <button
+                *ngFor="let p of getPagesArrayTickets()"
+                class="page-btn"
+                [class.active]="p === pageTickets()"
+                (click)="goToPageTickets(p)">
+
+                {{ p + 1 }}
+              </button>
+              <!-- NEXT -->
+              <button
+                class="page-btn"
+                (click)="nextPageTickets()"
+                [disabled]="pageTickets() + 1 >= totalPagesTickets()"
+                >
+                <svg viewBox="0 0 24 24">
+                  <polyline points="9 18 15 12 9 6"></polyline>
+                </svg>
+              </button>
+            </div>
+          </div>
+
+        </div>
+
+      </div>
+    </div>
+
+    <!-- History -->
+    <div class="section-card scroll-card">
+      <div class="card-header">
+        <h3 class="card-title">Histórico de chamadas</h3>
+      </div>
+
+      <div class="table-wrapper">
+
+        <div class="table-content">
+
+          <table class="tickets-table">
+            <thead>
+              <tr>
+                <th>Nome</th>
+                <th>Senha</th>
+                <th>Serviço</th>
+                <th>Prioridade</th>
+                <th>Status</th>
+              </tr>
+            </thead>
+
+            <tbody>
+              <tr *ngFor="let item of historyTickets(); let i = index">
+                <td>{{ item.customerName }}</td>
+                <td>{{ item.code }}</td>
+                <td>{{ item.serviceManagementName }}</td>
+                <td [class.priority-normal]="item.priority === 'NORMAL'"
+                    [class.priority-priority]="item.priority === 'PRIORITY'">
+                  {{ getNamePriority(item.priority) }}
+                </td>
+                <td style="color: #3b82f6 !important;">{{ getNameStatus(item.status) }}</td>
+              </tr>
+
+              <tr *ngIf="ticketsForAttendance().length === 0">
+                <td colspan="5" style="text-align:center;padding:3rem;color:#9ca3af;">
+                  <p>Nenhum ticket foi chamado.</p>
+                </td>
+              </tr>
+            </tbody>
+
+          </table>
+
+          <div class="pagination">
+            <span class="pagination-info">
+              Mostrando {{ getStartIndexHistory() }} - {{ getEndIndexHistory() }} de {{ totalElementsHistory() }}
+            </span>
+
+            <div class="pagination-buttons">
+              <!-- PREV -->
+              <button
+                class="page-btn"
+                (click)="previousPageHistory()"
+                [disabled]="pageHistory() === 0"
+                >
+                <svg viewBox="0 0 24 24">
+                  <polyline points="15 18 9 12 15 6"></polyline>
+                </svg>
+              </button>
+              <!-- PAGES -->
+              <button
+                *ngFor="let p of getPagesArrayHistory()"
+                class="page-btn"
+                [class.active]="p === pageHistory()"
+                (click)="goToPageHistory(p)">
+
+                {{ p + 1 }}
+              </button>
+              <!-- NEXT -->
+              <button
+                class="page-btn"
+                (click)="nextPageHistory()"
+                [disabled]="pageHistory() + 1 >= totalPagesHistory()"
+                >
+                <svg viewBox="0 0 24 24">
+                  <polyline points="9 18 15 12 9 6"></polyline>
+                </svg>
+              </button>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="info-card">
+
+    <div style="display: flex; align-items: center; justify-content: center; margin-bottom: 10px;">
+
+      <svg viewBox="0 0 1024 1024" width="45" height="45" class="icon" version="1.1" xmlns="http://www.w3.org/2000/svg" fill="#000000"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><path d="M895.3 278.8L529.6 77.7c-11-6.1-24.3-6-35.2 0l-154.5 85c-13.4-9.4-29.7-15-47.3-15-45.4 0-82.3 36.9-82.3 82.3s36.9 82.3 82.3 82.3 82.3-36.9 82.3-82.3c0-1 0-2-0.1-3L512 151.4l329.1 181v359L512 872.6l-329.1-181V445.9l292.6 92.9v82.4c-27.1 13.5-45.7 41.4-45.7 73.7 0 45.4 36.9 82.3 82.3 82.3s82.3-36.9 82.3-82.3c0-32.2-18.6-60.2-45.7-73.7v-87.7l81.7-45.4c13.2 8.9 29 14.2 46.1 14.2 45.4 0 82.3-36.9 82.3-82.3s-36.9-82.3-82.3-82.3-82.3 36.9-82.3 82.3c0 1.5 0 3 0.1 4.5L508 472.4 157.4 361c-11.1-3.5-23.2-1.6-32.7 5.3-9.4 6.9-15 17.9-15 29.5v317.3c0 13.3 7.3 25.6 18.9 32l365.7 201.1c5.5 3 11.6 4.5 17.6 4.5s12.1-1.5 17.6-4.5l365.7-201.1c11.7-6.4 18.9-18.7 18.9-32V310.9c0.2-13.4-7.1-25.7-18.8-32.1z m-602.7-21.4c-15.1 0-27.4-12.3-27.4-27.4s12.3-27.4 27.4-27.4S320 214.9 320 230s-12.3 27.4-27.4 27.4z m383.8 135.2c15.1 0 27.4 12.3 27.4 27.4s-12.3 27.4-27.4 27.4S649 435.1 649 420s12.3-27.4 27.4-27.4zM512 722.3c-15.1 0-27.4-12.3-27.4-27.4s12.3-27.4 27.4-27.4 27.4 12.3 27.4 27.4-12.3 27.4-27.4 27.4z" fill="#3578e3"></path></g>
+      </svg>
+    </div>
+
+    <p style="margin-bottom: 2px; font-weight: 600">
+      Bem-vindo ao Painel de Atendimento.
+    </p>
+    <p>
+      Verifique os dados do cliente e registre todas as informações antes de finalizar o atendimento.
+    </p>
+  </div>
+
+</div>
+
+
+<!-- MODAL CANCELED -->
+<div class="modal-cancel-container" *ngIf="modalCancelAttendance" (click)="closeModalCanceled()">
+  <div class="modal-cancel" onclick="event.stopPropagation()">
+
+    <div class="modal-cancel-top">
+      <div style="display: flex; justify-content: end; padding: 20px 20px 20px 20px;">
+        <button class="dept-modal-close" aria-label="Fechar" (click)="closeModalCanceled()" >
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+
+      <div class="modal-cancel-header-container">
+        <div class="modal-cancel-header">
+          <div class="modal-cancel-header-icon">
+            <svg viewBox="0 0 1024 1024" width="50px" height="50px" class="icon" version="1.1" xmlns="http://www.w3.org/2000/svg" fill="#000000"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"><path d="M512 128C300.8 128 128 300.8 128 512s172.8 384 384 384 384-172.8 384-384S723.2 128 512 128z m0 85.333333c66.133333 0 128 23.466667 179.2 59.733334L273.066667 691.2C236.8 640 213.333333 578.133333 213.333333 512c0-164.266667 134.4-298.666667 298.666667-298.666667z m0 597.333334c-66.133333 0-128-23.466667-179.2-59.733334l418.133333-418.133333C787.2 384 810.666667 445.866667 810.666667 512c0 164.266667-134.4 298.666667-298.666667 298.666667z" fill="#ffffff"></path></g>
+            </svg>
+          </div>
+          <div class="modal-cancel-header-text">
+            <h2>Cancelar atendimento</h2>
+            <span>Cancelar o ticket selecionado.</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div style="margin: 0px 30px">
+      <div class="modal-cancel-content">
+
+        <div class="modal-cancel-top-info">
+
+          <div style="display: flex; align-items: center;">
+            <svg viewBox="-0.5 0 25 25" width="35px" height="35px" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M12 21.5C17.1086 21.5 21.25 17.3586 21.25 12.25C21.25 7.14137 17.1086 3 12 3C6.89137 3 2.75 7.14137 2.75 12.25C2.75 17.3586 6.89137 21.5 12 21.5Z" stroke="#ec1313" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path> <path d="M12.9309 8.15005C12.9256 8.39231 12.825 8.62272 12.6509 8.79123C12.4767 8.95974 12.2431 9.05271 12.0008 9.05002C11.8242 9.04413 11.6533 8.98641 11.5093 8.884C11.3652 8.7816 11.2546 8.63903 11.1911 8.47415C11.1275 8.30927 11.1139 8.12932 11.152 7.95675C11.19 7.78419 11.278 7.6267 11.405 7.50381C11.532 7.38093 11.6923 7.29814 11.866 7.26578C12.0397 7.23341 12.2192 7.25289 12.3819 7.32181C12.5446 7.39072 12.6834 7.506 12.781 7.65329C12.8787 7.80057 12.9308 7.97335 12.9309 8.15005ZM11.2909 16.5301V11.1501C11.2882 11.0556 11.3046 10.9615 11.3392 10.8736C11.3738 10.7857 11.4258 10.7057 11.4922 10.6385C11.5585 10.5712 11.6378 10.518 11.7252 10.4822C11.8126 10.4464 11.9064 10.4286 12.0008 10.43C12.094 10.4299 12.1863 10.4487 12.272 10.4853C12.3577 10.5218 12.4352 10.5753 12.4997 10.6426C12.5642 10.7099 12.6143 10.7895 12.6472 10.8767C12.6801 10.9639 12.6949 11.0569 12.6908 11.1501V16.5301C12.6908 16.622 12.6727 16.713 12.6376 16.7979C12.6024 16.8828 12.5508 16.96 12.4858 17.025C12.4208 17.09 12.3437 17.1415 12.2588 17.1767C12.1738 17.2119 12.0828 17.23 11.9909 17.23C11.899 17.23 11.8079 17.2119 11.723 17.1767C11.6381 17.1415 11.5609 17.09 11.4959 17.025C11.4309 16.96 11.3793 16.8828 11.3442 16.7979C11.309 16.713 11.2909 16.622 11.2909 16.5301Z" fill="#ec1313"></path> </g>
+            </svg>
+          </div>
+
+          <div class="modal-cancel-top-info-text">
+            <p style="font-weight: bold; color: #c21010;">
+              Tem certeza que deseja cancelar este atendimento?
+            </p>
+            <p>O ticket será marcado como cancelado.</p>
+          </div>
+        </div>
+
+
+        <div class="modal-cancel-info">
+          <div class="modal-cancel-info-name">
+            <strong>Cliente:</strong> <p>{{ this.ticketSelected()?.customerName ?? 'N/A' }}</p>
+          </div>
+
+          <div class="modal-cancel-info-status">
+            <strong>Senha:</strong> <p>{{ this.ticketSelected()?.code }}</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="separator"></div>
+      <div class="modal-cancel-footer">
+        <button
+          type="button"
+          class="modal-cancel-confirm"
+          (click)="ticketSelected() && cancelAttendance(ticketSelected()!.ticketId)">
+          Cancelar atendimento
+        </button>
+        <button type="button" class="button-back" (click)="closeModalCanceled()">Cancelar</button>
+      </div>
+    </div>
+
+    <div style="padding: 20px 30px;">
+      <div class="modal-cancel-bottom-info">
+        <div class="modal-cancel-bottom-info-1">
+          <svg viewBox="-0.5 0 25 25" width="20px" height="20px" fill="none" xmlns="http://www.w3.org/2000/svg"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M12 21.5C17.1086 21.5 21.25 17.3586 21.25 12.25C21.25 7.14137 17.1086 3 12 3C6.89137 3 2.75 7.14137 2.75 12.25C2.75 17.3586 6.89137 21.5 12 21.5Z" stroke="#ec1313" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"></path> <path d="M12.9309 8.15005C12.9256 8.39231 12.825 8.62272 12.6509 8.79123C12.4767 8.95974 12.2431 9.05271 12.0008 9.05002C11.8242 9.04413 11.6533 8.98641 11.5093 8.884C11.3652 8.7816 11.2546 8.63903 11.1911 8.47415C11.1275 8.30927 11.1139 8.12932 11.152 7.95675C11.19 7.78419 11.278 7.6267 11.405 7.50381C11.532 7.38093 11.6923 7.29814 11.866 7.26578C12.0397 7.23341 12.2192 7.25289 12.3819 7.32181C12.5446 7.39072 12.6834 7.506 12.781 7.65329C12.8787 7.80057 12.9308 7.97335 12.9309 8.15005ZM11.2909 16.5301V11.1501C11.2882 11.0556 11.3046 10.9615 11.3392 10.8736C11.3738 10.7857 11.4258 10.7057 11.4922 10.6385C11.5585 10.5712 11.6378 10.518 11.7252 10.4822C11.8126 10.4464 11.9064 10.4286 12.0008 10.43C12.094 10.4299 12.1863 10.4487 12.272 10.4853C12.3577 10.5218 12.4352 10.5753 12.4997 10.6426C12.5642 10.7099 12.6143 10.7895 12.6472 10.8767C12.6801 10.9639 12.6949 11.0569 12.6908 11.1501V16.5301C12.6908 16.622 12.6727 16.713 12.6376 16.7979C12.6024 16.8828 12.5508 16.96 12.4858 17.025C12.4208 17.09 12.3437 17.1415 12.2588 17.1767C12.1738 17.2119 12.0828 17.23 11.9909 17.23C11.899 17.23 11.8079 17.2119 11.723 17.1767C11.6381 17.1415 11.5609 17.09 11.4959 17.025C11.4309 16.96 11.3793 16.8828 11.3442 16.7979C11.309 16.713 11.2909 16.622 11.2909 16.5301Z" fill="#ec1313"></path> </g>
+          </svg>
+          <strong>Dica:</strong>
+        </div>
+
+        <div class="modal-cancel-bottom-info-2">
+          <span>Esta ação não poderá ser desfeita.</span>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</div>
+
+
+<!-- MODAL FINISH -->
+<div class="modal-finish-container" *ngIf="modalFinishAttendance" (click)="closeModalFinish()">
+  <div class="modal-finish" onclick="event.stopPropagation()">
+
+    <div class="modal-finish-top">
+      <div style="display: flex; justify-content: end; padding: 20px 20px 20px 20px;">
+        <button class="dept-modal-close" aria-label="Fechar" (click)="closeModalFinish()" >
+          <svg viewBox="0 0 24 24" fill="none" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <line x1="18" y1="6" x2="6" y2="18"></line>
+            <line x1="6" y1="6" x2="18" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+
+      <div class="modal-finish-header-container">
+        <div class="modal-finish-header">
+          <div class="modal-finish-header-icon">
+            <svg version="1.1" id="svg2" width="35px" height="35px" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:cc="http://creativecommons.org/ns#" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#" xmlns:svg="http://www.w3.org/2000/svg" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" sodipodi:docname="ok.svg" inkscape:version="0.48.4 r9939" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 1200 1200" enable-background="new 0 0 1200 1200" xml:space="preserve" fill="#ffffff" stroke="#ffffff"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path id="path15124" inkscape:connector-curvature="0" d="M1004.237,99.152l-611.44,611.441L194.492,512.288L0,706.779 l198.305,198.306l195.762,195.763L588.56,906.355L1200,294.916L1004.237,99.152z"></path> </g>
+            </svg>
+          </div>
+          <div class="modal-finish-header-text">
+            <h2>Finalizar atendimento</h2>
+            <span>Informe a resolução do atendimento.</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <form [formGroup]="finishForm" (ngSubmit)="finishAttendance(ticketSelected()!.ticketId)">
+
+      <div class="modal-body">
+
+        <div class="form-group">
+          <label class="form-label">Resolução</label>
+          <textarea
+            formControlName="resolution"
+            rows="5"
+            class="form-textarea"
+            placeholder="Digite a resolução..."></textarea>
+        </div>
+
+      </div>
+
+      <div style="margin: 30px 30px; height: 1px; background-color: #e2e8f0;" ></div>
+      <div class="modal-finish-footer">
+        <button type="submit" class="button-finish">Finalizar atendimento</button>
+        <button type="button" class="button-back" (click)="closeModalFinish()">Fechar</button>
+      </div>
+    </form>
+
+  </div>
+</div>
