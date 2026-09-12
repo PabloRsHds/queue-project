@@ -10,7 +10,7 @@ services:
       POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
 
     ports:
-      - "${POSTGRES_PORT}:5432"
+      - "${POSTGRES_PORT}:${POSTGRES_PORT}"
 
     volumes:
       - postgres_data:/var/lib/postgresql/data
@@ -45,16 +45,23 @@ services:
       ADM_1_SURNAME: ${ADM_1_SURNAME}
 
     ports:
-      - "${BACKEND_URL}:8080"
+      - "${BACKEND_PORT}:${BACKEND_PORT}"
 
   frontend:
     build:
       context: ./queue-frontend
       dockerfile: Dockerfile
+
     container_name: queue-frontend
     restart: unless-stopped
+
+    environment:
+      BACKEND_PORT: ${BACKEND_PORT}
+      FRONTEND_PORT: ${FRONTEND_PORT}
+
     ports:
-      - "${FRONTEND_PORT}:80"
+      - "${FRONTEND_PORT}:${FRONTEND_PORT}"
+
     depends_on:
       - backend
 
