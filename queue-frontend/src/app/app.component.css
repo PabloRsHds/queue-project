@@ -1,3 +1,7 @@
+::ng-deep .cdk-overlay-container {
+  z-index: 10000 !important;
+}
+
 ::ng-deep .mat-mdc-snack-bar-container .mdc-snackbar__label {
   font-weight: 500 !important;
   text-align: center;

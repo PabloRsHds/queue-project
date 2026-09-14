@@ -74,7 +74,7 @@ public class LoginService {
             if (!user.getUnit().getUnitId().equals(unit.getUnitId())) {
                 log.warn("Usuário {} não pertence à unidade {}", user.getUserId(), unitId);
                 throw new UserUnitMismatchException(
-                        "Usuário não pertence à unidade: " + user.getUnit().getName()
+                        "Este usuário não existe nesta unidade"
                 );
             }
 

@@ -71,7 +71,8 @@ public class UserService {
             throw new UserValidationException("Usuário já cadastrado com username: " + dto.username());
         }
 
-        if (verifyEmail) {
+        if (dto.email() != null
+                && verifyEmail) {
             log.warn("Tentativa de criar usuário com e-mail já existente: {}", dto.email());
             throw new UserValidationException("E-mail já cadastrado: " + dto.email());
         }
