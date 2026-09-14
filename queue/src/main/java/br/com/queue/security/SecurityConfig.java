@@ -104,14 +104,6 @@ public class SecurityConfig {
     }
 
     @Bean
-    public WebSecurityCustomizer webSecurityCustomizer() {
-
-        return web -> web
-                .ignoring()
-                .requestMatchers("/ws/**");
-    }
-
-    @Bean
     public JwtAuthenticationConverter jwtAuthenticationConverter() {
 
         JwtGrantedAuthoritiesConverter grantedAuthoritiesConverter =
