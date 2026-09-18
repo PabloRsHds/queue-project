@@ -45,7 +45,7 @@ public class UserService {
     // =========================================== CREATE ===========================================================
 
     @Transactional
-    public ResponseUserDto createUser(JwtAuthenticationToken token, CreateUserDto dto) {
+    public ResponseUserDto create(JwtAuthenticationToken token, CreateUserDto dto) {
         log.info("Criando usuário: {}", dto.username());
 
         // Verifico em que unidade o usuario está logado,
@@ -118,7 +118,7 @@ public class UserService {
 
     // ============================================== UPDATE =========================================================
     @Transactional
-    public ResponseUserDto updateUser(UpdateUserDto dto) {
+    public ResponseUserDto update(UpdateUserDto dto) {
         log.info("Atualizando usuário: {}", dto.userId());
 
         var entity = this.findUser(dto.userId());
@@ -248,7 +248,7 @@ public class UserService {
 
     // ================================================= DELETE =====================================================
     @Transactional
-    public ResponseUserDto deleteUser(String userId) {
+    public ResponseUserDto delete(String userId) {
         log.info("Deletando usuário: {}", userId);
 
         var entity = this.findUser(userId);
@@ -261,7 +261,7 @@ public class UserService {
     // ==============================================================================================================
 
     // ============================================== ALL USERS =====================================================
-    public Page<ResponseUserDto> getAllUsers(JwtAuthenticationToken token, int page, int size, String search) {
+    public Page<ResponseUserDto> getAll(JwtAuthenticationToken token, int page, int size, String search) {
         var unit = this.unitContext.getCurrentUnit(token);
 
         String normalizedSearch = (search == null || search.isBlank())
@@ -295,7 +295,7 @@ public class UserService {
     // ==============================================================================================================
 
     // ========================================== GET STATISTICS ====================================================
-    public ResponseUserDashBoardDto getUserStatistics(JwtAuthenticationToken token) {
+    public ResponseUserDashBoardDto getStatistics(JwtAuthenticationToken token) {
         var unit = this.unitContext.getCurrentUnit(token);
 
         log.debug("Buscando estatísticas de usuários para unidade: {}", unit.getUnitId());
