@@ -97,6 +97,9 @@ public class SecurityConfig {
                                 .requestMatchers("/login/**").permitAll()
                                 .requestMatchers("/ws/**").permitAll()
                                 .requestMatchers(HttpMethod.GET, "/units").permitAll()
+                                .requestMatchers("/swagger-ui/**",
+                                        "/swagger-ui.html",
+                                        "/v3/api-docs/**").permitAll()
                                 .anyRequest().authenticated()
                 );
 
