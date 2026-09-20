@@ -36,7 +36,7 @@ public class DepartmentService {
     // =========================================== CREATE ===========================================
 
     @Transactional
-    public ResponseDepartmentDto createDepartment(JwtAuthenticationToken token, CreateDepartmentDto dto) {
+    public ResponseDepartmentDto create(JwtAuthenticationToken token, CreateDepartmentDto dto) {
         log.info("Criando departamento: {}", dto.name());
 
         var unit = this.unitContext.getCurrentUnit(token);
@@ -67,7 +67,7 @@ public class DepartmentService {
     // =========================================== UPDATE ===========================================
 
     @Transactional
-    public ResponseDepartmentDto updateDepartment(UpdateDepartmentDto dto) {
+    public ResponseDepartmentDto update(UpdateDepartmentDto dto) {
         log.info("Atualizando departamento: {}", dto.departmentId());
 
         var entity = this.findDepartmentById(dto.departmentId());
@@ -108,7 +108,7 @@ public class DepartmentService {
 
     // ============================================ GET ALL ==========================================
 
-    public Page<ResponseDepartmentDto> getAllDepartments(
+    public Page<ResponseDepartmentDto> getAll(
             JwtAuthenticationToken token,
             int page,
             int size,
@@ -131,7 +131,7 @@ public class DepartmentService {
 
     // =========================================== GET BY ID ==========================================
 
-    public ResponseDepartmentDto getDepartmentById(
+    public ResponseDepartmentDto getById(
             String departmentId
     ) {
         return toResponse(this.findDepartmentById(departmentId));
@@ -143,7 +143,7 @@ public class DepartmentService {
     // =========================================== DELETE ===========================================
 
     @Transactional
-    public ResponseDepartmentDto deleteDepartment(String departmentId) {
+    public ResponseDepartmentDto delete(String departmentId) {
         log.info("Deletando departamento: {}", departmentId);
 
         var entity = this.findDepartmentById(departmentId);

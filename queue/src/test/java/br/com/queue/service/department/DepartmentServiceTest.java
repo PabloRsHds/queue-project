@@ -103,7 +103,7 @@ class DepartmentServiceTest {
                 return saved;
             });
 
-            var response = departmentService.createDepartment(token, createDto);
+            var response = departmentService.create(token, createDto);
 
             assertNotNull(response);
             assertEquals("dept-456", response.departmentId());
@@ -130,7 +130,7 @@ class DepartmentServiceTest {
                 return saved;
             });
 
-            var response = departmentService.createDepartment(token, dto);
+            var response = departmentService.create(token, dto);
 
             assertNotNull(response);
             assertEquals("Financeiro", response.name());
@@ -155,7 +155,7 @@ class DepartmentServiceTest {
             when(departmentRepository.findByDepartmentId("dept-123")).thenReturn(Optional.of(department));
             when(departmentRepository.save(any(Department.class))).thenAnswer(invocation -> invocation.getArgument(0));
 
-            var response = departmentService.updateDepartment(updateDto);
+            var response = departmentService.update(updateDto);
 
             assertNotNull(response);
             assertEquals("dept-123", response.departmentId());
@@ -175,7 +175,7 @@ class DepartmentServiceTest {
 
             var exception = assertThrows(
                     DepartmentNotFoundException.class,
-                    () -> departmentService.updateDepartment(updateDto)
+                    () -> departmentService.update(updateDto)
             );
 
             assertEquals("Departamento não encontrado com ID: dept-123", exception.getMessage());
@@ -197,7 +197,7 @@ class DepartmentServiceTest {
             when(departmentRepository.findByDepartmentId("dept-123")).thenReturn(Optional.of(department));
             when(departmentRepository.save(any(Department.class))).thenAnswer(invocation -> invocation.getArgument(0));
 
-            var response = departmentService.updateDepartment(dto);
+            var response = departmentService.update(dto);
 
             assertNotNull(response);
             assertEquals("TI", response.name());
@@ -221,7 +221,7 @@ class DepartmentServiceTest {
             when(departmentRepository.findByDepartmentId("dept-123")).thenReturn(Optional.of(department));
             when(departmentRepository.save(any(Department.class))).thenAnswer(invocation -> invocation.getArgument(0));
 
-            var response = departmentService.updateDepartment(dto);
+            var response = departmentService.update(dto);
 
             assertNotNull(response);
             assertEquals("TI Novo", response.name());
@@ -244,7 +244,7 @@ class DepartmentServiceTest {
             when(departmentRepository.findByDepartmentId("dept-123")).thenReturn(Optional.of(department));
             when(departmentRepository.save(any(Department.class))).thenAnswer(invocation -> invocation.getArgument(0));
 
-            var response = departmentService.updateDepartment(dto);
+            var response = departmentService.update(dto);
 
             assertNotNull(response);
             assertEquals("TI", response.name());
@@ -267,7 +267,7 @@ class DepartmentServiceTest {
             when(departmentRepository.findByDepartmentId("dept-123")).thenReturn(Optional.of(department));
             when(departmentRepository.save(any(Department.class))).thenAnswer(invocation -> invocation.getArgument(0));
 
-            var response = departmentService.updateDepartment(dto);
+            var response = departmentService.update(dto);
 
             assertNotNull(response);
             assertFalse(response.active());
@@ -294,7 +294,7 @@ class DepartmentServiceTest {
             when(unitContext.getCurrentUnit(token)).thenReturn(unit);
             when(departmentRepository.findAllWithSearch("unit-123", null, pageable)).thenReturn(page);
 
-            var result = departmentService.getAllDepartments(token, 0, 10, null);
+            var result = departmentService.getAll(token, 0, 10, null);
 
             assertNotNull(result);
             assertEquals(1, result.getTotalElements());
@@ -318,7 +318,7 @@ class DepartmentServiceTest {
             when(unitContext.getCurrentUnit(token)).thenReturn(unit);
             when(departmentRepository.findAllWithSearch("unit-123", "TI", pageable)).thenReturn(page);
 
-            var result = departmentService.getAllDepartments(token, 0, 10, "TI");
+            var result = departmentService.getAll(token, 0, 10, "TI");
 
             assertNotNull(result);
             assertEquals(1, result.getTotalElements());
@@ -336,7 +336,7 @@ class DepartmentServiceTest {
             when(unitContext.getCurrentUnit(token)).thenReturn(unit);
             when(departmentRepository.findAllWithSearch("unit-123", null, pageable)).thenReturn(page);
 
-            var result = departmentService.getAllDepartments(token, 0, 10, null);
+            var result = departmentService.getAll(token, 0, 10, null);
 
             assertNotNull(result);
             assertEquals(0, result.getTotalElements());
@@ -361,7 +361,7 @@ class DepartmentServiceTest {
             when(departmentRepository.findByDepartmentId("dept-123")).thenReturn(Optional.of(department));
             doNothing().when(departmentRepository).delete(department);
 
-            var response = departmentService.deleteDepartment("dept-123");
+            var response = departmentService.delete("dept-123");
 
             assertNotNull(response);
             assertEquals("dept-123", response.departmentId());
@@ -378,7 +378,7 @@ class DepartmentServiceTest {
 
             var exception = assertThrows(
                     DepartmentNotFoundException.class,
-                    () -> departmentService.deleteDepartment("dept-123")
+                    () -> departmentService.delete("dept-123")
             );
 
             assertEquals("Departamento não encontrado com ID: dept-123", exception.getMessage());
@@ -463,7 +463,7 @@ class DepartmentServiceTest {
         void shouldFindDepartmentSuccessfully() {
             when(departmentRepository.findByDepartmentId("dept-123")).thenReturn(Optional.of(department));
 
-            var result = departmentService.deleteDepartment("dept-123");
+            var result = departmentService.delete("dept-123");
 
             assertNotNull(result);
             assertEquals("dept-123", result.departmentId());
@@ -478,7 +478,7 @@ class DepartmentServiceTest {
 
             var exception = assertThrows(
                     DepartmentNotFoundException.class,
-                    () -> departmentService.deleteDepartment("dept-123")
+                    () -> departmentService.delete("dept-123")
             );
 
             assertEquals("Departamento não encontrado com ID: dept-123", exception.getMessage());
@@ -510,7 +510,7 @@ class DepartmentServiceTest {
                     null
             );
 
-            var response = departmentService.updateDepartment(dto);
+            var response = departmentService.update(dto);
 
             assertNotNull(response);
             assertTrue(response.services().isEmpty());
