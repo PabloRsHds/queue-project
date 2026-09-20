@@ -91,7 +91,7 @@ class UnitServiceTest {
                         return entity;
                     });
 
-            var response = unitService.createUnit(createUnitDto);
+            var response = unitService.create(createUnitDto);
 
             assertNotNull(response);
 
@@ -117,7 +117,7 @@ class UnitServiceTest {
 
             var exception = assertThrows(
                     UnitIsPresentException.class,
-                    () -> unitService.createUnit(createUnitDto)
+                    () -> unitService.create(createUnitDto)
             );
 
             assertEquals(
@@ -156,7 +156,7 @@ class UnitServiceTest {
                             invocation.getArgument(0, Unit.class)
                     );
 
-            var response = unitService.updateUnit(updateUnitDto);
+            var response = unitService.update(updateUnitDto);
 
             assertNotNull(response);
 
@@ -182,7 +182,7 @@ class UnitServiceTest {
 
             var exception = assertThrows(
                     UnitNotFoundException.class,
-                    () -> unitService.updateUnit(updateUnitDto)
+                    () -> unitService.update(updateUnitDto)
             );
 
             assertEquals(
@@ -212,7 +212,7 @@ class UnitServiceTest {
 
             var exception = assertThrows(
                     UnitIsPresentException.class,
-                    () -> unitService.updateUnit(updateUnitDto)
+                    () -> unitService.update(updateUnitDto)
             );
 
             assertEquals(
@@ -247,7 +247,7 @@ class UnitServiceTest {
                             invocation.getArgument(0, Unit.class)
                     );
 
-            var response = unitService.updateUnit(dto);
+            var response = unitService.update(dto);
 
             assertNotNull(response);
 
@@ -283,7 +283,7 @@ class UnitServiceTest {
                             invocation.getArgument(0, Unit.class)
                     );
 
-            var response = unitService.updateUnit(dto);
+            var response = unitService.update(dto);
 
             assertNotNull(response);
 
@@ -318,7 +318,7 @@ class UnitServiceTest {
                             invocation.getArgument(0, Unit.class)
                     );
 
-            var response = unitService.updateUnit(dto);
+            var response = unitService.update(dto);
 
             assertNotNull(response);
             assertEquals("Unidade Teste", response.name());
@@ -354,7 +354,7 @@ class UnitServiceTest {
                             invocation.getArgument(0, Unit.class)
                     );
 
-            unitService.updateUnit(dto);
+            unitService.update(dto);
 
             assertEquals("Nova Unidade", unit.getName());
 
@@ -395,7 +395,7 @@ class UnitServiceTest {
                             invocation.getArgument(0, Unit.class)
                     );
 
-            unitService.updateUnit(dto);
+            unitService.update(dto);
 
             assertEquals(
                     "Unidade Teste",
@@ -438,7 +438,7 @@ class UnitServiceTest {
                     .when(unitRepository)
                     .delete(unit);
 
-            var response = unitService.deleteUnit("unit-123");
+            var response = unitService.delete("unit-123");
 
             assertNotNull(response);
 
@@ -468,7 +468,7 @@ class UnitServiceTest {
 
             var exception = assertThrows(
                     UnitNotFoundException.class,
-                    () -> unitService.deleteUnit("unit-123")
+                    () -> unitService.delete("unit-123")
             );
 
             assertEquals(
@@ -506,7 +506,7 @@ class UnitServiceTest {
                     eq(pageable)
             )).thenReturn(page);
 
-            var result = unitService.getAllUnits(
+            var result = unitService.getAll(
                     0,
                     10,
                     null
@@ -536,7 +536,7 @@ class UnitServiceTest {
                     eq(pageable)
             )).thenReturn(page);
 
-            var result = unitService.getAllUnits(
+            var result = unitService.getAll(
                     1,
                     5,
                     "   rodrigo   "
@@ -565,7 +565,7 @@ class UnitServiceTest {
                     eq(pageable)
             )).thenReturn(page);
 
-            var result = unitService.getAllUnits(
+            var result = unitService.getAll(
                     0,
                     10,
                     "   "

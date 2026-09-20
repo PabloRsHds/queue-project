@@ -36,7 +36,7 @@ public class UnitController {
     @ApiResponses({
             @ApiResponse(responseCode = "200", description = "Lista retornada com sucesso")
     })
-    public ResponseEntity<Page<ResponseUnitDto>> getAllUnits(
+    public ResponseEntity<Page<ResponseUnitDto>> getAll(
             @Parameter(description = "Número da página (inicia em 0)", example = "0")
             @RequestParam int page,
             @Parameter(description = "Quantidade de registros por página", example = "10")
@@ -44,7 +44,7 @@ public class UnitController {
             @Parameter(description = "Filtro por nome ou endereço", required = false)
             @RequestParam(required = false) String search
     ) {
-        return ResponseEntity.ok().body(this.unitService.getAllUnits(page, size, search));
+        return ResponseEntity.ok().body(this.unitService.getAll(page, size, search));
     }
 
     @GetMapping("/{unitId}")
@@ -74,9 +74,9 @@ public class UnitController {
             @ApiResponse(responseCode = "400", description = "Dados inválidos"),
             @ApiResponse(responseCode = "403", description = "Sem permissão para criar unidades")
     })
-    public ResponseEntity<ResponseUnitDto> createUnit(@RequestBody @Valid CreateUnitDto dto) {
+    public ResponseEntity<ResponseUnitDto> create(@RequestBody @Valid CreateUnitDto dto) {
         return ResponseEntity.status(HttpStatus.CREATED)
-                .body(this.unitService.createUnit(dto));
+                .body(this.unitService.create(dto));
     }
 
     @PutMapping
@@ -92,8 +92,8 @@ public class UnitController {
             @ApiResponse(responseCode = "400", description = "Dados inválidos"),
             @ApiResponse(responseCode = "404", description = "Unidade não encontrada")
     })
-    public ResponseEntity<ResponseUnitDto> updateUnit(@RequestBody @Valid UpdateUnitDto dto) {
-        return ResponseEntity.ok().body(this.unitService.updateUnit(dto));
+    public ResponseEntity<ResponseUnitDto> update(@RequestBody @Valid UpdateUnitDto dto) {
+        return ResponseEntity.ok().body(this.unitService.update(dto));
     }
 
     @DeleteMapping("/{unitId}")
@@ -107,7 +107,7 @@ public class UnitController {
             @ApiResponse(responseCode = "200", description = "Unidade removida com sucesso"),
             @ApiResponse(responseCode = "404", description = "Unidade não encontrada")
     })
-    public ResponseEntity<ResponseUnitDto> deleteUnit(@PathVariable String unitId) {
-        return ResponseEntity.ok().body(this.unitService.deleteUnit(unitId));
+    public ResponseEntity<ResponseUnitDto> delete(@PathVariable String unitId) {
+        return ResponseEntity.ok().body(this.unitService.delete(unitId));
     }
 }

@@ -30,7 +30,7 @@ public class UnitService {
     // ============================================ CREATE ============================================
 
     @Transactional
-    public ResponseUnitDto createUnit(CreateUnitDto dto) {
+    public ResponseUnitDto create(CreateUnitDto dto) {
         log.info("Criando unidade: {}", dto.name());
 
         this.validateCreateUnit(dto);
@@ -57,7 +57,7 @@ public class UnitService {
     // ============================================ UPDATE ============================================
 
     @Transactional
-    public ResponseUnitDto updateUnit(UpdateUnitDto dto) {
+    public ResponseUnitDto update(UpdateUnitDto dto) {
         log.info("Atualizando unidade: {}", dto.unitId());
 
         var entity = this.findUnit(dto.unitId());
@@ -102,7 +102,7 @@ public class UnitService {
     // ============================================ DELETE ============================================
 
     @Transactional
-    public ResponseUnitDto deleteUnit(String unitId) {
+    public ResponseUnitDto delete(String unitId) {
         log.info("Deletando unidade: {}", unitId);
 
         var entity = this.findUnit(unitId);
@@ -125,7 +125,7 @@ public class UnitService {
 
     // ============================================ GET ALL ===========================================
 
-    public Page<ResponseUnitDto> getAllUnits(int page, int size, String search) {
+    public Page<ResponseUnitDto> getAll(int page, int size, String search) {
         String normalizedSearch = this.normalizeSearch(search);
 
         log.debug("Buscando unidades - página: {}, tamanho: {}, busca: {}",
