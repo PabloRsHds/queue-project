@@ -156,7 +156,7 @@ class UserServiceTest {
             when(userRepository.save(any(User.class)))
                     .thenReturn(user);
 
-            var response = userService.createUser(token, createUserDto);
+            var response = userService.create(token, createUserDto);
 
             assertNotNull(response);
 
@@ -187,7 +187,7 @@ class UserServiceTest {
 
             assertThrows(
                     UserValidationException.class,
-                    () -> userService.createUser(token, createUserDto)
+                    () -> userService.create(token, createUserDto)
             );
 
             verify(userRepository, never()).save(any(User.class));
@@ -209,7 +209,7 @@ class UserServiceTest {
 
             assertThrows(
                     UserValidationException.class,
-                    () -> userService.createUser(token, createUserDto)
+                    () -> userService.create(token, createUserDto)
             );
 
             verify(userRepository, never()).save(any(User.class));
@@ -234,7 +234,7 @@ class UserServiceTest {
 
             assertThrows(
                     UserValidationException.class,
-                    () -> userService.createUser(token, createUserDto)
+                    () -> userService.create(token, createUserDto)
             );
 
             verify(userRepository, never()).save(any(User.class));
@@ -262,7 +262,7 @@ class UserServiceTest {
 
             assertThrows(
                     UserValidationException.class,
-                    () -> userService.createUser(token, createUserDto)
+                    () -> userService.create(token, createUserDto)
             );
 
             verify(userRepository, never()).save(any(User.class));
@@ -509,7 +509,7 @@ class UserServiceTest {
             when(userRepository.save(any(User.class)))
                     .thenReturn(user);
 
-            var response = userService.updateUser(updateUserDto);
+            var response = userService.update(updateUserDto);
 
             assertNotNull(response);
 
@@ -530,7 +530,7 @@ class UserServiceTest {
 
             assertThrows(
                     UserNotFoundException.class,
-                    () -> userService.updateUser(updateUserDto)
+                    () -> userService.update(updateUserDto)
             );
 
             verify(userRepository, never()).save(any(User.class));
@@ -549,7 +549,7 @@ class UserServiceTest {
 
             var exception = assertThrows(
                     UserValidationException.class,
-                    () -> userService.updateUser(updateUserDto)
+                    () -> userService.update(updateUserDto)
             );
 
             assertEquals(
@@ -576,7 +576,7 @@ class UserServiceTest {
 
             assertThrows(
                     UserValidationException.class,
-                    () -> userService.updateUser(updateUserDto)
+                    () -> userService.update(updateUserDto)
             );
 
             verify(userRepository, never()).save(any(User.class));
@@ -601,7 +601,7 @@ class UserServiceTest {
 
             assertThrows(
                     UserValidationException.class,
-                    () -> userService.updateUser(updateUserDto)
+                    () -> userService.update(updateUserDto)
             );
 
             verify(userRepository, never()).save(any(User.class));
@@ -629,7 +629,7 @@ class UserServiceTest {
 
             assertThrows(
                     UserValidationException.class,
-                    () -> userService.updateUser(updateUserDto)
+                    () -> userService.update(updateUserDto)
             );
 
             verify(userRepository, never()).save(any(User.class));
@@ -673,7 +673,7 @@ class UserServiceTest {
             when(userRepository.save(any(User.class)))
                     .thenReturn(user);
 
-            userService.updateUser(dto);
+            userService.update(dto);
 
             assertEquals(Role.MANAGER, user.getRole());
             assertNull(user.getCounterNumber());
@@ -709,7 +709,7 @@ class UserServiceTest {
             when(userRepository.save(any(User.class)))
                     .thenReturn(user);
 
-            userService.updateUser(dto);
+            userService.update(dto);
 
             assertEquals("novoUsername", user.getUsername());
 
@@ -747,7 +747,7 @@ class UserServiceTest {
             when(userRepository.save(any(User.class)))
                     .thenReturn(user);
 
-            userService.updateUser(dto);
+            userService.update(dto);
 
             assertEquals("encodedPassword", user.getPassword());
 
@@ -775,7 +775,7 @@ class UserServiceTest {
                     .when(userRepository)
                     .delete(user);
 
-            var response = userService.deleteUser("user-123");
+            var response = userService.delete("user-123");
 
             assertNotNull(response);
             assertEquals("testuser", response.username());
@@ -794,7 +794,7 @@ class UserServiceTest {
 
             assertThrows(
                     UserNotFoundException.class,
-                    () -> userService.deleteUser("user-123")
+                    () -> userService.delete("user-123")
             );
 
             verify(userRepository, never())
@@ -829,7 +829,7 @@ class UserServiceTest {
                     any(PageRequest.class)
             )).thenReturn(page);
 
-            var result = userService.getAllUsers(
+            var result = userService.getAll(
                     token,
                     0,
                     10,
@@ -860,7 +860,7 @@ class UserServiceTest {
                     any(PageRequest.class)
             )).thenReturn(new PageImpl<>(List.of()));
 
-            userService.getAllUsers(
+            userService.getAll(
                     token,
                     1,
                     5,
@@ -888,7 +888,7 @@ class UserServiceTest {
                     any(PageRequest.class)
             )).thenReturn(new PageImpl<>(List.of()));
 
-            userService.getAllUsers(
+            userService.getAll(
                     token,
                     0,
                     10,
@@ -1029,7 +1029,7 @@ class UserServiceTest {
                     .thenReturn(null);
 
             var response =
-                    userService.getUserStatistics(token);
+                    userService.getStatistics(token);
 
             assertNotNull(response);
 

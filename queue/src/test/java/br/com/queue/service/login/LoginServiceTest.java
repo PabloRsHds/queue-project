@@ -221,7 +221,7 @@ class LoginServiceTest {
                     () -> loginService.login(loginDto, response)
             );
 
-            assertEquals("Usuário não pertence à unidade: " + anotherUnit.getName(), exception.getMessage());
+            assertEquals("Este usuário não existe nesta unidade", exception.getMessage());
 
             verify(userRepository).findByEmailOrUsername("joao.silva");
             verify(passwordEncoder).matches("password123", "encoded_password");
@@ -349,7 +349,7 @@ class LoginServiceTest {
                     () -> loginService.verifyUser("unit-123", "joao.silva", "password123")
             );
 
-            assertEquals("Usuário não pertence à unidade: " + anotherUnit.getName(), exception.getMessage());
+            assertEquals("Este usuário não existe nesta unidade", exception.getMessage());
 
             verify(userRepository).findByEmailOrUsername("joao.silva");
             verify(passwordEncoder).matches("password123", "encoded_password");
