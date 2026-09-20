@@ -41,7 +41,7 @@ public class ServiceManagementService {
     // =========================================== CREATE ===========================================
 
     @Transactional
-    public ResponseServiceManagementDto createServiceManagement(
+    public ResponseServiceManagementDto create(
             JwtAuthenticationToken token,
             CreateServiceManagementDto dto
     ) {
@@ -88,7 +88,7 @@ public class ServiceManagementService {
     // =========================================== UPDATE ===========================================
 
     @Transactional
-    public ResponseServiceManagementDto updateServiceManagement(
+    public ResponseServiceManagementDto update(
             UpdateServiceManagementDto dto
     ) {
         log.info("Atualizando serviço: {}", dto.serviceManagementId());
@@ -164,7 +164,7 @@ public class ServiceManagementService {
     // =========================================== DELETE ===========================================
 
     @Transactional
-    public ResponseServiceManagementDto deleteServiceManagement(
+    public ResponseServiceManagementDto delete(
             String serviceManagementId
     ) {
         log.info("Deletando serviço: {}", serviceManagementId);
@@ -188,7 +188,7 @@ public class ServiceManagementService {
 
     // ============================================ GET ALL ==========================================
 
-    public Page<ResponseServiceManagementDto> getAllServicesManagement(
+    public Page<ResponseServiceManagementDto> getAll(
             JwtAuthenticationToken token,
             int page,
             int size,
@@ -212,7 +212,7 @@ public class ServiceManagementService {
 
     // ============================================ GET BY ID ========================================
 
-    public ResponseGetServiceByIdDto getServiceManagementById(
+    public ResponseGetServiceByIdDto getById(
             String serviceManagementId
     ) {
         log.debug("Buscando serviço por ID: {}", serviceManagementId);

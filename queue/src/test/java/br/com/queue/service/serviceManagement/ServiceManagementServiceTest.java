@@ -119,7 +119,7 @@ class ServiceManagementServiceTest {
                 return saved;
             });
 
-            var response = serviceManagementService.createServiceManagement(token, createDto);
+            var response = serviceManagementService.create(token, createDto);
 
             assertNotNull(response);
             assertEquals("Suporte Técnico", response.name());
@@ -142,7 +142,7 @@ class ServiceManagementServiceTest {
 
             var exception = assertThrows(
                     ServiceManagementAlreadyExistsException.class,
-                    () -> serviceManagementService.createServiceManagement(token, createDto)
+                    () -> serviceManagementService.create(token, createDto)
             );
 
             assertEquals("Já existe um serviço com o nome: Suporte Técnico", exception.getMessage());
@@ -161,7 +161,7 @@ class ServiceManagementServiceTest {
 
             var exception = assertThrows(
                     DepartmentNotFoundException.class,
-                    () -> serviceManagementService.createServiceManagement(token, createDto)
+                    () -> serviceManagementService.create(token, createDto)
             );
 
             assertEquals("Departamento não encontrado com nome: TI", exception.getMessage());
@@ -187,7 +187,7 @@ class ServiceManagementServiceTest {
             when(departmentRepository.findByName("TI")).thenReturn(Optional.of(department));
             when(serviceRepository.save(any(ServiceManagement.class))).thenAnswer(invocation -> invocation.getArgument(0));
 
-            var response = serviceManagementService.updateServiceManagement(updateDto);
+            var response = serviceManagementService.update(updateDto);
 
             assertNotNull(response);
             assertEquals("service-123", response.serviceManagementId());
@@ -210,7 +210,7 @@ class ServiceManagementServiceTest {
 
             var exception = assertThrows(
                     ServiceManagementNotFoundException.class,
-                    () -> serviceManagementService.updateServiceManagement(updateDto)
+                    () -> serviceManagementService.update(updateDto)
             );
 
             assertEquals("Serviço não encontrado com ID: service-123", exception.getMessage());
@@ -231,7 +231,7 @@ class ServiceManagementServiceTest {
 
             var exception = assertThrows(
                     ServiceManagementAlreadyExistsException.class,
-                    () -> serviceManagementService.updateServiceManagement(updateDto)
+                    () -> serviceManagementService.update(updateDto)
             );
 
             assertEquals("Já existe um serviço com o nome: Suporte Técnico Atualizado", exception.getMessage());
@@ -257,7 +257,7 @@ class ServiceManagementServiceTest {
                     "TI"
             );
 
-            var response = serviceManagementService.updateServiceManagement(dto);
+            var response = serviceManagementService.update(dto);
 
             assertNotNull(response);
             assertEquals("Suporte Técnico", response.name());
@@ -276,7 +276,7 @@ class ServiceManagementServiceTest {
 
             var exception = assertThrows(
                     DepartmentNotFoundException.class,
-                    () -> serviceManagementService.updateServiceManagement(updateDto)
+                    () -> serviceManagementService.update(updateDto)
             );
 
             assertEquals("Departamento não encontrado com nome: TI", exception.getMessage());
@@ -301,7 +301,7 @@ class ServiceManagementServiceTest {
             doNothing().when(serviceRepository).deleteUserServicesByServiceId("service-123");
             doNothing().when(serviceRepository).delete(serviceManagement);
 
-            var response = serviceManagementService.deleteServiceManagement("service-123");
+            var response = serviceManagementService.delete("service-123");
 
             assertNotNull(response);
             assertEquals("service-123", response.serviceManagementId());
@@ -319,7 +319,7 @@ class ServiceManagementServiceTest {
 
             var exception = assertThrows(
                     ServiceManagementNotFoundException.class,
-                    () -> serviceManagementService.deleteServiceManagement("service-123")
+                    () -> serviceManagementService.delete("service-123")
             );
 
             assertEquals("Serviço não encontrado com ID: service-123", exception.getMessage());
@@ -360,7 +360,7 @@ class ServiceManagementServiceTest {
             when(unitContext.getCurrentUnit(token)).thenReturn(unit);
             when(serviceRepository.findAllWithSearch("unit-123", null, pageable)).thenReturn(page);
 
-            var result = serviceManagementService.getAllServicesManagement(token, 0, 10, null);
+            var result = serviceManagementService.getAll(token, 0, 10, null);
 
             assertNotNull(result);
             assertEquals(1, result.getTotalElements());
@@ -391,7 +391,7 @@ class ServiceManagementServiceTest {
             when(unitContext.getCurrentUnit(token)).thenReturn(unit);
             when(serviceRepository.findAllWithSearch("unit-123", "Suporte", pageable)).thenReturn(page);
 
-            var result = serviceManagementService.getAllServicesManagement(token, 0, 10, "Suporte");
+            var result = serviceManagementService.getAll(token, 0, 10, "Suporte");
 
             assertNotNull(result);
             assertEquals(1, result.getTotalElements());
@@ -411,7 +411,7 @@ class ServiceManagementServiceTest {
             when(unitContext.getCurrentUnit(token)).thenReturn(unit);
             when(serviceRepository.findAllWithSearch("unit-123", null, pageable)).thenReturn(page);
 
-            var result = serviceManagementService.getAllServicesManagement(token, 0, 10, null);
+            var result = serviceManagementService.getAll(token, 0, 10, null);
 
             assertNotNull(result);
             assertEquals(0, result.getTotalElements());
@@ -435,7 +435,7 @@ class ServiceManagementServiceTest {
         void shouldGetServiceByIdSuccessfully() {
             when(serviceRepository.findByServiceManagementId("service-123")).thenReturn(Optional.of(serviceManagement));
 
-            var response = serviceManagementService.getServiceManagementById("service-123");
+            var response = serviceManagementService.getById("service-123");
 
             assertNotNull(response);
             assertEquals("service-123", response.serviceManagementId());
@@ -455,7 +455,7 @@ class ServiceManagementServiceTest {
 
             var exception = assertThrows(
                     ServiceManagementNotFoundException.class,
-                    () -> serviceManagementService.getServiceManagementById("service-123")
+                    () -> serviceManagementService.getById("service-123")
             );
 
             assertEquals("Serviço não encontrado com ID: service-123", exception.getMessage());
