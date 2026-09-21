@@ -118,7 +118,7 @@ class CustomerServiceTest {
                 return saved;
             });
 
-            var response = customerService.registerCustomer(token, createDto);
+            var response = customerService.create(token, createDto);
 
             assertNotNull(response);
             assertEquals("customer-456", response.customerId());
@@ -146,7 +146,7 @@ class CustomerServiceTest {
 
             var exception = assertThrows(
                     CustomerValidationException.class,
-                    () -> customerService.registerCustomer(token, createDto)
+                    () -> customerService.create(token, createDto)
             );
 
             assertEquals("Já existe um cliente com este CPF.", exception.getMessage());
@@ -164,7 +164,7 @@ class CustomerServiceTest {
 
             var exception = assertThrows(
                     CustomerValidationException.class,
-                    () -> customerService.registerCustomer(token, createDto)
+                    () -> customerService.create(token, createDto)
             );
 
             assertEquals("Já existe um cliente com este RG.", exception.getMessage());
@@ -183,7 +183,7 @@ class CustomerServiceTest {
 
             var exception = assertThrows(
                     CustomerValidationException.class,
-                    () -> customerService.registerCustomer(token, createDto)
+                    () -> customerService.create(token, createDto)
             );
 
             assertEquals("Já existe um cliente com este telefone.", exception.getMessage());
@@ -203,7 +203,7 @@ class CustomerServiceTest {
 
             var exception = assertThrows(
                     CustomerValidationException.class,
-                    () -> customerService.registerCustomer(token, createDto)
+                    () -> customerService.create(token, createDto)
             );
 
             assertEquals("Já existe um cliente com este e-mail.", exception.getMessage());
@@ -229,7 +229,7 @@ class CustomerServiceTest {
             when(customerRepository.existsByEmail("joao.atualizado@email.com")).thenReturn(false);
             when(customerRepository.save(any(Customer.class))).thenAnswer(invocation -> invocation.getArgument(0));
 
-            var response = customerService.updateCustomer(updateDto);
+            var response = customerService.update(updateDto);
 
             assertNotNull(response);
             assertEquals("customer-123", response.customerId());
@@ -253,7 +253,7 @@ class CustomerServiceTest {
 
             var exception = assertThrows(
                     CustomerNotFoundException.class,
-                    () -> customerService.updateCustomer(updateDto)
+                    () -> customerService.update(updateDto)
             );
 
             assertEquals("Cliente não encontrado com ID: customer-123", exception.getMessage());
@@ -280,7 +280,7 @@ class CustomerServiceTest {
 
             var exception = assertThrows(
                     CustomerValidationException.class,
-                    () -> customerService.updateCustomer(dtoWithDifferentCpf)
+                    () -> customerService.update(dtoWithDifferentCpf)
             );
 
             assertEquals("Já existe um cliente com este CPF.", exception.getMessage());
@@ -305,7 +305,7 @@ class CustomerServiceTest {
             when(customerRepository.findByCustomerId("customer-123")).thenReturn(Optional.of(customer));
             when(customerRepository.save(any(Customer.class))).thenAnswer(invocation -> invocation.getArgument(0));
 
-            var response = customerService.updateCustomer(dto);
+            var response = customerService.update(dto);
 
             assertNotNull(response);
             assertEquals("João Silva", response.name());
@@ -331,7 +331,7 @@ class CustomerServiceTest {
             when(customerRepository.findByCustomerId("customer-123")).thenReturn(Optional.of(customer));
             when(customerRepository.save(any(Customer.class))).thenAnswer(invocation -> invocation.getArgument(0));
 
-            var response = customerService.updateCustomer(dto);
+            var response = customerService.update(dto);
 
             assertNotNull(response);
             assertNull(response.updatedAt());
@@ -368,7 +368,7 @@ class CustomerServiceTest {
             when(unitContext.getCurrentUnit(token)).thenReturn(unit);
             when(customerRepository.findAllWithSearch("unit-123", null, pageable)).thenReturn(page);
 
-            var result = customerService.getAllCustomers(token, 0, 10, null);
+            var result = customerService.getAll(token, 0, 10, null);
 
             assertNotNull(result);
             assertEquals(1, result.getTotalElements());
@@ -399,7 +399,7 @@ class CustomerServiceTest {
             when(unitContext.getCurrentUnit(token)).thenReturn(unit);
             when(customerRepository.findAllWithSearch("unit-123", "João", pageable)).thenReturn(page);
 
-            var result = customerService.getAllCustomers(token, 0, 10, "João");
+            var result = customerService.getAll(token, 0, 10, "João");
 
             assertNotNull(result);
             assertEquals(1, result.getTotalElements());
@@ -417,7 +417,7 @@ class CustomerServiceTest {
             when(unitContext.getCurrentUnit(token)).thenReturn(unit);
             when(customerRepository.findAllWithSearch("unit-123", null, pageable)).thenReturn(page);
 
-            var result = customerService.getAllCustomers(token, 0, 10, null);
+            var result = customerService.getAll(token, 0, 10, null);
 
             assertNotNull(result);
             assertEquals(0, result.getTotalElements());
@@ -478,7 +478,7 @@ class CustomerServiceTest {
         void shouldGetCustomerByIdSuccessfully() {
             when(customerRepository.findByCustomerId("customer-123")).thenReturn(Optional.of(customer));
 
-            var response = customerService.getCustomerById("customer-123");
+            var response = customerService.getById("customer-123");
 
             assertNotNull(response);
             assertEquals("customer-123", response.customerId());
@@ -501,7 +501,7 @@ class CustomerServiceTest {
 
             var exception = assertThrows(
                     CustomerNotFoundException.class,
-                    () -> customerService.getCustomerById("customer-123")
+                    () -> customerService.getById("customer-123")
             );
 
             assertEquals("Cliente não encontrado com ID: customer-123", exception.getMessage());
@@ -516,7 +516,7 @@ class CustomerServiceTest {
 
             when(customerRepository.findByCustomerId("customer-123")).thenReturn(Optional.of(customer));
 
-            var response = customerService.getCustomerById("customer-123");
+            var response = customerService.getById("customer-123");
 
             assertNotNull(response);
             assertNull(response.ticketCode());
@@ -539,7 +539,7 @@ class CustomerServiceTest {
             when(customerRepository.findByCustomerId("customer-123")).thenReturn(Optional.of(customer));
             doNothing().when(customerRepository).delete(customer);
 
-            var response = customerService.deleteCustomer("customer-123");
+            var response = customerService.delete("customer-123");
 
             assertNotNull(response);
             assertEquals("customer-123", response.customerId());
@@ -556,7 +556,7 @@ class CustomerServiceTest {
 
             var exception = assertThrows(
                     CustomerNotFoundException.class,
-                    () -> customerService.deleteCustomer("customer-123")
+                    () -> customerService.delete("customer-123")
             );
 
             assertEquals("Cliente não encontrado com ID: customer-123", exception.getMessage());
@@ -627,7 +627,7 @@ class CustomerServiceTest {
         void shouldFindCustomerSuccessfully() {
             when(customerRepository.findByCustomerId("customer-123")).thenReturn(Optional.of(customer));
 
-            var result = customerService.deleteCustomer("customer-123");
+            var result = customerService.delete("customer-123");
 
             assertNotNull(result);
             assertEquals("customer-123", result.customerId());
@@ -642,7 +642,7 @@ class CustomerServiceTest {
 
             var exception = assertThrows(
                     CustomerNotFoundException.class,
-                    () -> customerService.deleteCustomer("customer-123")
+                    () -> customerService.delete("customer-123")
             );
 
             assertEquals("Cliente não encontrado com ID: customer-123", exception.getMessage());
@@ -678,7 +678,7 @@ class CustomerServiceTest {
             when(unitContext.getCurrentUnit(token)).thenReturn(unit);
             when(customerRepository.findAllWithSearch("unit-123", null, pageable)).thenReturn(page);
 
-            var result = customerService.getAllCustomers(token, 0, 10, null);
+            var result = customerService.getAll(token, 0, 10, null);
 
             assertNotNull(result);
             assertEquals(1, result.getTotalElements());
@@ -704,7 +704,7 @@ class CustomerServiceTest {
                     null
             );
 
-            var response = customerService.updateCustomer(dto);
+            var response = customerService.update(dto);
 
             assertNotNull(response);
             assertEquals("customer-123", response.customerId());

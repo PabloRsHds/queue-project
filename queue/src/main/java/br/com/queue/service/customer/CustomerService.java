@@ -41,7 +41,7 @@ public class CustomerService {
     // =========================================== CREATE ===========================================
 
     @Transactional
-    public ResponseCustomerDto registerCustomer(JwtAuthenticationToken token, CreateCustomerDto dto) {
+    public ResponseCustomerDto create(JwtAuthenticationToken token, CreateCustomerDto dto) {
         log.info("Registrando cliente: {}", dto.name());
 
         var unit = this.unitContext.getCurrentUnit(token);
@@ -106,7 +106,7 @@ public class CustomerService {
     // =========================================== UPDATE ===========================================
 
     @Transactional
-    public ResponseCustomerDto updateCustomer(UpdateCustomerDto dto) {
+    public ResponseCustomerDto update(UpdateCustomerDto dto) {
         log.info("Atualizando cliente: {}", dto.customerId());
 
         var entity = this.findCustomerById(dto.customerId());
@@ -207,7 +207,7 @@ public class CustomerService {
 
     // ============================================ GET ALL ==========================================
 
-    public Page<ResponseAllCustomersDto> getAllCustomers(
+    public Page<ResponseAllCustomersDto> getAll(
             JwtAuthenticationToken token,
             int page,
             int size,
@@ -248,7 +248,7 @@ public class CustomerService {
 
     // ============================================ GET BY ID =========================================
 
-    public ResponseCustomerById getCustomerById(String customerId) {
+    public ResponseCustomerById getById(String customerId) {
         log.debug("Buscando cliente por ID: {}", customerId);
 
         var entity = this.findCustomerById(customerId);
@@ -284,7 +284,7 @@ public class CustomerService {
     // =========================================== DELETE ===========================================
 
     @Transactional
-    public ResponseCustomerDto deleteCustomer(String customerId) {
+    public ResponseCustomerDto delete(String customerId) {
         log.info("Deletando cliente: {}", customerId);
 
         var entity = this.findCustomerById(customerId);
