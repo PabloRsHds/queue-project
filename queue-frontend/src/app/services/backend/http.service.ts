@@ -174,6 +174,13 @@ export class HttpService {
     );
   }
 
+  public getDepartmentById(departmentId: string): Observable<ResponseDepartmentDto> {
+    return this.http.get<ResponseDepartmentDto>(
+      `${this.API_URL}/departments/${departmentId}`,
+      { withCredentials: true }
+    );
+  }
+
   public getDepartmentStatistics(): Observable<ResponseDepartmentDashBoardDto> {
     return this.http.get<ResponseDepartmentDashBoardDto>(
       `${this.API_URL}/departments/statistics`,

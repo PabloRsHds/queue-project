@@ -52,7 +52,7 @@ export class DepartmentStateService {
   public deleteStatus = signal<'success' | 'error' | 'default'>('default');
 
   // ====================== LOADING ===========================
-  
+
   public allDepartmentsLoading = signal(false);
   public registerLoading = signal(false);
   public updateLoading = signal(false);
@@ -127,9 +127,9 @@ export class DepartmentStateService {
           departments => {
             this.totalElements.update(total => total + 1);
             return [response, ...departments];
-          } 
+          }
         );
-        
+
         this.loadStatistics();
 
         this.registerMessage.set('Departamento criado com sucesso!');
@@ -155,14 +155,14 @@ export class DepartmentStateService {
       next: (response) => {
 
         // sincroniza com backend
-        this.departments.update( departments => 
+        this.departments.update( departments =>
           departments.map(
-            department => 
+            department =>
               department.departmentId === response.departmentId
-              ? response : department     
+              ? response : department
           )
         );
-        
+
         this.loadStatistics();
         this.getInfoDepartment(response.departmentId);
 
@@ -230,6 +230,15 @@ export class DepartmentStateService {
       this.departmentInfo.set(department);
       return;
     }
+
+    this.http.getDepartmentById(departmentId).subscribe({
+      next: (response) => {
+        this.departmentInfo.set(response);
+      },
+      error: (error: HttpErrorResponse) => {
+        console.error('Erro ao carregar detalhes do departamento', error.error?.message || error.message || 'Erro desconhecido');
+      }
+    });
   }
 
   // ================= GET DEPARTMENT NAMES =================
