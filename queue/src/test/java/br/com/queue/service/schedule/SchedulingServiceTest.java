@@ -147,7 +147,7 @@ class SchedulingServiceTest {
                 return saved;
             });
 
-            var response = schedulingService.createSchedule(token, createDto);
+            var response = schedulingService.create(token, createDto);
 
             assertNotNull(response);
             assertEquals("schedule-123", response.scheduleId());
@@ -173,7 +173,7 @@ class SchedulingServiceTest {
 
             var exception = assertThrows(
                     CustomerNotFoundException.class,
-                    () -> schedulingService.createSchedule(token, createDto)
+                    () -> schedulingService.create(token, createDto)
             );
 
             assertEquals("Cliente não encontrado com ID: customer-123", exception.getMessage());
@@ -192,7 +192,7 @@ class SchedulingServiceTest {
 
             var exception = assertThrows(
                     ServiceManagementNotFoundException.class,
-                    () -> schedulingService.createSchedule(token, createDto)
+                    () -> schedulingService.create(token, createDto)
             );
 
             assertEquals("Serviço não encontrado com ID: service-123", exception.getMessage());
@@ -220,7 +220,7 @@ class SchedulingServiceTest {
                     .thenReturn(Optional.of(serviceManagement));
             when(scheduleRepository.save(any(Schedule.class))).thenAnswer(invocation -> invocation.getArgument(0));
 
-            var response = schedulingService.updateSchedule(updateDto);
+            var response = schedulingService.update(updateDto);
 
             assertNotNull(response);
             assertEquals("schedule-123", response.scheduleId());
@@ -240,7 +240,7 @@ class SchedulingServiceTest {
 
             var exception = assertThrows(
                     ScheduleNotFoundException.class,
-                    () -> schedulingService.updateSchedule(updateDto)
+                    () -> schedulingService.update(updateDto)
             );
 
             assertEquals("Agendamento não encontrado com ID: schedule-123", exception.getMessage());
@@ -263,7 +263,7 @@ class SchedulingServiceTest {
 
             when(scheduleRepository.findByScheduleId("schedule-123")).thenReturn(Optional.of(schedule));
 
-            var response = schedulingService.updateSchedule(dto);
+            var response = schedulingService.update(dto);
 
             assertNotNull(response);
             assertNull(schedule.getUpdatedAt());
@@ -290,7 +290,7 @@ class SchedulingServiceTest {
 
             var exception = assertThrows(
                     CustomerNotFoundException.class,
-                    () -> schedulingService.updateSchedule(dto)
+                    () -> schedulingService.update(dto)
             );
 
             assertEquals("Cliente não encontrado com ID: customer-456", exception.getMessage());
@@ -333,7 +333,7 @@ class SchedulingServiceTest {
             when(scheduleRepository.findAllWithSearch("unit-123", null, null, pageable))
                     .thenReturn(page);
 
-            var result = schedulingService.getAllSchedules(token, 0, 10, null, null);
+            var result = schedulingService.getAll(token, 0, 10, null, null);
 
             assertNotNull(result);
             assertEquals(1, result.getTotalElements());
@@ -369,7 +369,7 @@ class SchedulingServiceTest {
             when(scheduleRepository.findAllWithSearch("unit-123", "João", null, pageable))
                     .thenReturn(page);
 
-            var result = schedulingService.getAllSchedules(token, 0, 10, "João", null);
+            var result = schedulingService.getAll(token, 0, 10, "João", null);
 
             assertNotNull(result);
             assertEquals(1, result.getTotalElements());
@@ -404,7 +404,7 @@ class SchedulingServiceTest {
             when(scheduleRepository.findAllWithSearch("unit-123", null, date, pageable))
                     .thenReturn(page);
 
-            var result = schedulingService.getAllSchedules(token, 0, 10, null, date);
+            var result = schedulingService.getAll(token, 0, 10, null, date);
 
             assertNotNull(result);
             assertEquals(1, result.getTotalElements());
@@ -423,7 +423,7 @@ class SchedulingServiceTest {
             when(scheduleRepository.findAllWithSearch("unit-123", null, null, pageable))
                     .thenReturn(page);
 
-            var result = schedulingService.getAllSchedules(token, 0, 10, null, null);
+            var result = schedulingService.getAll(token, 0, 10, null, null);
 
             assertNotNull(result);
             assertEquals(0, result.getTotalElements());
@@ -448,7 +448,7 @@ class SchedulingServiceTest {
             when(scheduleRepository.findByScheduleId("schedule-123")).thenReturn(Optional.of(schedule));
             when(ticketRepository.findByTicketId("ticket-123")).thenReturn(Optional.of(ticket));
 
-            var response = schedulingService.getScheduleById("schedule-123");
+            var response = schedulingService.getById("schedule-123");
 
             assertNotNull(response);
             assertEquals("schedule-123", response.scheduleId());
@@ -472,7 +472,7 @@ class SchedulingServiceTest {
 
             var exception = assertThrows(
                     ScheduleNotFoundException.class,
-                    () -> schedulingService.getScheduleById("schedule-123")
+                    () -> schedulingService.getById("schedule-123")
             );
 
             assertEquals("Agendamento não encontrado com ID: schedule-123", exception.getMessage());
@@ -487,7 +487,7 @@ class SchedulingServiceTest {
 
             when(scheduleRepository.findByScheduleId("schedule-123")).thenReturn(Optional.of(schedule));
 
-            var response = schedulingService.getScheduleById("schedule-123");
+            var response = schedulingService.getById("schedule-123");
 
             assertNotNull(response);
             assertNull(response.ticketId());
@@ -515,7 +515,7 @@ class SchedulingServiceTest {
             when(scheduleRepository.findByScheduleId("schedule-123")).thenReturn(Optional.of(schedule));
             doNothing().when(scheduleRepository).delete(schedule);
 
-            var response = schedulingService.deleteSchedule("schedule-123");
+            var response = schedulingService.delete("schedule-123");
 
             assertNotNull(response);
             assertEquals("schedule-123", response.scheduleId());
@@ -531,7 +531,7 @@ class SchedulingServiceTest {
 
             var exception = assertThrows(
                     ScheduleNotFoundException.class,
-                    () -> schedulingService.deleteSchedule("schedule-123")
+                    () -> schedulingService.delete("schedule-123")
             );
 
             assertEquals("Agendamento não encontrado com ID: schedule-123", exception.getMessage());
@@ -553,7 +553,7 @@ class SchedulingServiceTest {
 
             var exception = assertThrows(
                     ScheduleDeleteException.class,
-                    () -> schedulingService.deleteSchedule("schedule-123")
+                    () -> schedulingService.delete("schedule-123")
             );
 
             assertEquals(
@@ -576,7 +576,7 @@ class SchedulingServiceTest {
             when(scheduleRepository.findByScheduleId("schedule-123")).thenReturn(Optional.of(schedule));
             doNothing().when(scheduleRepository).delete(schedule);
 
-            var response = schedulingService.deleteSchedule("schedule-123");
+            var response = schedulingService.delete("schedule-123");
 
             assertNotNull(response);
             assertEquals("schedule-123", response.scheduleId());
@@ -618,7 +618,7 @@ class SchedulingServiceTest {
             when(scheduleRepository.countSchedulesByPriority("unit-123")).thenReturn(byPriority);
             when(scheduleRepository.countSchedulesByHour("unit-123")).thenReturn(byHour);
 
-            var response = schedulingService.getScheduleStatistics(token);
+            var response = schedulingService.getStatistics(token);
 
             assertNotNull(response);
             assertEquals(totalDto, response.countTotalScheduleStatistics());
@@ -657,7 +657,7 @@ class SchedulingServiceTest {
             when(scheduleRepository.countSchedulesByPriority("unit-123")).thenReturn(List.of());
             when(scheduleRepository.countSchedulesByHour("unit-123")).thenReturn(List.of());
 
-            var response = schedulingService.getScheduleStatistics(token);
+            var response = schedulingService.getStatistics(token);
 
             assertNotNull(response);
             assertNull(response.countTotalScheduleStatistics());
