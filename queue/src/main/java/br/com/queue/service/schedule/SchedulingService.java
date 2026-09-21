@@ -50,7 +50,7 @@ public class SchedulingService {
     // =========================================== CREATE ===========================================
 
     @Transactional
-    public ResponseScheduleDto createSchedule(JwtAuthenticationToken token, CreateScheduleDto dto) {
+    public ResponseScheduleDto create(JwtAuthenticationToken token, CreateScheduleDto dto) {
         log.info("Criando agendamento para customerId: {}, serviceId: {}, data: {}",
                 dto.customerId(), dto.serviceManagementId(), dto.scheduledDate());
 
@@ -67,7 +67,7 @@ public class SchedulingService {
     // =========================================== UPDATE ===========================================
 
     @Transactional
-    public ResponseScheduleDto updateSchedule(UpdateScheduleDto dto) {
+    public ResponseScheduleDto update(UpdateScheduleDto dto) {
         log.info("Atualizando agendamento: {}", dto.scheduleId());
 
         var schedule = this.findScheduleById(dto.scheduleId());
@@ -86,7 +86,7 @@ public class SchedulingService {
 
     // ============================================ GET ALL ==========================================
 
-    public Page<ResponseAllSchedulesDto> getAllSchedules(
+    public Page<ResponseAllSchedulesDto> getAll(
             JwtAuthenticationToken token,
             int page,
             int size,
@@ -109,7 +109,7 @@ public class SchedulingService {
 
     // ============================================ GET BY ID ========================================
 
-    public ResponseScheduleDto getScheduleById(String scheduleId) {
+    public ResponseScheduleDto getById(String scheduleId) {
         log.debug("Buscando agendamento por ID: {}", scheduleId);
         var entity = this.findScheduleById(scheduleId);
         return this.buildResponseScheduleDto(entity);
@@ -118,7 +118,7 @@ public class SchedulingService {
     // =========================================== DELETE ===========================================
 
     @Transactional
-    public ResponseScheduleDto deleteSchedule(String scheduleId) {
+    public ResponseScheduleDto delete(String scheduleId) {
         log.info("Deletando agendamento: {}", scheduleId);
 
         var entity = this.findScheduleById(scheduleId);
@@ -134,7 +134,7 @@ public class SchedulingService {
 
     // =========================================== STATISTICS ========================================
 
-    public ResponseScheduleDashBoardDto getScheduleStatistics(JwtAuthenticationToken token) {
+    public ResponseScheduleDashBoardDto getStatistics(JwtAuthenticationToken token) {
         var unit = this.unitContext.getCurrentUnit(token);
         log.debug("Buscando estatísticas de agendamentos para unidade: {}", unit.getUnitId());
 

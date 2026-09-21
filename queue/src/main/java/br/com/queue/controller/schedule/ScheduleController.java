@@ -11,7 +11,6 @@ import io.swagger.v3.oas.annotations.Parameter;
 import io.swagger.v3.oas.annotations.responses.ApiResponse;
 import io.swagger.v3.oas.annotations.responses.ApiResponses;
 import io.swagger.v3.oas.annotations.security.SecurityRequirement;
-import io.swagger.v3.oas.annotations.security.SecurityRequirements;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import lombok.RequiredArgsConstructor;
 import org.springframework.data.domain.Page;
@@ -44,12 +43,12 @@ public class ScheduleController {
             @ApiResponse(responseCode = "400", description = "Dados inválidos ou horário indisponível"),
             @ApiResponse(responseCode = "403", description = "Sem permissão para criar agendamentos")
     })
-    public ResponseEntity<ResponseScheduleDto> createSchedule(
+    public ResponseEntity<ResponseScheduleDto> create(
             JwtAuthenticationToken token,
             @RequestBody CreateScheduleDto dto
     ) {
         return ResponseEntity.status(HttpStatus.CREATED)
-                .body(this.schedulingService.createSchedule(token, dto));
+                .body(this.schedulingService.create(token, dto));
     }
 
     @PatchMapping
@@ -65,8 +64,8 @@ public class ScheduleController {
             @ApiResponse(responseCode = "400", description = "Dados inválidos"),
             @ApiResponse(responseCode = "404", description = "Agendamento não encontrado")
     })
-    public ResponseEntity<ResponseScheduleDto> updateSchedule(@RequestBody UpdateScheduleDto dto) {
-        return ResponseEntity.ok(this.schedulingService.updateSchedule(dto));
+    public ResponseEntity<ResponseScheduleDto> update(@RequestBody UpdateScheduleDto dto) {
+        return ResponseEntity.ok(this.schedulingService.update(dto));
     }
 
     @GetMapping
@@ -80,7 +79,7 @@ public class ScheduleController {
     @ApiResponses({
             @ApiResponse(responseCode = "200", description = "Lista retornada com sucesso")
     })
-    public ResponseEntity<Page<ResponseAllSchedulesDto>> getAllSchedules(
+    public ResponseEntity<Page<ResponseAllSchedulesDto>> getAll(
             JwtAuthenticationToken token,
             @Parameter(description = "Número da página (inicia em 0)", example = "0")
             @RequestParam int page,
@@ -99,7 +98,7 @@ public class ScheduleController {
             @RequestParam(required = false) String search
     ) {
         return ResponseEntity.ok(
-                this.schedulingService.getAllSchedules(token, page, size, search, scheduleDate)
+                this.schedulingService.getAll(token, page, size, search, scheduleDate)
         );
     }
 
@@ -114,8 +113,8 @@ public class ScheduleController {
             @ApiResponse(responseCode = "200", description = "Agendamento encontrado"),
             @ApiResponse(responseCode = "404", description = "Agendamento não encontrado")
     })
-    public ResponseEntity<ResponseScheduleDto> getScheduleById(@PathVariable String scheduleId) {
-        return ResponseEntity.ok(this.schedulingService.getScheduleById(scheduleId));
+    public ResponseEntity<ResponseScheduleDto> getById(@PathVariable String scheduleId) {
+        return ResponseEntity.ok(this.schedulingService.getById(scheduleId));
     }
 
     @DeleteMapping("/{scheduleId}")
@@ -129,8 +128,8 @@ public class ScheduleController {
             @ApiResponse(responseCode = "200", description = "Agendamento removido com sucesso"),
             @ApiResponse(responseCode = "404", description = "Agendamento não encontrado")
     })
-    public ResponseEntity<ResponseScheduleDto> deleteSchedule(@PathVariable String scheduleId) {
-        return ResponseEntity.ok(this.schedulingService.deleteSchedule(scheduleId));
+    public ResponseEntity<ResponseScheduleDto> delete(@PathVariable String scheduleId) {
+        return ResponseEntity.ok(this.schedulingService.delete(scheduleId));
     }
 
     @GetMapping("/statistics")
@@ -142,9 +141,9 @@ public class ScheduleController {
     @ApiResponses({
             @ApiResponse(responseCode = "200", description = "Estatísticas retornadas com sucesso")
     })
-    public ResponseEntity<ResponseScheduleDashBoardDto> getScheduleStatistics(
+    public ResponseEntity<ResponseScheduleDashBoardDto> getStatistics(
             JwtAuthenticationToken token
     ) {
-        return ResponseEntity.ok(this.schedulingService.getScheduleStatistics(token));
+        return ResponseEntity.ok(this.schedulingService.getStatistics(token));
     }
 }
