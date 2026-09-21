@@ -101,7 +101,7 @@ public class TicketController {
     }
 
     @GetMapping
-    @SecurityRequirements  // 👈 público — sem token
+    @SecurityRequirements
     @Operation(
             summary = "Listar todas as senhas",
             description = "Retorna uma lista paginada de todas as senhas emitidas. Endpoint público."
@@ -159,7 +159,7 @@ public class TicketController {
     }
 
     @GetMapping("/{ticketId}")
-    @SecurityRequirements  // 👈 público — sem token
+    @SecurityRequirements
     @Operation(
             summary = "Buscar senha por ID",
             description = "Retorna os dados detalhados de uma senha específica. Endpoint público."
